@@ -720,7 +720,7 @@ function sorting_posts_by_number_views( $args = '' ){
 		$x = 'popular_posts_cell';
     $LinkArticle = get_permalink( $pst->ID );
 		$image = get_the_post_thumbnail($pst->ID);
-    //Длинна заголовка
+    // Header length
    	$maxchar = 40;
     $Title = ( iconv_strlen( $pst->post_title, 'utf-8' ) > $maxchar ) ? iconv_substr( $pst->post_title, 0, $maxchar, 'utf-8' )."..." : $pst->post_title;
 		$a1       = '<a href="' . get_permalink( $pst->ID ) . "\" title=\"{$pst->views} просмотров: $Title\">";

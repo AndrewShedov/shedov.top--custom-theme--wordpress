@@ -733,8 +733,8 @@ function kama_postviews( $args = [] ){
 		$x = 'popular_posts_cell';
     $LinkArticle = get_permalink( $pst->ID );
 		$image = get_the_post_thumbnail($pst->ID);
-    //Длинна заголовка
-   	$maxchar = 40;
+    // Header length
+   	$maxchar = 37;
     $Title = ( iconv_strlen( $pst->post_title, 'utf-8' ) > $maxchar ) ? iconv_substr( $pst->post_title, 0, $maxchar, 'utf-8' )."..." : $pst->post_title;
 		$a1       = '<a href="' . get_permalink( $pst->ID ) . "\" title=\"{$pst->views} просмотров: $Title\">";
 		$a2       = '</a>';

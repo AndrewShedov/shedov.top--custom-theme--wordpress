@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // in the header
   if (document.body.classList.contains('admin-bar')) {
   let wpAdminbarHeight = document.getElementById('wpadminbar').offsetHeight;
-  console.log(wpAdminbarHeight)
   document.getElementById("nav_wrap_0").style.marginTop = wpAdminbarHeight+"px", document.getElementById("mobile_nav_wrap_2").style.marginTop = wpAdminbarHeight+"px", document.getElementById("mobile_nav_wrap_1").style.top = wpAdminbarHeight+"px", document.getElementById("nav_wrap_1").style.top = wpAdminbarHeight+"px"
  }
 // in the footer
@@ -92,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function copy(e) {
       const btn = e.currentTarget;
-      const lang = btn.dataset.lang;
       const text = e.currentTarget.previousSibling.children[0].textContent;
       copyTextToClipboard(text)
         .then(
@@ -226,9 +224,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let burger = document.getElementById("burger");
   let mobile_Side_burger = document.getElementById("mobile_Side_burger");
   let menu = document.getElementById("menu");
-  let wrap = document.getElementById("wrap");
-  let UpButton = document.getElementById("UpButton");
-
   let BodyHiddenOver = document.body;
   ///////////////Function opening menu
   function calcShowMenu(showMenu) {
@@ -238,7 +233,6 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle("menuMoveLeft", showMenu);
     menu.classList.toggle("menu_shadow", showMenu);
     BodyHiddenOver.classList.toggle("BodyHiddenOver", showMenu);
-    const menuWidth = menu.offsetWidth;
     /* shift towards burger 1 */
     /*
                 [burger.style].map(v => v.transform = `translateX(${showMenu ? -menuWidth - 25 : 0}px)`);
@@ -273,7 +267,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let target = event.target;
     if (target.tagName == "A") {
       menu.classList.toggle("menu_shadow", showMenu);
-      console.log("safsd");
     }
   };
 
@@ -350,8 +343,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 jQuery(document).ready(function ($) {
+  /* UP BUTTON */
   let offset = 100;
-  let speed = 250;
+  let speed = 120;
   let duration = 400;
   $(window).scroll(function () {
     if ($(this).scrollTop() < offset) {

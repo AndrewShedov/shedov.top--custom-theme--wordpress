@@ -6,7 +6,7 @@
               </div>
               <div class="entry_text_wrap">
                 <div class="entry_text">
-                  <p> <?php echo excerpt(17); ?> </p>
+                  <p> <?php echo excerpt(27); ?> </p>
                 </div>
               </div>
               </a>
