@@ -601,16 +601,17 @@ function trim_title_chars($count, $after) {
 	// delete category url 1
 // function remove_category( $string, $type )  {           if ( $type != 'single' && $type == 'category' && ( strpos( $string, 'category' ) !== false ) )          {              $url_without_category = str_replace( "/category/", "/", $string );              return trailingslashit( $url_without_category );          }      return $string;  }     add_filter( 'user_trailingslashit', 'remove_category', 100, 2);  
 		// delete category url 2
-/*
-		add_action( 'wp_enqueue_scripts', 'enqueue_load_fa' );
-		function enqueue_load_fa() {
-		wp_enqueue_style('load-fa', 'https://lnwp4/SHE_RU/wp-content/themes/Shedov.top.Theme.RUS/fonts/fontawesome-free-5.13.0-web/css/all.min.css' );
+
+		// add_action( 'wp_enqueue_scripts', 'enqueue_load_fa' );
+		// function enqueue_load_fa() {
+		// wp_enqueue_style('load-fa', 'https://shedov.top/wp-content/themes/Shedov.top.Theme.RUS/fonts/fontawesome-free-5.13.0-web/css/all.min.css' );
+		// }
+		 
+		add_action( 'wp_enqueue_scripts', 'enqueue_load_fontawesome_free_6_5_1_web' );
+		function enqueue_load_fontawesome_free_6_5_1_web() {
+		wp_enqueue_style('enqueue_load_fontawesome_free_6_5_1_web', 'https://shedov.top/wp-content/themes/Shedov.top.Theme.RUS/fonts/fontawesome-free-6.5.1-web/css/all.min.css' );
 		}
-*/
-		add_action( 'wp_enqueue_scripts', 'enqueue_load_fa' );
-		function enqueue_load_fa() {
-		wp_enqueue_style('load-fa', 'https://shedov.top/wp-content/themes/Shedov.top.Theme.RUS/fonts/fontawesome-free-5.13.0-web/css/all.min.css' );
-		}
+
 	// redirect on exit 1
 	add_action('wp_logout','auto_redirect_after_logout');
 	function auto_redirect_after_logout(){

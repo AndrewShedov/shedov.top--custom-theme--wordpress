@@ -118,54 +118,36 @@ document.addEventListener("DOMContentLoaded", function () {
   /* single.php 1 */
   /* single_share_link 1 */
   document.querySelectorAll(".single_share_copy_icon").forEach((element) => {
-    element.addEventListener("click", function () {
+    element.addEventListener("click", (event) => {
       const href = element.getAttribute('data-href');
       navigator.clipboard.writeText(href);
-      document.getElementById("single_share_copy_notification").textContent =
-        "Скопировано";
-
-      document.getElementById("single_share_copy_notification").style.width =
-        "85px";
-
-      document.getElementById(
-        "single_share_copy_notification"
-      ).style.marginLeft = "-47px";
+      element.parentElement.querySelector(".single_share_copy_notification").querySelector("p").textContent = "Скопировано";
     });
   });
 
   document.querySelectorAll(".single_share_copy_icon").forEach((element) => {
-    element.addEventListener("mouseover", function () {
-      document.getElementById("single_share_copy_notification").textContent =
-        "Копировать";
-
-      document.getElementById("single_share_copy_notification").style.width =
-        "75px";
-
-      document.getElementById(
-        "single_share_copy_notification"
-      ).style.marginLeft = "-42px";
+    element.addEventListener("mouseover", (event) => {
+        element.parentElement.querySelector(".single_share_copy_notification").querySelector("p").textContent = "Копировать"; 
     });
   });
-
   /* single_share_link 2 */
   /* single.php 2 */
 
   /*index.php 1*/
   /* entry cell share 1 */
-  /*share list open/close 1*/
-  const ob = document.querySelector("html");
+   /*share list open/close 1*/
+   const ob = document.querySelector("html");
   ob.addEventListener("click", (e) => {
     const o = e.target.closest(".entry_cell_share");
     if (!o) {
-      if (e.target.closest(".entry_cell_share_list_wrap")) return;
-      ob.querySelectorAll(".entry_cell_share_list_wrap.show").forEach((el) =>
+      if (e.target.closest(".entry_cell_share_list")) return;
+      ob.querySelectorAll(".entry_cell_share_list.show").forEach((el) =>
         animateDisplay(el, "show", "block", 150)
       );
       return;
     }
     const op = e.target.closest(".entry_cell_share_wrap");
-
-    const el = op.querySelector(".entry_cell_share_list_wrap");
+    const el = op.querySelector(".entry_cell_share_list");
     animateDisplay(el, "show", "block", 150);
   });
 
@@ -200,42 +182,31 @@ document.addEventListener("DOMContentLoaded", function () {
       }, timeout);
     }
   }
-  /* entry cell share 2 */
+   /* entry cell share 2 */
+ 
 
   /* entry cell share link 1 */
 
   ob.addEventListener("click", (e) => {
-
-    const o = e.target.closest(".entry_cell_share_link_wrap");
+    const o = e.target.closest(".entry_cell_share_link");
     if (!o) {
-      ob.querySelectorAll(".entry_cell_share_link_wrap").forEach((element) => {
+      ob.querySelectorAll(".entry_cell_share_link").forEach((element) => {
         element.addEventListener("click", function () {
           const href = element.getAttribute('data-href');
           navigator.clipboard.writeText(href);
-          element.parentElement
-            .querySelector(".entry_cell_share_link")
-            .querySelector("p").textContent = "Скопировано";
-          element.parentElement
-            .querySelector(".entry_cell_share_link")
-            .querySelector("i").style.marginRight = "7px";
+          element.parentElement.querySelector(".entry_cell_share_link_copy_notification").querySelector("p").textContent = "Скопировано";
         });
       });
       return;
     }
   });
 
-  ob.addEventListener("click", (e) => {
-    const o = e.target.closest(".entry_cell_share_link_wrap");
+   ob.addEventListener("click", (e) => {
+    const o = e.target.closest(".entry_cell_share_link");
     if (!o) {
-      ob.querySelectorAll(".entry_cell_share_link_wrap").forEach((element) => {
+      ob.querySelectorAll(".entry_cell_share_link").forEach((element) => {
         element.addEventListener("mouseover", function () {
-          element.parentElement
-            .querySelector(".entry_cell_share_link")
-            .querySelector("p").textContent = "Копировать";
-
-          element.parentElement
-            .querySelector(".entry_cell_share_link")
-            .querySelector("i").style.marginRight = "10px";
+          element.parentElement.querySelector(".entry_cell_share_link_copy_notification").querySelector("p").textContent = "Копировать";
         });
       });
       return;
@@ -246,17 +217,13 @@ document.addEventListener("DOMContentLoaded", function () {
   /*index.php 2*/
 
   let burger = document.getElementById("burger");
-
-  let mobile_Side_burger = document.getElementById("mobile_Side_burger");
-
+  let mobile_side_burger = document.getElementById("mobile_side_burger");
   let menu = document.getElementById("menu");
   let BodyHiddenOver = document.body;
   ///////////////Function opening menu
   function calcShowMenu(showMenu) {
     burger.classList.toggle("burger-open", showMenu);
-
-    mobile_Side_burger.classList.toggle("burger-open", showMenu);
-
+    mobile_side_burger.classList.toggle("burger-open", showMenu);
     menu.classList.toggle("menu-open", showMenu);
     menu.classList.toggle("menuMoveLeft", showMenu);
     menu.classList.toggle("menu_shadow", showMenu);
@@ -268,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
   /////////////////Pressing a Burger
   burger.addEventListener("click", () => calcShowMenu((showMenu = !showMenu)));
 
-  mobile_Side_burger.addEventListener("click", () =>
+  mobile_side_burger.addEventListener("click", () =>
     calcShowMenu((showMenu = !showMenu))
   );
 
@@ -291,32 +258,6 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.toggle("menu_shadow", showMenu);
     }
   };
-
-  /*Menu scrolling 1*/
-  window.onscroll = function () {
-    growShrinkLogo();
-  };
-
-  function growShrinkLogo() {
-    let li = document.querySelectorAll(".nav ul li");
-    let = mobile_nav_wrap_3 = document.querySelectorAll(".mobile_nav_wrap_3");
-    let = nav_wrap_2 = document.querySelectorAll(".nav_wrap_2");
-    let logo = document.querySelectorAll(".nav_logo_wrap");
-    if (
-      document.body.scrollTop > 50 ||
-      document.documentElement.scrollTop > 50
-    ) {
-      nav_wrap_2.forEach((el) => (el.style.marginBottom = "2px"));
-      li.forEach((el) => (el.style.height = "40px"));
-      logo.forEach((el) => (el.style.height = "50px"));
-    } else {
-      nav_wrap_2.forEach((el) => (el.style.marginBottom = "0px"));
-      li.forEach((el) => (el.style.height = "45px"));
-      logo.forEach((el) => (el.style.height = "70px"));
-    }
-  }
-
-  /*Menu scrolling 2*/
 
   ///////////////scrol when you click on the title
   const smoothLinks = document.querySelectorAll('a[href^="#"]');
