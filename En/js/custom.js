@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // in the header
   if (document.body.classList.contains('admin-bar')) {
   let wpAdminbarHeight = document.getElementById('wpadminbar').offsetHeight;
-  document.getElementById("nav_wrap_0").style.marginTop = wpAdminbarHeight+"px", document.getElementById("mobile_nav_wrap_2").style.marginTop = wpAdminbarHeight+"px", document.getElementById("mobile_nav_wrap_1").style.top = wpAdminbarHeight+"px", document.getElementById("nav_wrap_1").style.top = wpAdminbarHeight+"px"
+  document.getElementById("desktop_menu_part_1_wrap").style.marginTop = wpAdminbarHeight+"px", document.getElementById("mobile_menu_part_1").style.marginTop = wpAdminbarHeight+"px", document.getElementById("mobile_menu_part_2").style.top = wpAdminbarHeight+"px", document.getElementById("desktop_menu_part_2_wrap").style.top = wpAdminbarHeight+"px"
  }
 // in the footer
 // if (document.body.classList.contains('admin-bar')) {
@@ -357,20 +357,20 @@ jQuery(document).ready(function ($) {
 
   /*Search_2*/
 
-  /*Search_mobile(1)_1*/
-  $(".mobile_1_search_open").hide();
+  /* mobile search /start */
+  $(".mobile_menu_part_2_search").hide();
 
-  $(".mobile_1_toggle-block").click(function () {
-    if ($(".mobile_1_search_open").is(":visible")) {
+  $(".mobile_menu_part_2_search_icon").click(function () {
+    if ($(".mobile_menu_part_2_search").is(":visible")) {
 
 
-      $(".mobile_1_search_open").fadeOut(150);
+      $(".mobile_menu_part_2_search").fadeOut(150);
     } else {
 
 
-      $(".mobile_1_search_open").fadeIn(150);
+      $(".mobile_menu_part_2_search").fadeIn(150);
 
-      $("#mobile_1_search_input_focus").focus();
+      $(".mobile_menu_part_2_search_input").focus();
     }
   });
 
@@ -378,7 +378,7 @@ jQuery(document).ready(function ($) {
   jQuery(function ($) {
     $(document).mouseup(function (e) {
 
-      let div = $("#mobile_1_search_open");
+      let div = $(".mobile_menu_part_2_search");
       if (
         !div.is(e.target) &&
         div.has(e.target).length === 0
@@ -389,26 +389,26 @@ jQuery(document).ready(function ($) {
     });
   });
 
-  $(".mobile_1_nav_search_button_clear").hide(150);
+  $(".mobile_menu_part_2_search_button_clear").hide(150);
 
   setInterval(function () {
-    if ($("#mobile_1_search_input_focus").val().length != 0) {
-      $(".mobile_1_nav_search_button_clear").fadeIn(150);
+    if ($(".mobile_menu_part_2_search_input").val().length != 0) {
+      $(".mobile_menu_part_2_search_button_clear").fadeIn(150);
 
     } else {
 
-      $(".mobile_1_nav_search_button_clear").fadeOut(150);
+      $(".mobile_menu_part_2_search_button_clear").fadeOut(150);
     }
   }, 0);
 
-  /*Search_mobile(1)_2*/
+  /* mobile search /end */
 
   /* HIDE ICONS IN THE HEADER ON THE CONTACT PAGE 1*/
-  if (document.querySelector(".Contacts_Icons_Wrap")) {
-    $(".header_social_wrap").hide("slow");
+  if (document.querySelector(".contacts_wrap")) {
+    $(".desktop_menu_part_1_social_icons").fadeOut('2000');
   }
-  if (document.querySelector(".Contacts_Icons_Wrap")) {
-    $(".mobile_header_social_wrap").hide("slow");
+  if (document.querySelector(".contacts_wrap")) {
+    $(".mobile_menu_part_1_social_icons").fadeOut('2000');
   }
 
   /* HIDE ICONS IN THE HEADER ON THE CONTACT PAGE
