@@ -574,7 +574,7 @@ function no_image() {
 	if ( has_post_thumbnail() ):
 		the_post_thumbnail();
 	else:
-		print '<img class="wp-post-image" src="'. get_bloginfo('template_directory'). '/img/2342918.jpg' . '"alt="no image" />';
+		print '<img class="wp-post-image" src="'. get_bloginfo('template_directory'). '/images/post_no_image.webp' . '"alt="no image" />';
 	endif;  
 	}  
 // PICTURE IF THERE IS NO IMAGE 2
