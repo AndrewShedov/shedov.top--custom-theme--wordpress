@@ -7,45 +7,41 @@
             $paged = (get_query_var('page')) ? get_query_var('page') : 1;
             $s = get_search_query();
             $args = array(
-            'posts_per_page' => 10,
+            'posts_per_page' => 5,
             'paged' => $paged,
             's' => $s
             );
             $the_query = new WP_Query($args);
-            //print_r($the_query);
             if ( $the_query->have_posts() ) {
-            _e("<!-- <div class='search_title_wrap'> 1 -->
-            <div class='search_title_wrap'> <h2>Search results for: ".get_query_var('s')."</h2><!-- <div class='search_title_wrap'> 2 -->
+            _e("<div class='search_title'> <h2>Search results for: ".get_query_var('s')."</h2>
             </div>" );
-            echo '<!-- search_results_wrap 1 -->
-            <div class="search_results_wrap">
-            <!-- search_results 1 -->
-            <div class="search_results">';
+            echo '<div class="search_results_wrap">
+                  <div class="search_results">';
             while ( $the_query->have_posts() ) {
             $the_query->the_post();
             ?>
-         <div class="search_results_cell_wrap">
+         <div id="post-<?php the_ID(); ?>" class="search_results_cell_wrap">
             <a href="<?php the_permalink() ?>">
                <div class="search_results_cell">
                   <div class="search_results_cell_title_text_image_wrap">
                      <div class="search_results_cell_title_text_wrap">
-                        <div class="search_results_cell_title_wrap_2">
+                        <div class="search_results_cell_title">
                            <h3>
                               <?php trim_title_chars(80, "&nbsp;…"); ?>
                            </h3>
                         </div>
-                        <div class="search_results_cell_text_wrap_1">
+                        <div class="search_results_cell_text_desktop">
                            <p>
                               <?php echo excerpt(25); ?>
                            </p>
-                        </div>
-                        <div class="search_results_cell_text_wrap_2">
+                        </div>   
+                        <div class="search_results_cell_text_mobile">
                            <p>
                               <?php echo excerpt(20); ?>
                            </p>
                         </div>
-                     </div>
-                     <div class="search_results_cell_image_wrap">
+                     </div> 
+                     <div class="search_results_cell_image">
                         <?php
                            no_image()
                            ?>
@@ -57,9 +53,7 @@
          <?php
             }
             echo
-            '<!-- search results 2 -->
-            </div>
-            <!-- search results_wrap 2 -->
+            '</div>
             </div>';
             }else{
             ?>

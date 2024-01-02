@@ -314,48 +314,44 @@ jQuery(document).ready(function ($) {
     return false;
   });
 
-  /*Search_1*/
-  $(".search_open").hide();
+   /* desktop search /start */
+   $(".desktop_menu_part_2__search").hide();
 
-  $(".toggle-block").click(function () {
-    if ($(".search_open").is(":visible")) {
-      $(".search_open").fadeOut(150);
-    } else {
-      $(".search_open").fadeIn(150);
-
-      $("#search_input_focus").focus();
-    }
-  });
-
-
-
-  jQuery(function ($) {
-    $(document).mouseup(function (e) {
-
-      let div = $("#search_open");
-      if (
-        !div.is(e.target) &&
-        div.has(e.target).length === 0
-      ) {
-
-        div.fadeOut(150);
-      }
-    });
-  });
-
-  $(".nav_search_button_clear").hide(150);
-
-  setInterval(function () {
-    if ($("#search_input_focus").val().length != 0) {
-      $(".nav_search_button_clear").fadeIn(150);
-
-    } else {
-
-      $(".nav_search_button_clear").fadeOut(150);
-    }
-  }, 0);
-
-  /*Search_2*/
+   $(".desktop_menu_part_2__search_icon").click(function () {
+     if ($(".desktop_menu_part_2__search").is(":visible")) {
+       $(".desktop_menu_part_2__search").fadeOut(150);
+     } else {
+       $(".desktop_menu_part_2__search").fadeIn(150);
+ 
+       $(".desktop_menu_part_2__search_input").focus();
+     }
+   });
+ 
+   jQuery(function ($) {
+     $(document).mouseup(function (e) {
+       let div = $(".desktop_menu_part_2__search");
+       if (
+         !div.is(e.target) &&
+         div.has(e.target).length === 0
+       ) {
+         div.fadeOut(150);
+       }
+     });
+   });
+ 
+   $(".desktop_menu_part_2__search_button_clear").hide(150);
+ 
+   setInterval(function () {
+     if ($(".desktop_menu_part_2__search_input").val().length != 0) {
+       $(".desktop_menu_part_2__search_button_clear").fadeIn(150);
+ 
+     } else {
+ 
+       $(".desktop_menu_part_2__search_button_clear").fadeOut(150);
+     }
+   }, 0);
+ 
+   /* desktop search /end */
 
   /* mobile search /start */
   $(".mobile_menu_part_2_search").hide();
@@ -403,16 +399,14 @@ jQuery(document).ready(function ($) {
 
   /* mobile search /end */
 
-  /* HIDE ICONS IN THE HEADER ON THE CONTACT PAGE 1*/
+  /* hide icons in the header on the contact page /start */
   if (document.querySelector(".contacts_wrap")) {
-    $(".desktop_menu_part_1_social_icons").fadeOut('2000');
+    $(".desktop_menu_part_1_social_icons").fadeOut('fast');
   }
   if (document.querySelector(".contacts_wrap")) {
-    $(".mobile_menu_part_1_social_icons").fadeOut('2000');
+    $(".mobile_menu_part_1_social_icons").fadeOut('fast');
   }
-
-  /* HIDE ICONS IN THE HEADER ON THE CONTACT PAGE
- 2*/
+  /* hide icons in the header on the contact page /end*/
 
   /* Hide a block with similar posts and comments if there are none  1 */
   if ($(".similar_news_cell").length) {

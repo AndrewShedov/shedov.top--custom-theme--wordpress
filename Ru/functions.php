@@ -10,8 +10,7 @@ add_theme_support( 'post-thumbnails' );
 add_image_size( 'bigfeatured', 888, 578, true);
 add_image_size( 'smallsidebar', 88, 69, true);
 add_action( 'wp_enqueue_scripts', 'Add_js_and_css' );
- 
-function Add_js_and_css(){
+ function Add_js_and_css(){ 
  
 wp_enqueue_style('main', get_stylesheet_directory_uri() . '/css/style.css', array(), time());
  
@@ -27,20 +26,9 @@ add_editor_style('css/style-gutenberg.css');
 }
 // Gutenberg styles 2
 register_nav_menus( array(
-'head_menu' =>'Menu in header',
-//'footer_menu' =>'menu footer',
+'head_menu' =>'Menu in header'
 ));
-/*
-function my_menus() {
-	$locations = array(
-		'head_menu_mobile'  => __( 'Mobile menu', 'my_menus' ),
-		'head_menu' => __( 'Menu in
- header', 'my_menus' ),
-		
-	);
-	register_nav_menus( $locations );
-}
-*/
+
 class Cust_Nav extends Walker_Nav_Menu {
   public function start_lvl( &$output, $depth = 0, $args = null ) {
 		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
@@ -270,7 +258,7 @@ class Cust_Nav_mobile extends Walker_Nav_Menu {
 //добавить стрелку
 $has_children = array_search ( 'menu-item-has-children' , $classes );
 if($has_children != false) :
-	$item_output .= '<div class="toggle-button"  ><i class="menu_arrow fas fa-sort-up"></i></div>' ;
+	$item_output .= '<div class="toggle-button"><svg class="menu_arrow" viewBox="-96 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg></div>' ;
 endif;
 		/**
 		 * Filters the arguments for a single nav menu item.
@@ -368,7 +356,7 @@ endif;
 		$item_output .= $args->after;
 		//example
 		//$item_output .= $args->before;
-//example
+//example 
 		/**
 		 * Filters a menu item's starting output.
 		 *
@@ -410,7 +398,8 @@ function true_add_contacts( $contactmethods ) {
  
 }
 add_filter('user_contactmethods', 'true_add_contacts', 10, 1);
-	//КОЛИЧЕСВО СЛОВ В ПРЕВЬЮ 1
+
+// КОЛИЧЕСВО СЛОВ В ПРЕВЬЮ 1
 	
 // меняем текст читать далее
 function excerpt($limit) {
@@ -425,13 +414,14 @@ function excerpt($limit) {
 	return $excerpt;
 }
 	//КОЛИЧЕСВО СЛОВ В ПРЕВЬЮ 2
-	/* Пользовательский скрипт без зависимостей, включенный в хедере  
-add_action('wp_enqueue_scripts', 'tutsplus_enqueue_custom_js');
-function tutsplus_enqueue_custom_js() {
-    wp_enqueue_script('custom', get_stylesheet_directory_uri().'/js/custom.js');
-}
-*/
-/* Пользовательский скрипт без зависимостей, включенный в футере */
+
+// Custom script in footer header  
+// add_action('wp_enqueue_scripts', 'tutsplus_enqueue_custom_js');
+// function tutsplus_enqueue_custom_js() {
+//     wp_enqueue_script('custom', get_stylesheet_directory_uri().'/js/custom.js');
+// }
+ 
+/* Custom script in footer */
 add_action('wp_enqueue_scripts', 'tutsplus_enqueue_custom_js');
 function tutsplus_enqueue_custom_js() {
     wp_enqueue_script('custom', get_stylesheet_directory_uri().'/js/custom.js', 
@@ -442,6 +432,15 @@ function mobile_menu_1_js() {
     wp_enqueue_script('mobile_menu_1_js', get_stylesheet_directory_uri().'/parts/mobile_menu_1/mobile_menu_1.js', 
     array(), false, true);
 }
+
+// Remove the WordPress default jquery
+wp_deregister_script( 'jquery' );
+
+// custom jquery
+wp_enqueue_script(
+  'jquery', get_template_directory_uri() . '/js/jQuery_3_7_1.js','', '3.7.1', true
+);
+
 // удалить стандартный класс - menu-item-has-children
 //add_filter('nav_menu_css_class', 'delete_standard_class', 10, 2);
 //function delete_standard_class($classes, $item){
@@ -452,7 +451,7 @@ function mobile_menu_1_js() {
 //}
 function be_arrows_in_menus( $item_output, $item, $depth, $args ) {
 	if( in_array( 'desktop_menu_arrows', $item->classes ) ) {
-		$arrow = 0 == $depth ?'<i class="menu_arrow fas fa-sort-up"></i>' : '<i class="menu_arrow_2 fas fa-sort-down"></i>';
+		$arrow = 0 == $depth ?'<svg class="menu_arrow" viewBox="-96 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg>' : '<svg class="menu_arrow_2" viewBox="-96 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg>';
 		$item_output = str_replace( '</a>', $arrow . '</a>', $item_output );
 	}
 	return $item_output;
@@ -502,10 +501,6 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'twentynineteen_setup' );
-/**
- * Custom Comment Walker template.
- */
-require get_template_directory() . '/classes/class-twentynineteen-walker-comment.php';
 /**
  * Common theme functions.
  */
@@ -589,28 +584,8 @@ function trim_title_chars($count, $after) {
 	echo $title . $after;
 }
 // ... ellipses at the end TITLE 2
-//display categories in the preview of the  entries 1
-//function my_thecat() {
-	//global $post;
-	//foreach((get_the_category($post->ID)) as $category) { 
-	//echo  ' <a href="'.get_category_link($category->cat_ID).'" title="'.$category->cat_name.'">  <div class="entry_cell_category_cell"> <p> ' .$category->cat_name.'</p> </div> </a>';
-	//}
-	//}
-	
-//display categories in the preview of the  entries 2
-	// delete category url 1
-// function remove_category( $string, $type )  {           if ( $type != 'single' && $type == 'category' && ( strpos( $string, 'category' ) !== false ) )          {              $url_without_category = str_replace( "/category/", "/", $string );              return trailingslashit( $url_without_category );          }      return $string;  }     add_filter( 'user_trailingslashit', 'remove_category', 100, 2);  
-		// delete category url 2
-
-		// add_action( 'wp_enqueue_scripts', 'enqueue_load_fa' );
-		// function enqueue_load_fa() {
-		// wp_enqueue_style('load-fa', 'https://shedov.top/wp-content/themes/Shedov.top.Theme.RUS/fonts/fontawesome-free-5.13.0-web/css/all.min.css' );
-		// }
-		 
-		add_action( 'wp_enqueue_scripts', 'enqueue_load_fontawesome_free_6_5_1_web' );
-		function enqueue_load_fontawesome_free_6_5_1_web() {
-		wp_enqueue_style('enqueue_load_fontawesome_free_6_5_1_web', 'https://shedov.top/wp-content/themes/Shedov.top.Theme.RUS/fonts/fontawesome-free-6.5.1-web/css/all.min.css' );
-		}
+ 
+ 
 
 	// redirect on exit 1
 	add_action('wp_logout','auto_redirect_after_logout');
