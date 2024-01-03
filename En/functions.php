@@ -83,11 +83,7 @@ class Cust_Nav extends Walker_Nav_Menu {
 		if (in_array('menu-item-has-children', $classes)){
       $classes[] = 'dropdown';
       }
-			//добавить стрелку
-			//$has_children = array_search ( 'menu-item-has-children' , $classes );
-		//	if($has_children != false) :
-			//	$item_output .= '<div class="toggle-button"><p>sdf</p></div>';
-	//	endif;
+ 
 		/**
 		 * Filters the arguments for a single nav menu item.
 		 *
@@ -255,7 +251,7 @@ class Cust_Nav_mobile extends Walker_Nav_Menu {
       $classes[] = 'dropdown_mobile';
 			
       }
-//добавить стрелку
+//add arrow
 $has_children = array_search ( 'menu-item-has-children' , $classes );
 if($has_children != false) :
 	$item_output .= '<div class="toggle-button"  ><svg class="menu_arrow" viewBox="-96 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg>' ;
@@ -433,23 +429,27 @@ function mobile_menu_1_js() {
 }
 
 // Remove the WordPress default jquery
-wp_deregister_script( 'jquery' );
+// wp_deregister_script( 'jquery' );
 
 // custom jquery
-wp_enqueue_script(
-  'jquery', get_template_directory_uri() . '/js/jQuery_3_7_1.js','', '3.7.1', true
-);
+// wp_enqueue_script(
+//   'jquery', get_template_directory_uri() . '/js/jQuery_3_7_1.js','', '3.7.1', true
+// );
 
+// Script to move all Head scripts to the Footer
 
+// function remove_head_scripts() { 
+// 	remove_action('wp_head', 'wp_print_scripts'); 
+// 	remove_action('wp_head', 'wp_print_head_scripts', 9); 
+// 	remove_action('wp_head', 'wp_enqueue_scripts', 1);
 
-// удалить стандартный класс - menu-item-has-children
-//add_filter('nav_menu_css_class', 'delete_standard_class', 10, 2);
-//function delete_standard_class($classes, $item){
-    //if(($key = array_search('menu-item-has-children', $classes)) !== false) {
-        //unset($classes[$key]);
-    //}
-   // return $classes;
-//}
+// 	add_action('wp_footer', 'wp_print_scripts', 5);
+// 	add_action('wp_footer', 'wp_enqueue_scripts', 5);
+// 	add_action('wp_footer', 'wp_print_head_scripts', 5); 
+// } 
+// add_action( 'wp_enqueue_scripts', 'remove_head_scripts' );
+
+ 
 function be_arrows_in_menus( $item_output, $item, $depth, $args ) {
 	if( in_array( 'desktop_menu_arrows', $item->classes ) ) {
 		$arrow = 0 == $depth ?'<svg class="menu_arrow" viewBox="-96 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg>' : '<svg class="menu_arrow_2" viewBox="-96 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg>';
@@ -777,3 +777,6 @@ add_action( 'template_redirect', function(){
 // delete html { margin-top: 32px !important; }
 add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
  // adaptation to different screens admin bar / End
+
+
+ 

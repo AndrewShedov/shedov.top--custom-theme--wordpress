@@ -36,12 +36,8 @@
 </div>
 <div id="similar_news_wrap_1">
    <div class="similar_news_wrap">
-      <div class="similar_news_title_wrap">
-         <div class="similar_news_title">
-            <div class="similar_news_title_text">
-               <h3>Похожее</h3>
-            </div>
-         </div>
+      <div class="similar_news_title">
+         <h3>Похожее</h3>
       </div>
       <div class="similar_news">
          <?php

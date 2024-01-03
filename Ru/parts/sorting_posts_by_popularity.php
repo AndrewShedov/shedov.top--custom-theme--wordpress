@@ -1,12 +1,8 @@
 <div id="popular_posts_wrap" class="popular_posts_wrap">
-   <div class="popular_posts_title_wrap">
-      <div class="popular_posts_title">
-         <div class="popular_posts_title_text">
-            <h3>Популярное</h3>
-         </div>
-      </div>
+   <div class="popular_posts_title">
+          <h3>Популярное</h3>
    </div>
-   <div class="popular_posts">
+     <div class="popular_posts">
          <?php sorting_posts_by_number_views("num=5");
             ?>
    </div>
