@@ -13,108 +13,108 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // adaptation to different screens admin bar /End
 
-  function initCodeCopy() {
-    const codeBlocks = document.querySelectorAll('code[class*="language-"]');
-    codeBlocks.forEach((block) => {
-      const lang = parseLanguage(block);
-      const referenceEl = block.parentElement;
-      const parent = block.parentElement.parentElement;
-      const wrapper = document.createElement('div');
-      wrapper.className = 'code-wrapper';
-      parent.insertBefore(wrapper, referenceEl);
-      wrapper.append(block.parentElement);
-      const copyBtn = document.createElement('button');
-      copyBtn.setAttribute('class', 'copy-button');
-      copyBtn.setAttribute('data-lang', lang);
-      copyBtn.innerHTML = `<svg width="27px" height="27px" fill="none" stroke="#292929" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
+function initCodeCopy() {
+  const codeBlocks = document.querySelectorAll('code[class*="language-"]');
+  codeBlocks.forEach((block) => {
+    const lang = parseLanguage(block);
+    const referenceEl = block.parentElement;
+    const parent = block.parentElement.parentElement;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'code-wrapper';
+    parent.insertBefore(wrapper, referenceEl);
+    wrapper.append(block.parentElement);
+    const copyBtn = document.createElement('button');
+    copyBtn.setAttribute('class', 'copy-button');
+    copyBtn.setAttribute('data-lang', lang); 
+    copyBtn.innerHTML = `<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
+   wrapper.insertAdjacentElement('beforeend', copyBtn);
+  });
 
-      wrapper.insertAdjacentElement('beforeend', copyBtn);
-    });
-
-    function parseLanguage(block) {
-      const className = block.className;
-      if (className.startsWith('language')) {
-        const [prefix, lang] = className.split('-');
-        return lang;
-      }
+  function parseLanguage(block) {
+    const className = block.className;
+    if (className.startsWith('language')) {
+      const [prefix, lang] = className.split('-');
+      return lang;
     }
-
-    async function fallbackCopyTextToClipboard(text) {
-      return new Promise((resolve, reject) => {
-        var textArea = document.createElement('textarea');
-        textArea.value = copyInfo.getText();
-        // Avoid scrolling to bottom
-        textArea.style.top = '0';
-        textArea.style.left = '0';
-        textArea.style.position = 'fixed';
-        document.body.appendChild(textArea);
-        textArea.focus();
-        textArea.select();
-        try {
-          var successful = document.execCommand('copy');
-          setTimeout(function () {
-            if (successful) {
-              resolve('success')
-            } else {
-              reject('error')
-            }
-          }, 1);
-        } catch (err) {
-          setTimeout(function () {
-            reject(err)
-          }, 1);
-        } finally {
-          document.body.removeChild(textArea);
-        }
-      })
-    }
-
-    async function copyTextToClipboard(text) {
-      return new Promise((resolve, reject) => {
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(text).then(
-            resolve(), function () {
-              // try the fallback in case `writeText` didn't work
-              fallbackCopyTextToClipboard(text).then(
-                () => resolve(),
-                () => reject()
-              )
-            });
-        } else {
-          fallbackCopyTextToClipboard(text).then(
-            () => resolve(),
-            () => reject()
-          )
-        }
-      })
-    }
-
-    function copy(e) {
-      const btn = e.currentTarget;
-      const text = e.currentTarget.previousSibling.children[0].textContent;
-      copyTextToClipboard(text)
-        .then(
-          () => {
-            btn.innerHTML = `<svg fill="#292929" width="23px" height="23px" viewBox="2 -2 24 24" id="check-mark-square-2" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color"><polyline id="secondary" points="21 5 12 14 8 10" style="fill: none; stroke: #292929; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></polyline><path id="primary" d="M21,11v9a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16" style="fill: none; stroke: #292929; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></svg>`;
-            btn.setAttribute('style', 'opacity: 1');
-
-          },
-          () => alert('failed to copy'),
-        );
-
-      setTimeout(() => {
-        btn.removeAttribute('style');
-        btn.innerHTML = `<svg width="27px" height="27px" fill="none" stroke="#292929" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
-      }, 1000);
-    }
-
-    const copyButtons = document.querySelectorAll('.copy-button');
-
-    copyButtons.forEach((btn) => {
-      btn.addEventListener('click', copy);
-    });
   }
-  initCodeCopy()
+
+  async function fallbackCopyTextToClipboard(text) {
+    return new Promise((resolve, reject) => {
+      var textArea = document.createElement('textarea');
+      textArea.value = copyInfo.getText();
+      // Avoid scrolling to bottom
+      textArea.style.top = '0';
+      textArea.style.left = '0';
+      textArea.style.position = 'fixed';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        var successful = document.execCommand('copy');
+        setTimeout(function () {
+          if (successful) {
+            resolve('success')
+          } else {
+            reject('error')
+          }
+        }, 1);
+      } catch (err) {
+        setTimeout(function () {
+          reject(err)
+        }, 1);
+      } finally {
+        document.body.removeChild(textArea);
+      }
+    })
+  }
+
+  async function copyTextToClipboard(text) {
+    return new Promise((resolve, reject) => {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(
+          resolve(),
+          function () {
+            // try the fallback in case `writeText` didn't work
+            fallbackCopyTextToClipboard(text).then(
+              () => resolve(),
+              () => reject()
+            )
+          });
+      } else {
+        fallbackCopyTextToClipboard(text).then(
+          () => resolve(),
+          () => reject()
+        )
+      }
+    })
+  }
+
+  function copy(e) {
+    const btn = e.currentTarget;
+    const text = e.currentTarget.previousSibling.children[0].textContent;
+    copyTextToClipboard(text)
+      .then(  
+        () => {   
+          btn.innerHTML = `<svg class="button_copied_code" fill="#292929" viewBox="2 -2 24 24" id="check-mark-square-2" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color"><polyline id="secondary" points="21 5 12 14 8 10" style="fill: none; stroke: #292929; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></polyline><path id="primary" d="M21,11v9a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16" style="fill: none; stroke: #292929; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></svg>`;
+          btn.setAttribute('style', 'opacity: 1');
+
+        },
+        () => alert('failed to copy'),
+      );
+
+    setTimeout(() => {
+      btn.removeAttribute('style');
+      btn.innerHTML = `<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
+    }, 1000);
+  }
+
+  const copyButtons = document.querySelectorAll('.copy-button');
+
+  copyButtons.forEach((btn) => {
+    btn.addEventListener('click', copy);
+  });
+}
+initCodeCopy()
   /* single.php 1 */
   /* single_share_link 1 */
   document.querySelectorAll(".single_share_copy_icon").forEach((element) => {
