@@ -1,21 +1,22 @@
 <?php
    get_header();
    ?>
-<div class="category_name_title_wrap">
-   <div class="category_name_title">
-      <div class="category_name_title_text">
-         <?php echo get_category_parents($cat, TRUE, '<p>&nbsp;/&nbsp;</p>'); ?>
-      </div>
-   </div>
-</div>
 <div class="width_page_1165_wrap">
    <div class="width_page_1165">
+      <div class="category_name_title">
+         <div class="category_name_title_text">
+            <?php echo get_category_parents($cat, TRUE, '<p>&nbsp;/&nbsp;</p>'); ?>
+         </div>
+      </div>
       <div class="entry_categories_side_wrap">
+         <?php
+            get_template_part( 'parts/sorting_posts_by_popularity__left_sidebar' );
+            ?>
          <div class="entry_wrap">
             <div class="entry">
                <?php
                   if (have_posts()) : while (have_posts()) : the_post();  
-                   get_template_part( 'posts' );
+                   get_template_part( 'parts/posts' );
                   
                   
                     endwhile;
@@ -24,7 +25,7 @@
             </div>
          </div>
          <?php
-            get_template_part( 'categories_side' );
+            get_template_part( 'parts/categories_side' );
              ?>
       </div>
       <div class="pagination_wrap">
@@ -37,7 +38,7 @@
 <div id="similar_news_wrap_1">
    <div class="similar_news_wrap">
       <div class="similar_news_title">
-         <h3>Похожее</h3>
+         <h3>Похожие посты</h3>
       </div>
       <div class="similar_news">
          <?php
@@ -79,7 +80,6 @@
       </div>
    </div>
 </div>
-<?php get_sidebar() ?>
 <?php
    get_footer();
    ?>

@@ -286,6 +286,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+if (document.querySelector(".category_name_title")) {
+ console.log("1")
+}
+
 jQuery(document).ready(function ($) {
   /* UP BUTTON */
   let offset = 100;

@@ -27,8 +27,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
  else: ?>
     <p><?php _e('No posts by this author.'); ?></p>
     <?php endif; ?>
-    <?php get_template_part( 'template-parts/pagination' ); ?>
-    <?php get_sidebar() ?>
+    <?php get_template_part( 'parts/pagination' ); ?>
   </div>
 </div>
 <?php get_footer() ?>

@@ -7,18 +7,18 @@
                            <h3>
                               <?php trim_title_chars(80, "&nbsp;…"); ?>
                            </h3>
-                        </div> 
+                        </div>
                         <div class="search_results_cell_text_desktop">
                            <p>
-                              <?php echo excerpt(19); ?>
+                              <?php echo excerpt(25); ?>
                            </p>
-                        </div> 
+                        </div>   
                         <div class="search_results_cell_text_mobile">
                            <p>
                               <?php echo excerpt(20); ?>
                            </p>
                         </div>
-                     </div>
+                     </div> 
                      <div class="search_results_cell_image">
                         <?php
                            no_image()
