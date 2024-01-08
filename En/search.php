@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="width_page_1165_wrap">
    <div class="width_page_1165">
-      <div class="entry_categories_side_wrap">
+      <div class="entry_categories_side_wrap__search_page">
          <?php
             get_template_part( 'parts/sorting_posts_by_popularity__left_sidebar' );
             ?>

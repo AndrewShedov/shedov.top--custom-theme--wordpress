@@ -418,5 +418,18 @@ jQuery(document).ready(function ($) {
   }
 
   /* Hide a block with similar posts and comments if there are none  2*/
+  /* disable search, if the search field is empty /start */
+  let $submit_search_desktop = $('.desktop_menu_part_2__search_button_search');
+  $submit_search_desktop.prop('disabled', true);
+  $('.desktop_menu_part_2__search_input').on('input change', function() { //'input change keyup paste'
+      $submit_search_desktop.prop('disabled', !$(this).val());
+  });
+ 
+  let $submit_search_mobile = $('.mobile_menu_part_2_search_button_search');
+  $submit_search_mobile.prop('disabled', true);
+  $('.mobile_menu_part_2_search_input').on('input change', function() { //'input change keyup paste'
+      $submit_search_mobile.prop('disabled', !$(this).val());
+  });
+/* disable search, if the search field is empty /end */
 });
 

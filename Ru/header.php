@@ -78,7 +78,7 @@
                <form role="search" method="get" id="searchform"
                   action="<?php echo home_url( '/' ) ?>">
                   <label class="screen-reader-text" >Search: </label>
-                  <input class="desktop_menu_part_2__search_input" type="text" value="" name="s" autocomplete="off"
+                  <input class="desktop_menu_part_2__search_input" id="desktop_menu_part_2__search_input" type="text" value="" name="s" autocomplete="off"
                      > 
                   <button class="desktop_menu_part_2__search_button_clear" name="clear" type="reset">
                      <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->

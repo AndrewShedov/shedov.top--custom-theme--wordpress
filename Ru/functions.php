@@ -477,14 +477,14 @@ function excerpt($limit)
     $excerpt = explode(" ", get_the_excerpt(), $limit);
     if (count($excerpt) >= $limit) {
         array_pop($excerpt);
-        $excerpt = implode(" ", $excerpt) . " ...";
+        $excerpt = implode(" ", $excerpt) . "...";
     } else {
         $excerpt = implode(" ", $excerpt);
     }
     $excerpt = preg_replace("`\[[^\]]*\]`", "", $excerpt);
     return $excerpt;
 }
- 
+
 // Custom script in footer header
 // add_action('wp_enqueue_scripts', 'tutsplus_enqueue_custom_js');
 // function tutsplus_enqueue_custom_js() {
@@ -543,16 +543,14 @@ function MobileMenu()
 }
 add_action("init", "MobileMenu");
 
-require get_template_directory() . "/parts/MobileMenu/mobile_menu.php"; 
-
+require get_template_directory() . "/parts/MobileMenu/mobile_menu.php";
 
 add_action("wp_enqueue_scripts", "MobileMenuJs");
 function MobileMenuJs()
 {
     wp_enqueue_script(
         "MobileMenuJs",
-        get_stylesheet_directory_uri() .
-            "/parts/MobileMenu/mobile_menu.js",
+        get_stylesheet_directory_uri() . "/parts/MobileMenu/mobile_menu.js",
         [],
         false,
         true
@@ -641,7 +639,7 @@ function no_image()
     endif;
 }
 // PICTURE IF THERE IS NO IMAGE 2
-// ... ellipses at the end TITLE 1
+//... ellipses at the end TITLE 1
 function trim_title_chars($count, $after)
 {
     $title = get_the_title();
@@ -652,7 +650,7 @@ function trim_title_chars($count, $after)
     }
     echo $title . $after;
 }
-// ... ellipses at the end TITLE 2
+//... ellipses at the end TITLE 2
 
 // redirect on exit 1
 add_action("wp_logout", "auto_redirect_after_logout");
@@ -778,7 +776,7 @@ function sorting_posts_by_number_views_left_sidebar($args = "")
         $LinkArticle = get_permalink($pst->ID);
         $image = get_the_post_thumbnail($pst->ID);
         // Title length
-        $maxchar = 37;
+        $maxchar = 45;
         $Title =
             iconv_strlen($pst->post_title, "utf-8") > $maxchar
                 ? iconv_substr($pst->post_title, 0, $maxchar, "utf-8") . "..."
@@ -831,8 +829,7 @@ function sorting_posts_by_number_views_left_sidebar($args = "")
     return $out;
 }
 
-// sorting posts by number of views - left sidebar /end 
-
+// sorting posts by number of views - left sidebar /end
 
 // sorting posts by number of views - bottom /start
 

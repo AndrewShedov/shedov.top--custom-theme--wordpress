@@ -171,15 +171,15 @@
             ?>
          <div class="similar_news_cell">
             <a href="<?php the_permalink() ?>">
-               <div class="similar_news_cell_image_wrap">
+               <div class="similar_news_cell_image">
                   <?php
                      no_image()
                      ?>
                </div>
-               <div class="similar_news_cell_title_wrap">
-                  <h3>
+               <div class="similar_news_cell_title">
+                  <p>
                      <?php echo mb_strimwidth(get_the_title(), 0, 40,'...'); ?>
-                  </h3>
+                  </p>
                </div>
             </a>
          </div>

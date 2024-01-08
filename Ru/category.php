@@ -3,12 +3,12 @@
    ?>
 <div class="width_page_1165_wrap">
    <div class="width_page_1165">
-      <div class="category_name_title">
-         <div class="category_name_title_text">
+      <div class="category_name_title_wrap">
+         <div class="category_name_title">
             <?php echo get_category_parents($cat, TRUE, '<p>&nbsp;/&nbsp;</p>'); ?>
          </div>
       </div>
-      <div class="entry_categories_side_wrap">
+      <div class="entry_categories_side_wrap__categories_page">
          <?php
             get_template_part( 'parts/sorting_posts_by_popularity__left_sidebar' );
             ?>
@@ -59,15 +59,15 @@
             ?>
          <div class="similar_news_cell">
             <a href="<?php the_permalink() ?>">
-               <div class="similar_news_cell_image_wrap">
+               <div class="similar_news_cell_image">
                   <?php
                      no_image()
                      ?>
                </div>
-               <div class="similar_news_cell_title_wrap">
-                  <h3>
-                     <?php echo mb_strimwidth(get_the_title(), 0, 45,'...'); ?>
-                  </h3>
+               <div class="similar_news_cell_title">
+                  <p>
+                     <?php echo mb_strimwidth(get_the_title(), 0, 38,'...'); ?>
+                  </p>
                </div>
             </a>
          </div>

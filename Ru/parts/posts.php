@@ -3,21 +3,21 @@
    <div class="entry_cell">
       <a aria-label="посмотреть запись" class="entry_cell_all_link" href="<?php the_permalink() ?>">
       </a>
-         <div class="entry_cell_image_wrap"> <?php no_image() ?> </div>
-         <div class="entry_cell_title_wrap">
-            <h2> <?php trim_title_chars(110, "…"); ?> </h2>
+         <div class="entry_cell_image"> <?php no_image() ?> </div>
+         <div class="entry_cell_title">
+            <h2> <?php trim_title_chars(100, "…"); ?> </h2>
          </div> 
-         <div class="entry_text_wrap">
+
             <div class="entry_text">
-               <p> <?php echo excerpt(27); ?> </p>
+               <p> <?php echo excerpt(21); ?> </p>
             </div>
-         </div>
+
       
       <?php
          if ( $categories = get_the_category()) : ?> 
-      <div class="categories_entry_thumbnail_wrap">
+
          <div class="categories_entry_thumbnail">
-            <div class="categories_entry_thumbnail_title"> </div>
+
             <ul class="categories_entry_thumbnail_list">
                <?php foreach($categories as $cat) : ?> 
                <li>
@@ -30,7 +30,7 @@
             </ul>
             <?php endif; ?>
          </div>
-      </div>
+
       <div class="views_date_share_wrap">
          <div class="views_wrap">
             <div class="eye">
@@ -46,12 +46,12 @@
                <?php echo get_post_meta( $post->ID, 'views', true ); ?>
             </div>
          </div>
-         <div class="entry_cell_date_wrap">
+         <div class="entry_cell_date">
             <p> <?php the_time('d.m.Y') ?> </p>
          </div>
          <div class="entry_cell_share_wrap">
             <div class="entry_cell_share">
-               <div class="entry_cell_share_svg_wrap">
+               
                   <svg  height="16px" width="16px" version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                      viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
                      <path d="M426.7,341.3c-29.1,0-54.8,14.7-70.2,36.9L167.4,278.1c1.9-7.1,3.3-14.4,3.3-22.1c0-7.7-1.3-15-3.3-22.1l189.1-100.1
@@ -59,7 +59,7 @@
                         c-15.2-13.8-35.1-22.4-57.2-22.4C38.2,170.7,0,208.9,0,256s38.2,85.3,85.3,85.3c22.1,0,42-8.6,57.2-22.4l199,105.4
                         c0,0.8-0.2,1.6-0.2,2.4c0,47.1,38.2,85.3,85.3,85.3s85.3-38.2,85.3-85.3S473.8,341.3,426.7,341.3z"/>
                   </svg>
-               </div>
+               
             </div>
             <div class="entry_cell_share_list">
                <div class="entry_cell_share_list_title">
