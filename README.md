@@ -1,4 +1,4 @@
-## Custom theme for the site Shedov.top (WordPress)
+## Custom theme for the website Shedov.top (WordPress)
 Type - Multi-page site. <br />
 Technologies: Flexbox/Grid, JS, jQuery, PHP. <br />
 #### [Markup test](https://validator.w3.org/nu/?doc=https%3A%2F%2Fshedov.top%2F)
