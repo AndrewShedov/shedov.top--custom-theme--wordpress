@@ -1167,12 +1167,12 @@ button.sub-menu-toggle.active svg {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.categories_entry_wrap {
+.categories__under_post_wrap {
   display: flex;
   justify-content: center;
 }
 
-.categories_entry {
+.categories__under_post {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -1180,21 +1180,21 @@ button.sub-menu-toggle.active svg {
   flex-wrap: wrap;
 }
 
-.categories_entry_title {
+.categories__under_post_title {
   display: flex;
   justify-content: center;
   margin-bottom: 5px;
   width: 100%;
 }
 
-.categories_entry_title h3 {
+.categories__under_post_title h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   color: black;
   font-size: 18px;
 }
 
-.categories_entry_list {
+.categories__under_post_list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -1202,14 +1202,14 @@ button.sub-menu-toggle.active svg {
   margin-right: 11.5px !important;
 }
 
-.categories_entry_list ul {
+.categories__under_post_list ul {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 10px;
 }
 
-.categories_entry_list li {
+.categories__under_post_list li {
   display: flex;
   margin-right: 3.6px;
   margin-left: 3.6px;
@@ -1218,7 +1218,7 @@ button.sub-menu-toggle.active svg {
   align-items: center;
 }
 
-.categories_entry_list a {
+.categories__under_post_list a {
   color: black;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
@@ -1518,55 +1518,31 @@ button.sub-menu-toggle.active svg {
   margin-right: 15px;
 }
 
-.entry_cell_category_wrap {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.entry_cell_category {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.entry_cell_category p {
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  font-size: 11px;
-}
-
-.entry_categories_side_wrap {
+.posts__categories_side__wrap {
   margin-top: 36px;
   display: flex;
   justify-content: space-between;
 }
 
-.entry_categories_side_wrap__categories_page {
+.posts_categories_side_wrap__categories_page {
   margin-top: 39px;
   display: flex;
   justify-content: space-between;
 }
 
-.entry_categories_side_wrap__search_page {
+.posts_categories_side_wrap__search_page {
   margin-top: 37px;
   display: flex;
   justify-content: space-between;
 }
 
-.entry_wrap {
+.posts_wrap {
   display: flex;
-  justify-content: flex-end;
-  transition: all 200ms ease;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
-.entry {
-  transition: all 200ms ease;
+.posts {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1575,34 +1551,29 @@ button.sub-menu-toggle.active svg {
   max-width: 520px;
 }
 
-.entry_cell_wrap {
-  transition: all 200ms ease;
+.post {
   display: flex;
   justify-content: center;
   margin-right: 15px;
   margin-left: 15px;
   width: 100%;
-}
-
-.entry_cell {
   display: flex;
   justify-content: center;
   border-radius: 6px;
   flex-wrap: wrap;
-  width: 100%;
-  transition: all 200ms ease;
   border: 1px solid rgb(225 223 223 / 34%);
   box-shadow: 0 4px 16px rgb(132 134 136 / 9%), 0 2px 2px rgb(138 140 143 / 16%);
   margin-bottom: 33px;
   position: relative;
 }
 
-.entry_cell a {
+.post a {
+  display: flex;
   text-decoration: none;
   pointer-events: all;
 }
 
-.entry_cell_all_link {
+.post_all_link {
   position: absolute;
   left: 0;
   top: 0;
@@ -1610,16 +1581,16 @@ button.sub-menu-toggle.active svg {
   right: 0;
 }
 
-.entry_cell:hover {
+.post:hover {
   transition: all 200ms ease;
   box-shadow: 4px 6px 9px rgb(151 153 155 / 13%), 0 4px 6px rgb(155 157 162 / 7%);
 }
 
-.entry_cell_title {
+.post_title {
   padding: 10px 15px 3px 15px;
 }
 
-.entry_cell_title h2 {
+.post_title p {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   color: #212121;
@@ -1628,7 +1599,7 @@ button.sub-menu-toggle.active svg {
   text-align: center;
 }
 
-.entry_cell_image {
+.post_image {
   display: flex;
   justify-content: center;
   height: 200px;
@@ -1639,23 +1610,23 @@ button.sub-menu-toggle.active svg {
   border-top-left-radius: 6px;
 }
 
-.entry_cell_image img {
+.post_image img {
   height: 100%;
   object-fit: cover;
 }
 
-.entry_cell_date p {
+.post__publication_date p {
   font-size: 14px;
   color: black;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.entry_text {
+.post_text {
   padding: 2px 15px 0px 15px;
 }
 
-.entry_text p {
+.post_text p {
   font-size: 16px;
   line-height: 21px;
   color: black;
@@ -1692,20 +1663,13 @@ button.sub-menu-toggle.active svg {
   display: none;
 }
 
-.categories_entry_thumbnail {
+.post_categories {
   width: 100%;
   max-width: 295px;
   padding: 10px 15px;
 }
 
-.categories_entry_thumbnail_title h3 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: normal;
-  color: black;
-  font-size: 18px;
-}
-
-.categories_entry_thumbnail_list a {
+.post__categories_list a {
   color: black;
   font-size: 14.2px;
   font-family: Arial, Helvetica, sans-serif;
@@ -1717,13 +1681,13 @@ button.sub-menu-toggle.active svg {
   border-radius: 3px;
 }
 
-.categories_entry_thumbnail_list {
+.post__categories_list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.categories_entry_thumbnail_list li {
+.post__categories_list li {
   pointer-events: none;
   z-index: 1;
   padding: 3px 6.6px 3.3px 0px;
@@ -1826,27 +1790,11 @@ button.sub-menu-toggle.active svg {
   color: #000000;
 }
 
-/* desktop menu /start */
 .dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* desktop menu /end */
-/* entry.php /start */
-.author_wrap {
-  display: flex;
-  justify-content: center;
-}
-
-/* entry.php /end */
-/* content.php 1 */
-.author_wrap {
-  display: flex;
-  justify-content: center;
-}
-
-/* content.php 2 */
 .desktop_menu_part_1_logo {
   position: relative;
   padding-top: 2px;
@@ -2010,10 +1958,10 @@ button.sub-menu-toggle.active svg {
 }
 
 .category_name_title_wrap {
-    display: flex;
-    margin-top: 6px;
-    margin-bottom: -33px;
-    margin-right: 15px;
+  display: flex;
+  margin-top: 6px;
+  margin-bottom: -33px;
+  margin-right: 15px;
 }
 
 .category_name_title {
@@ -2022,7 +1970,7 @@ button.sub-menu-toggle.active svg {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  padding: 4px 13px; 
+  padding: 4px 13px;
   border-radius: 6px;
 }
 
@@ -2480,10 +2428,7 @@ button.sub-menu-toggle.active svg {
   overflow: hidden;
   border: 1px solid rgb(225 223 223 / 34%);
   box-shadow: 0 4px 16px rgb(132 134 136 / 9%), 0 2px 2px rgb(138 140 143 / 16%);
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 15px;
-  padding-top: 15px;
+  padding: 15px;
   transition: all 200ms ease;
   flex-wrap: wrap;
 }
@@ -2763,7 +2708,7 @@ button.pswp__button:hover {
 /* categories_side.php 1 */
 .categories_side_wrap {
   margin-bottom: 33px;
-  width: 24%;
+  width: 23.5%;
   align-items: flex-start;
   display: flex;
   justify-content: flex-end;
@@ -2899,14 +2844,14 @@ button.pswp__button:hover {
 
 /*sidebar_single.php 2*/
 /*posts.php 1*/
-.entry_cell_share_wrap {
+.post_share_wrap {
   position: absolute;
   right: 6px;
   bottom: 6px;
   display: block;
 }
 
-.entry_cell_share {
+.post_share {
   width: 27px;
   height: 27px;
   overflow: hidden;
@@ -2919,7 +2864,7 @@ button.pswp__button:hover {
   background-color: rgb(243 243 243);
 }
 
-.entry_cell_share svg {
+.post_share svg {
   fill: #4a4a4a;
   display: flex;
   justify-content: center;
@@ -2929,14 +2874,14 @@ button.pswp__button:hover {
   top: 0.3px;
 }
 
-.entry_cell_share img {
+.post_share img {
   height: 100%;
   width: auto;
   position: relative;
   right: 1.5px;
 }
 
-.entry_cell_share_list {
+.post__share_list {
   position: absolute;
   top: 33px;
   right: -6px;
@@ -2950,27 +2895,32 @@ button.pswp__button:hover {
   padding: 5px 7px 3px 8px;
 }
 
-.entry_cell_share_list.show {
+.post__share_list.show {
   opacity: 1;
   display: block;
   transition: all 50ms ease;
 }
 
-.entry_cell_share_link {
+.post__share_link {
+  transition: all 200ms ease;
   cursor: pointer;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  bottom: 0.1px;
 }
 
-.entry_cell_share_link_copy_notification_wrap {
+.post__share_link_copy_notification_wrap {
   position: relative;
   display: inline-block;
 }
 
-.entry_cell_share_link_copy_notification_wrap:hover .entry_cell_share_link_copy_notification {
+.post__share_link_copy_notification_wrap:hover .post__share_link_copy_notification_window {
   visibility: visible;
   opacity: 1;
 }
 
-.entry_cell_share_link_copy_notification {
+.post__share_link_copy_notification_window {
   visibility: hidden;
   background-color: #ffffff;
   box-shadow: rgb(0 0 0 / 13%) 0.3px 0.3px 6px;
@@ -2978,13 +2928,13 @@ button.pswp__button:hover {
   padding: 5px;
   position: absolute;
   z-index: 1;
-  bottom: 24px;
-  left: -13px;
+  bottom: 23px;
+  left: -14px;
   opacity: 0;
   transition: opacity 0.3s;
 }
 
-.entry_cell_share_link_copy_notification p {
+.post__share_link_copy_notification_window p {
   color: #000000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -2992,7 +2942,7 @@ button.pswp__button:hover {
   cursor: default;
 }
 
-.entry_cell_share_link_copy_notification::after {
+.post__share_link_copy_notification_window::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -3003,18 +2953,18 @@ button.pswp__button:hover {
   border-color: #ffffff transparent transparent transparent;
 }
 
-.entry_cell_share_list_title {
+.post__share_list_title {
   cursor: default;
 }
 
-.entry_cell_share_list_title p {
+.post__share_list_title p {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: black;
 }
 
-.views_wrap {
+.post_views_wrap {
   position: absolute;
   bottom: 6px;
   left: 6px;
@@ -3024,29 +2974,29 @@ button.pswp__button:hover {
   gap: 7px;
 }
 
-.eye {
+.post_eye {
   display: flex;
 }
 
-.eye svg {
+.post_eye svg {
   fill: #6f6d6d;
   width: 15px;
   height: 15px;
 }
 
-.views {
+.post__number_views {
   color: rgb(31, 30, 30);
   font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.views_date_share_wrap {
+.post__views__date__share__wrap {
   width: 100%;
   padding-bottom: 5px;
   padding-top: 5px;
 }
 
-.entry_cell_share_list_social_icons {
+.post__share_list_social_icons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3054,45 +3004,37 @@ button.pswp__button:hover {
   padding-top: 1px;
 }
 
-.entry_cell_share_list_social_icons svg {
+.post__share_list_social_icons svg {
+  transition: all 200ms ease;
+}
+
+.post__share_link svg {
   display: flex;
   justify-content: center;
   align-items: center;
   fill: #292929;
 }
 
-.entry_cell_share_list_social_icons__x_icon {
-  transition: all 200ms ease;
+.post__share_list_social_icons__x_icon {
   cursor: pointer;
-  width: 14px;
-  height: 14px;
+  width: 13px;
+  height: 13px;
 }
 
-.entry_cell_share_list_social_icons__telegram_icon {
-  transition: all 200ms ease;
+.post__share_list_social_icons__telegram_icon {
   cursor: pointer;
   position: relative;
   right: 1px;
-  width: 19px;
-  height: 14px;
+  width: 18px;
+  height: 13px;
 }
 
-.entry_cell_share_list_social_icons__vk_icon {
-  transition: all 200ms ease;
+.post__share_list_social_icons__vk_icon {
   cursor: pointer;
-  width: 23px;
-  height: 22px;
-  bottom: 1.5px;
+  width: 21.5px;
+  height: 20.5px;
+  bottom: 1px;
   position: relative;
-}
-
-.entry_cell_share_list_social_icons__share_link {
-  transition: all 200ms ease;
-  cursor: pointer;
-  width: 17px;
-  height: 17px;
-  position: relative;
-  bottom: 0.1px;
 }
 
 /*posts.php 2*/
@@ -3131,7 +3073,7 @@ button.pswp__button:hover {
 }
 
 .popular_posts__left_sidebar_wrap {
-  width: 26%;
+  width: 25.5%;
   margin-bottom: 33px;
 }
 
@@ -3346,6 +3288,50 @@ button.pswp__button:hover {
 }
 
 @media (max-width: 1000px) {
+  .posts_wrap {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .post_image {
+    transition: all 200ms ease;
+    height: 210px !important;
+  }
+
+  .categories_side_wrap {
+    display: none;
+  }
+
+  .popular_posts__left_sidebar_wrap {
+    display: none;
+  }
+
+  .post {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .popular_posts_wrap {
+    display: flex;
+  }
+
+  .nothing_found_title p {
+    margin-left: 0px;
+  }
+
+  .nothing_found_title h2 {
+    margin-left: 0px;
+  }
+
+  .posts__categories_side__wrap {
+    justify-content: center;
+  }
+
+  .search_wrap {
+    width: 100%;
+    margin: 0px;
+  }
+
   .single_title_wrap {
     margin-top: 22px;
   }
@@ -3362,19 +3348,19 @@ button.pswp__button:hover {
     margin-top: 22px;
   }
 
-  .entry_categories_side_wrap {
+  .posts__categories_side__wrap {
     margin-top: 31px;
   }
 
-  .entry_categories_side_wrap__categories_page {
+  .posts_categories_side_wrap__categories_page {
     margin-top: 37px;
   }
 
-  .entry_categories_side_wrap__search_page {
+  .posts_categories_side_wrap__search_page {
     margin-top: 22px;
   }
 
-  .entry_cell_share_link_copy_notification {
+  .post__share_link_copy_notification_window {
     display: none;
   }
 
@@ -3385,50 +3371,9 @@ button.pswp__button:hover {
   .category_name_title_wrap {
     margin-top: 4px;
   }
-}
 
-@media (max-width: 930px) {
-  .entry_wrap {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .entry_cell_image {
-    transition: all 200ms ease;
-    height: 210px !important;
-  }
-
-  .categories_side_wrap {
-    display: none;
-  }
-
-  .popular_posts__left_sidebar_wrap {
-    display: none;
-  }
-
-  .entry_cell_wrap {
-    margin: 0px;
-  }
-
-  .popular_posts_wrap {
-    display: flex;
-  }
-
-  .nothing_found_title p {
-    margin-left: 0px;
-  }
-
-  .nothing_found_title h2 {
-    margin-left: 0px;
-  }
-
-  .entry_categories_side_wrap {
-    justify-content: center;
-  }
-
-  .search_wrap {
-    width: 100%;
-    margin: 0px;
+  .search_results_cell_title_text_image_wrap {
+    max-width: 100%;
   }
 }
 
@@ -3465,18 +3410,6 @@ button.pswp__button:hover {
 }
 
 @media (max-width: 650px) {
-  .entry_cell_wrap {
-    transition: all 200ms ease;
-    display: flex;
-    justify-content: center;
-    width: calc((100%) / 1);
-  }
-
-  .entry_cell {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
   .portfolio_examples {
     grid-template-areas: "p1" "p2" "p3" "p4";
   }
@@ -3548,10 +3481,7 @@ button.pswp__button:hover {
   }
 
   .search_results_cell {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding: 10px;
   }
 }
 
@@ -3579,12 +3509,10 @@ button.pswp__button:hover {
     text-decoration-color: rgba(255, 255, 255, 0);
   }
 
-  .categories_entry_list li:hover {
+  .categories__under_post_list li:hover {
     transition: all 200ms ease;
     background-color: var(--categories_background_hover_color);
   }
-
-  .categories_entry_list a:hover {}
 
   .single_share_post_social_links svg:hover {
     fill: rgb(63, 59, 59);
@@ -3600,10 +3528,6 @@ button.pswp__button:hover {
     transition: all 200ms ease;
     background-color: var(--categories_background_hover_color);
   }
-
-  .categories_list a:hover {}
-
-  .categories_entry_thumbnail_list a:hover {}
 
   .mobile_menu_part_1_languages a:hover {
     transition: all 200ms ease;
@@ -3639,10 +3563,6 @@ button.pswp__button:hover {
   .portfolio_example:hover {
     transition: all 200ms ease;
     box-shadow: 4px 6px 9px rgb(151 153 155 / 13%), 0 4px 6px rgb(155 157 162 / 7%);
-    /* box-shadow: 0 8px 18px rgb(151 153 155 / 10%), 0 4px 8px rgb(155 157 162 / 12%);
-      */
-    /* transform: translateY(-2px);
-      */
   }
 
   .contacts_icons_level_1 svg:hover {
@@ -3670,11 +3590,11 @@ button.pswp__button:hover {
     background-color: var(--categories_background_hover_color);
   }
 
-  .entry_cell_share:hover {
+  .post_share:hover {
     background-color: rgb(230, 229, 229);
   }
 
-  .entry_cell_share_list_social_icons svg:hover {
+  .post__share_list_social_icons svg:hover {
     fill: #404040;
     transition: all 200ms ease;
   }

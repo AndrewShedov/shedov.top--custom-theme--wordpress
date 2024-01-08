@@ -26,7 +26,6 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
     <?php endwhile; 
  else: ?>
     <p><?php _e('No posts by this author.'); ?></p>
-
     <?php endif; ?>
     <?php get_template_part( 'parts/pagination' ); ?>
   </div>

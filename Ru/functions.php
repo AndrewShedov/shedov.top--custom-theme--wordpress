@@ -808,11 +808,10 @@ function sorting_posts_by_number_views_left_sidebar($args = "")
         //$out .= "\n<div class='$x'>". $image ."$Sformat</div>";
         $out .=
             "<div class='popular_posts_cell__left_sidebar'>
-						<a class='popular_posts_cell__left_sidebar_all_link' href=" .
+						<a aria-label='популярный пост' class='popular_posts_cell__left_sidebar_all_link' href=" .
             $LinkArticle .
             "></a>
-
-						<div class='popular_posts_cell__left_sidebar_image'>" .
+            <div class='popular_posts_cell__left_sidebar_image'>" .
             $image .
             "</div><div class='popular_posts_cell__left_sidebar_title'>
 		<p>" .

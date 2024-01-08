@@ -8,12 +8,12 @@
             <?php echo get_category_parents($cat, TRUE, '<p>&nbsp;/&nbsp;</p>'); ?>
          </div>
       </div>
-      <div class="entry_categories_side_wrap__categories_page">
+      <div class="posts_categories_side_wrap__categories_page">
          <?php
             get_template_part( 'parts/sorting_posts_by_popularity__left_sidebar' );
             ?>
-         <div class="entry_wrap">
-            <div class="entry">
+         <div class="posts_wrap">
+            <div class="posts">
                <?php
                   if (have_posts()) : while (have_posts()) : the_post();  
                    get_template_part( 'parts/posts' );
@@ -36,7 +36,7 @@
 <div id="similar_news_wrap_1">
    <div class="similar_news_wrap">
       <div class="similar_news_title">
-         <h3>Related Posts</h3>
+         <h3>Related posts</h3>
       </div>
       <div class="similar_news">
          <?php

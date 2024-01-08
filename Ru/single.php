@@ -118,11 +118,11 @@
             </div>
             <?php
                if ( $categories = get_the_category()) : ?>
-            <div class="categories_entry_wrap">
-               <div class="categories_entry">
-                  <div class="categories_entry_title">
+            <div class="categories__under_post_wrap">
+               <div class="categories__under_post">
+                  <div class="categories__under_post_title">
                   </div>
-                  <ul class="categories_entry_list">
+                  <ul class="categories__under_post_list">
                      <?php foreach($categories as $cat) : ?>
                      <li>
                         <a href="<?php echo get_category_link( $cat )?>">
