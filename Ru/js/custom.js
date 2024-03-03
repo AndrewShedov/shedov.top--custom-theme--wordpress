@@ -234,8 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.localStorage.getItem("СookieNotificationRU") ? document.getElementById("cookie_wrap").style.display = "none" : document.getElementById("cookie_wrap").style.display = "flex";
 
   document.getElementById('cookie_accept_button').onclick = function () {
-   window.localStorage.setItem("СookieNotificationRU", true)
-  console.log("1")
+  window.localStorage.setItem("СookieNotificationRU", true)
   document.getElementById("cookie_wrap").style.display = "none";
 };
  // /Сookie notification

@@ -1963,7 +1963,7 @@ button.sub-menu-toggle.active svg {
   padding: 15px;
 }
 .cookie_text {
-  width: 70%;
+  width: 75%;
 }
 .cookie_text p {
   font-size: 17px;
@@ -1972,7 +1972,7 @@ button.sub-menu-toggle.active svg {
   line-height: 25px;
 }
 .cookie_buttons {
-  width: 30%;
+  width: 25%;
   display: flex;
   gap: 15px;
   justify-content: flex-end;
@@ -2012,7 +2012,7 @@ button.sub-menu-toggle.active svg {
   .cookie_buttons {
       justify-content: center;
       width: 100%;
-      padding-top: 15px;
+      padding-top: 10px;
  }
 }
 /* /Сookie notification */

@@ -240,7 +240,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
    document.getElementById('cookie_accept_button').onclick = function () {
     window.localStorage.setItem("СookieNotification", true)
-   console.log("1")
    document.getElementById("cookie_wrap").style.display = "none";
  };
   // /Сookie notification

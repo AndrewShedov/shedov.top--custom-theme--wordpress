@@ -1971,7 +1971,7 @@ button.sub-menu-toggle.active svg {
   .cookie_buttons {
       justify-content: center;
       width: 100%;
-      padding-top: 15px;
+      padding-top: 10px;
  }
 }
 /* /Сookie notification */
