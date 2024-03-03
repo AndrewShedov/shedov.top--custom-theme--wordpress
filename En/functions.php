@@ -504,8 +504,17 @@ function tutsplus_enqueue_custom_js()
         true
     );
 }
-// Remove the WordPress default jquery
-// wp_deregister_script( 'jquery' );
+
+// Remove jquery jQuery Migrate
+add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
+function remove_jquery_migrate( $scripts ) {
+	if ( empty( $scripts->registered['jquery'] ) || is_admin() ) {
+		return;
+	}
+   $deps = & $scripts->registered['jquery']->deps;
+   $deps = array_diff( $deps, [ 'jquery-migrate' ] );
+}
+// /Remove jquery jQuery Migrate
 
 function be_arrows_in_menus($item_output, $item, $depth, $args)
 {
@@ -534,7 +543,7 @@ function change_nav_menu_items_desktop($items, $args)
     return $items;
 }
 
-/*Mobile Menu /start */
+/*Mobile Menu */
 function MobileMenu()
 {
     $locations = [
@@ -557,7 +566,7 @@ function MobileMenuJs()
         true
     );
 }
-/* Mobile Menu /end */
+/* /Mobile Menu */
 
 // Reply to comment 1
 function add_comment_author_to_reply_link($link, $args, $comment)
@@ -725,7 +734,7 @@ function kama_postviews($args = [])
 }
 // Counting the number of page visits 2
 
-// sorting posts by number of views - left sidebar /start
+// sorting posts by number of views - left sidebar
 
 function sorting_posts_by_number_views_left_sidebar($args = "")
 {
@@ -830,9 +839,9 @@ function sorting_posts_by_number_views_left_sidebar($args = "")
     return $out;
 }
 
-// sorting posts by number of views - left sidebar /end
+// /sorting posts by number of views - left sidebar
 
-// sorting posts by number of views - bottom /start
+// sorting posts by number of views - bottom
 
 function sorting_posts_by_number_views_bottom($args = "")
 {
@@ -935,7 +944,7 @@ function sorting_posts_by_number_views_bottom($args = "")
     return $out;
 }
 
-// sorting posts by number of views - bottom /end
+// /sorting posts by number of views - bottom
 
 // PRISM 1
 function add_prism()

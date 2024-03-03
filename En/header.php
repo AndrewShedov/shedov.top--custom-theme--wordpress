@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html <?php language_attributes() ?>>
+<html <?php language_attributes(); ?>>
    <head>
-      <meta charset="<?php bloginfo('charset') ?>">
+<script> 
+// lazy loading Yandex metrika 
+let lazyloadingScript_sensor = false;
+window.addEventListener('scroll', () => {
+    if (lazyloadingScript_sensor === false) {
+        lazyloadingScript_sensor = true;
+        setTimeout(() => {
+            // Yandex.Metrika counter
+            (function(m, e, t, r, i, k, a) {
+                m[i] = m[i] || function() {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            ym(96082337, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+            // /Yandex.Metrika counter            
+        }, 1000)
+    }
+});
+// /lazy loading Yandex metrika
+</script>
+      <meta charset="<?php bloginfo("charset"); ?>">
       <meta name=viewport content="width=device-width, initial-scale=1.0">
-      <meta name="google-site-verification" content="2XcRGIXiTveI7Wx70UnTv2SZwGiFjK1GGnLWd_7m4eY">
-      <?php wp_head() ?>
+      <?php wp_head(); ?> 
    </head>
    <body <?php body_class(); ?>>
       <div class="wrap" id="wrap">
@@ -62,7 +94,17 @@
       <div class="desktop_menu_part_2_wrap" id="desktop_menu_part_2_wrap">
          <div class="desktop_menu_part_2">
             <div class="desktop_menu_part_2_navigation" >
-               <?php if(has_nav_menu('head_menu')){ wp_nav_menu(array ( 'theme_location' => 'head_menu', 'container'=> false, 'menu_class' => 'desktop_menu_part_2_navigation', 'items_wrap' => ' <ul class="%2$s">%3$s' . $mobile_search . '</ul>', 'depth' => 30, 'walker' => new Cust_Nav() ) ); } ?>
+               <?php if (has_nav_menu("head_menu")) {
+                   wp_nav_menu([
+                       "theme_location" => "head_menu",
+                       "container" => false,
+                       "menu_class" => "desktop_menu_part_2_navigation",
+                       "items_wrap" =>
+                           ' <ul class="%2$s">%3$s' . $mobile_search . "</ul>",
+                       "depth" => 30,
+                       "walker" => new Cust_Nav(),
+                   ]);
+               } ?>
             </div>
             <div class="desktop_menu_part_2__search_icon">
                <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
@@ -76,7 +118,7 @@
             </div>
             <div class="desktop_menu_part_2__search">
                <form role="search" method="get" id="searchform"
-                  action="<?php echo home_url( '/' ) ?>">
+                  action="<?php echo home_url("/"); ?>">
                   <label class="screen-reader-text" >Search: </label>
                   <input class="desktop_menu_part_2__search_input" type="text" value="" name="s" autocomplete="off"
                      > 
@@ -164,7 +206,7 @@
          </div>
          <div class="mobile_menu_part_2_search">
             <form   role="search" method="get" id="mobile_searchform"
-               action="<?php echo home_url( '/' ) ?>">
+               action="<?php echo home_url("/"); ?>">
                <label class="screen-reader-text" >Search: </label>
                <input class="mobile_menu_part_2_search_input" type="text" value="" name="s" autocomplete="off"
                   > 
@@ -182,11 +224,13 @@
          </div>
       </div>
       <div class="menu" id="menu">
-         <p><?php echo $str11;?></p>
+         <p><?php echo $str11; ?></p>
          <div class="wrap_m">
             <div class="menu-modal cover-modal">
                <div class="menu-wrapper ">
-                  <?php $mobile_menu_location = 'Mobile_Menu_1'; if ( 'expanded' !== $mobile_menu_location ) { ?> 
+                  <?php
+                  $mobile_menu_location = "Mobile_Menu_1";
+                  if ("expanded" !== $mobile_menu_location) { ?> 
                   <nav
                      class="mobile-menu">
                      <div class="mobile_side_burger_wrap">
@@ -198,10 +242,18 @@
                         </div>
                      </div>
                      <ul class="modal-menu reset-list-style">
-                        <?php if ( $mobile_menu_location ) { wp_nav_menu( array( 'theme_location' => $mobile_menu_location, 'container' => '', 'items_wrap' => '%3$s', 'show_toggles' => true, ) ); } ?>
+                        <?php if ($mobile_menu_location) {
+                            wp_nav_menu([
+                                "theme_location" => $mobile_menu_location,
+                                "container" => "",
+                                "items_wrap" => '%3$s',
+                                "show_toggles" => true,
+                            ]);
+                        } ?>
                      </ul>
                   </nav>
-                  <?php } ?> 
+                  <?php }
+                  ?> 
                </div>
             </div>
          </div>

@@ -92,9 +92,7 @@
                      </svg>
                   </a>
                </div>
-               <div class="single_sub_icons_level_2"> <a class="single_sub_icons_level_2__qiwi_icon"
-                  href="https://qiwi.com/n/ANDREWSHEDOV" target="blank" rel="noopener" aria-label="qiwi link"><img
-                  src="https://shedov.top/wp-content/images/qiwi.png" alt="qiwi" /> </a> <a
+               <div class="single_sub_icons_level_2"> <a
                   class="yoomoney_icon_sub_single" href="https://yoomoney.ru/to/410011226872318" target="blank"
                   rel="noopener" aria-label="yoomoney link"><img src="https://shedov.top/wp-content/images/yoomoney.png" alt="yoomoney" /> </a>
                   <a class="tinkoff_icon_sub_single" href="https://www.tinkoff.ru/rm/shedov.andrey2/lGla256001" target="blank"
@@ -150,7 +148,7 @@
 <div id="similar_news_wrap_1">
    <div class="similar_news_wrap">
       <div class="similar_news_title">
-         <h3>Similar</h3>
+         <h3>Related posts</h3>
       </div>
       <div class="similar_news">
          <?php

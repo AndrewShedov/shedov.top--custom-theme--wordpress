@@ -230,6 +230,15 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.toggle("menu_shadow", showMenu);
     }
   };
+  // Сookie notification 
+  window.localStorage.getItem("СookieNotificationRU") ? document.getElementById("cookie_wrap").style.display = "none" : document.getElementById("cookie_wrap").style.display = "flex";
+
+  document.getElementById('cookie_accept_button').onclick = function () {
+   window.localStorage.setItem("СookieNotificationRU", true)
+  console.log("1")
+  document.getElementById("cookie_wrap").style.display = "none";
+};
+ // /Сookie notification
 });
 jQuery(document).ready(function ($) {
   /* UP BUTTON */
