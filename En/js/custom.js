@@ -235,14 +235,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }
    };
  
-   // Сookie notification 
-   window.localStorage.getItem("СookieNotification") ? document.getElementById("cookie_wrap").style.display = "none" : document.getElementById("cookie_wrap").style.display = "flex";
+// Сookies notification 
+window.localStorage.getItem("СookiesAccept") ? document.getElementById("cookies_wrap").style.display = "none" : document.getElementById("cookies_wrap").style.display = "flex";
 
-   document.getElementById('cookie_accept_button').onclick = function () {
-    window.localStorage.setItem("СookieNotification", true)
-   document.getElementById("cookie_wrap").style.display = "none";
- };
-  // /Сookie notification
+document.getElementById('cookies_accept_button').onclick = function () {
+window.localStorage.setItem("СookiesAccept", true)
+document.getElementById("cookies_wrap").style.display = "none";
+};
+// /Сookies notification
  });
  jQuery(document).ready(function ($) {
    /* UP BUTTON */

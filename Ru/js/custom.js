@@ -230,14 +230,14 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.toggle("menu_shadow", showMenu);
     }
   };
-  // Сookie notification 
-  window.localStorage.getItem("СookieNotificationRU") ? document.getElementById("cookie_wrap").style.display = "none" : document.getElementById("cookie_wrap").style.display = "flex";
+  // Сookies notification 
+  window.localStorage.getItem("СookiesAcceptRU") ? document.getElementById("cookies_wrap").style.display = "none" : document.getElementById("cookies_wrap").style.display = "flex";
 
-  document.getElementById('cookie_accept_button').onclick = function () {
-  window.localStorage.setItem("СookieNotificationRU", true)
-  document.getElementById("cookie_wrap").style.display = "none";
+  document.getElementById('cookies_accept_button').onclick = function () {
+  window.localStorage.setItem("СookiesAcceptRU", true)
+  document.getElementById("cookies_wrap").style.display = "none";
 };
- // /Сookie notification
+ // /Сookies notification
 });
 jQuery(document).ready(function ($) {
   /* UP BUTTON */

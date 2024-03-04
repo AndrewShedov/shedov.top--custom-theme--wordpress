@@ -11,17 +11,21 @@
       <a href="https://shedov.top">Andrew Shedov</a>
    </div>
 </div>
-<div id="cookie_wrap" class="cookie_wrap">
-   <div class="cookie">
-      <div class="cookie_text">
+<div id="cookies_wrap" class="cookies_wrap">
+   <div class="cookies">
+      <div class="cookies_text">
          <p>Этот сайт использует файлы cookies. Нажимая кнопку 'Принять' или продолжая пользоваться сайтом, вы соглашаетесь на использование файлов cookies. 
         </p>
       </div>
-      <div class="cookie_buttons">
-         <form target="_blank" rel="noopener" action="https://shedov.top/ru/cookies-politika">
-            <input type="submit" value="Подробнее" />
-         </form>
-         <button id="cookie_accept_button"
+      <div class="cookies_buttons">
+      <div class="cookies_button_wrap">
+         <button type="button">
+         Подробнее
+         </button>
+         <a class="cookies_button_link" target="_blank" rel="noopener" href="https://shedov.top/ru/cookies-politika">
+         </a>
+         </div>
+         <button id="cookies_accept_button"
             type="button">
             Принять
          </button>
