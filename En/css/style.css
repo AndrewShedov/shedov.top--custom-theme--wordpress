@@ -1996,6 +1996,14 @@ button.sub-menu-toggle.active svg {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 28.5px;
 }
+
+.cookie_policy a {
+  color: black;
+  text-underline-offset: 2px;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  transition: all 200ms ease;
+}
 /* /Page - cookie-policy */
 /* Page - Contacts */
 .contacts_wrap {
@@ -3147,6 +3155,10 @@ button.pswp__button:hover {
       background-color: rgb(33, 33, 33);
       transition: all 200ms ease;
  }
+ .cookie_policy a:hover {
+  transition: all 200ms ease;
+  text-decoration-color: rgba(255, 255, 255, 0);
+}
 }
 /* hover /end */
 /* @media /end */

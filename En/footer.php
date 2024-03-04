@@ -15,10 +15,10 @@
    <div class="cookie">
       <div class="cookie_text">
          <p>This website uses cookies. By clicking the 'Accept' button or continuing to use the website, you agree to the use of cookies.
-         <p>
+         </p>
       </div>
       <div class="cookie_buttons">
-         <form target="_blank" rel="noopener" action="https://shedov.top/cookie-policy">
+         <form target="_blank" rel="noopener" action="https://shedov.top/cookies-policy">
             <input type="submit" value="More details" />
          </form>
          <button id="cookie_accept_button"

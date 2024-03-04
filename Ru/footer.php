@@ -14,11 +14,11 @@
 <div id="cookie_wrap" class="cookie_wrap">
    <div class="cookie">
       <div class="cookie_text">
-         <p>Этот сайт использует файлы cookie. Нажав кнопку 'Принять' или продолжая пользоваться сайтом, вы соглашаетесь на использование файлов cookie. 
-         <p>
+         <p>Этот сайт использует файлы cookies. Нажимая кнопку 'Принять' или продолжая пользоваться сайтом, вы соглашаетесь на использование файлов cookies. 
+        </p>
       </div>
       <div class="cookie_buttons">
-         <form target="_blank" rel="noopener" action="https://shedov.top/ru/cookie-politika">
+         <form target="_blank" rel="noopener" action="https://shedov.top/ru/cookies-politika">
             <input type="submit" value="Подробнее" />
          </form>
          <button id="cookie_accept_button"
