@@ -989,3 +989,18 @@ add_action("template_redirect", function () {
 // delete html { margin-top: 32px !important; }
 add_theme_support("admin-bar", ["callback" => "__return_false"]);
 // adaptation to different screens admin bar / End
+
+
+//  BREADCRUMBS
+// function the_breadcrumb()
+// {
+//     foreach ( get_the_category() as $category ) {
+//         printf(
+//             '<a href="%s" class="link link_text">%s</a>',
+//             esc_url( get_category_link( $category ) ),
+//             esc_html( $category->name )
+//         );
+//     }
+
+// }
+ //  /BREADCRUMBS

@@ -405,7 +405,9 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   position: fixed;
   top: 0;
   right: 0;
-  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+ /* menu close speed */
+ transition: transform 350ms ease-in-out, opacity 350ms ease-in-out;
+ /* /menu close speed */
   transform: translateX(101%);
   height: 100%;
   overflow-y: auto;
@@ -423,10 +425,12 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   box-shadow: 0 0 0 9999px rgba(18, 38, 54, 0.596);
   transition: all 300ms ease;
 }
+/* menu opening speed */
 .menu-open {
-  transition: transform 300ms ease-in-out, opacity 300ms ease-in-out;
+  transition: transform 350ms ease-in-out, opacity 350ms ease-in-out;
   display: block !important;
 }
+/* /menu opening speed */
 .menuMoveLeft {
   transform: translateX(0%);
 }
@@ -464,25 +468,25 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   transition: all 500ms ease;
 }
 .burger .burger-bar-top {
-  height: 3px;
+  height: 2.5px;
   border-bottom: none;
   background-color: black;
 }
 .burger .burger-bar-middle {
-  height: 3px;
+  height: 2.5px;
   background-color: black;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .burger .burger-bar-bottom {
-  height: 3px;
+  height: 2.5px;
   background-color: black;
   border-top: none;
 }
 .burger-open .burger-bar-top {
   position: relative;
   transform: translate(0, 0) rotate(-225deg);
-  height: 3px;
+  height: 2.5px;
   width: 26px;
   background-color: black;
   top: 1px;
@@ -494,11 +498,11 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 .burger-open .burger-bar-bottom {
   transform: translate(0, 0) rotate(225deg);
-  height: 3px;
+  height: 2.5px;
   width: 26px;
   background-color: black;
   position: relative;
-  top: -2px !important;
+  top: -1.5px !important;
 }
 /* footer */
 .footer_wrap {
@@ -515,6 +519,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5px;
 }
 .footer a {
   font-family: Arial, Helvetica, sans-serif;
@@ -534,16 +539,16 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 .UpButton {
   position: fixed;
-  bottom: -6px;
-  right: 15px;
+  bottom: -2px;
+    right: 20px;
   z-index: 2;
   cursor: pointer;
   display: none;
 }
 .UpButton svg {
   fill: rgb(0 0 0 / 7%);
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   z-index: 99;
   position: relative;
 }
@@ -755,7 +760,7 @@ button.sub-menu-toggle.active svg {
 }
 .single_width_1025 {
   width: 100%;
-  max-width: 1025px;
+  max-width: 800px;
 }
 .single_title_wrap {
   display: flex;
@@ -981,14 +986,15 @@ button.sub-menu-toggle.active svg {
 .categories__under_post_title {
   display: flex;
   justify-content: center;
-  margin-bottom: 5px;
+  margin-top: 8px;
+  margin-bottom: 1px;
   width: 100%;
 }
 .categories__under_post_title h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
   color: black;
-  font-size: 18px;
+  font-size: 19px;
 }
 .categories__under_post_list {
   display: flex;
@@ -1013,15 +1019,15 @@ button.sub-menu-toggle.active svg {
   transition: all 200ms ease;
 }
 .categories__under_post_list a {
-  color: black;
+  padding: 3px 6px;
+  border-radius: 4px;
+  border: 1px solid rgb(225 223 223 / 34%);
+  box-shadow: 0 1px 6px rgb(132 134 136 / 9%), 0 0px 2px rgb(138 140 143 / 16%);
+  transition: all 200ms ease;
+  color: #000000;
+  font-weight: normal;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.6px 4px;
-  border: 1.6px solid var(--categories_border_color);
-  border-radius: 3px;
   text-decoration: none;
 }
 .single_share_post_wrap {
@@ -1030,7 +1036,7 @@ button.sub-menu-toggle.active svg {
   margin-top: 17px;
 }
 .single_share_post {
-  box-shadow: 0 4px 16px rgb(132 134 136 / 9%), 0 1px 2px rgb(138 140 143 / 16%);
+  box-shadow: 0 1px 6px rgb(132 134 136 / 9%), 0 0px 2px rgb(138 140 143 / 16%);
   border-radius: 6px;
   padding: 3px 8px;
   border: 1px solid rgb(225 223 223 / 28%);
@@ -1052,39 +1058,50 @@ button.sub-menu-toggle.active svg {
   gap: 12px;
   padding-top: 2px;
 }
-.single_share_post_social_links a {
+.single_share_post_social_links__icon_wrap {
   display: flex;
+  align-items: center;
+  position: relative;
 }
-.single_share_post_social_links svg {
+.single_share_post_social_links__icon_wrap a{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.single_share_post_social_links__icon_wrap svg {
   fill: #000000;
   transition: all 200ms ease;
   cursor: pointer;
 }
-.single_share_copy_icon {
-  cursor: pointer;
-  display: flex;
-}
-.single_share_post_social_links__x_icon {
+.single_share_post_social_links__x_icon svg{
   width: 16px;
   height: 16px;
 }
-.single_share_post_social_links__telegram_icon {
+.single_share_post_social_links__telegram_icon svg{
   position: relative;
   right: 1px;
   width: 21px;
   height: 16px;
 }
-.single_share_post_social_links__vk_icon {
+.single_share_post_social_links__vk_icon svg{
   width: 25px;
   height: 24px;
   bottom: 1.5px;
   position: relative;
 }
-.single_share_post_social_links__share_link {
+.single_share_copy_icon {
+  cursor: pointer;
+  display: flex;
+}
+.single_share_copy_icon svg {
   width: 19px;
   height: 19px;
   position: relative;
   bottom: 0.1px;
+  fill: #000000;
+  transition: all 200ms ease;
 }
 .single_share_copy_notification_wrap {
   position: relative;
@@ -1131,7 +1148,9 @@ button.sub-menu-toggle.active svg {
 }
 .single_sub_icons {
   margin-top: 15px;
-  transition: all 200ms ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .single_sub_icons_level_1 {
   display: flex;
@@ -1139,16 +1158,29 @@ button.sub-menu-toggle.active svg {
   align-items: center;
   gap: 14px;
 }
-.single_sub_icons_level_1 svg {
+.single_sub_icons_level_1__icon_wrap {
   display: flex;
-  fill: #000000;
-  width: 28px;
-  height: 27px;
+  align-items: center;
+  position: relative;
+}
+.single_sub_icons_level_1__icon_wrap svg{
+  fill: rgb(0, 0, 0);
+  width: 33px;
+  height: 33px;
   transition: all 200ms ease;
 }
-.single_sub_icons_level_1__telegram_icon svg {
-  width: 21px;
-  height: 16px;
+.single_sub_icons_level_1__icon_wrap a{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.single_sub_icons_level_1__discord_icon svg {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  right: 1px;
 }
 .single_sub_icons_level_2 {
   display: flex;
@@ -1160,8 +1192,8 @@ button.sub-menu-toggle.active svg {
 .single_sub_icons_level_2 a {
   display: flex;
   align-items: center;
-  height: 31px;
-  width: 31px;
+  height: 37.5px;
+  width: 37.5px;
   text-decoration: none;
 }
 .single_sub_icons_level_3 {
@@ -1180,6 +1212,63 @@ button.sub-menu-toggle.active svg {
 .single_sub_icons_level_3 p:nth-child(2) {
   margin-top: 5px;
 }
+
+.breadcrumbs_name_wrap {
+  display: flex;
+  justify-content: left;
+  margin-top: 15px;
+}
+.breadcrumbs_name_wrap p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+.breadcrumbs_name_title_wrap {
+  display: flex;
+  margin-top: 13px;
+  gap: 4px;
+  margin-right: 15px;
+}
+.breadcrumbs_name_title {
+  /* border: 1px solid rgb(225 223 223 / 34%);
+  box-shadow: 0 4px 16px rgb(132 134 136 / 9%), 0 2px 2px rgb(138 140 143 / 16%); */
+  /* display: flex;
+  flex-wrap: wrap;
+  text-align: center; */
+  /* padding: 4px 13px;
+  border-radius: 6px; */
+  display: flex;
+    align-items: self-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.breadcrumbs_name_title a {
+  padding: 2px 5px;
+
+  border-radius: 6px;
+  border: 1px solid rgb(225 223 223 / 34%);
+  box-shadow: 0 1px 6px rgb(132 134 136 / 9%), 0 0px 2px rgb(138 140 143 / 16%);
+  transition: all 200ms ease;
+  color: #000000;
+  font-weight: normal;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+.breadcrumbs_name_title a:hover {
+  transition: all 200ms ease;
+  color: #383838;
+}
+.breadcrumbs_name_title_wrap p {
+  font-weight: normal;
+  font-size: 15px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: default;
+}
+ 
+ 
 /*single.php /end*/
 /* sidebar.php /start*/
 .sidebar_wrap {
@@ -1319,10 +1408,6 @@ button.sub-menu-toggle.active svg {
   bottom: 0;
   right: 0;
 }
-.post:hover {
-  transition: all 200ms ease;
-  box-shadow: 4px 6px 9px rgb(151 153 155 / 13%), 0 4px 6px rgb(155 157 162 / 7%);
-}
 .post_title {
   padding: 10px 15px 3px 15px;
 }
@@ -1348,6 +1433,11 @@ button.sub-menu-toggle.active svg {
   height: 100%;
   object-fit: cover;
 }
+.post__publication_date {
+  position: relative;
+  bottom: 4px;
+}
+
 .post__publication_date p {
   font-size: 14px;
   color: black;
@@ -1392,6 +1482,7 @@ button.sub-menu-toggle.active svg {
   width: 100%;
   max-width: 295px;
   padding: 10px 15px;
+  margin-bottom: 10px;
 }
 .post__categories_list {
   display: flex;
@@ -1404,25 +1495,27 @@ button.sub-menu-toggle.active svg {
   padding: 3px 6.6px 3.3px 0px;
 }
 .post__categories_list a {
-  color: black;
-  font-size: 14.2px;
+  padding: 3px 6px;
+  border-radius: 4px;
+  border: 1px solid rgb(225 223 223 / 34%);
+  box-shadow: 0 1px 6px rgb(132 134 136 / 9%), 0 0px 2px rgb(138 140 143 / 16%);
+  transition: all 200ms ease;
+  color: #000000;
+  font-weight: normal;
+  font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.6px 4px;
-  border: 1.6px solid var(--categories_border_color);
-  border-radius: 3px;
+  text-decoration: none;
 }
 .post_share_wrap {
   position: absolute;
-  right: 6px;
-  bottom: 6px;
+  right: 14px;
+  bottom: 13px;
   display: block;
+  
 }
 .post_share {
-  width: 27px;
-  height: 27px;
+  width: 30px;
+  height: 30px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -1433,7 +1526,9 @@ button.sub-menu-toggle.active svg {
   background-color: rgb(243 243 243);
 }
 .post_share svg {
-  fill: #4a4a4a;
+  fill: #2c2b2b;
+  width: 17px;
+  height: 17px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1441,12 +1536,7 @@ button.sub-menu-toggle.active svg {
   right: 1px;
   top: 0.3px;
 }
-.post_share img {
-  height: 100%;
-  width: auto;
-  position: relative;
-  right: 1.5px;
-}
+
 .visible {
   transition: all 150ms ease;
   opacity: 1;
@@ -1502,21 +1592,27 @@ button.sub-menu-toggle.active svg {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-.mobile_menu_part_1_social_icons svg {
+.mobile_menu_part_1_social_icons__icon_wrap {
   display: flex;
   align-items: center;
+  position: relative;
+}
+.mobile_menu_part_1_social_icons__icon_wrap a{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.mobile_menu_part_1_social_icons__icon_wrap svg {
   width: 25px;
   height: 24px;
   fill: #000000;
+  transition: all 200ms ease;
 }
-.mobile_menu_part_1_social_icons_telegram_icon {
-  position: relative;
-  left: 1px;
-}
-.mobile_menu_part_1_social_icons_telegram_icon svg {
-  width: 20px;
-  height: 15px;
-  fill: #000000;
+.mobile_menu_part_1_social_icons_discord_icon svg {
+  width: 23px;
+  height: 18px;
 }
 .mobile_menu_part_1_languages {
   display: flex;
@@ -1631,28 +1727,27 @@ button.sub-menu-toggle.active svg {
   align-items: center;
   gap: 15px;
 }
-.desktop_menu_part_1_social_icons svg {
+.desktop_menu_part_1_social_icons__icon_wrap {
   display: flex;
   align-items: center;
+  position: relative;
+}
+.desktop_menu_part_1_social_icons__icon_wrap a{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.desktop_menu_part_1_social_icons__icon_wrap svg {
   width: 23px;
   height: 22px;
   fill: #000000;
   transition: all 200ms ease;
 }
-.desktop_menu_part_1_social_icons_telegram_icon {
-  position: relative;
-  left: 1px;
-  top: 0.5px;
-}
-.desktop_menu_part_1_social_icons_telegram_icon svg {
-  width: 18px;
-  height: 14px;
-  fill: #000000;
-  transition: all 200ms ease;
-}
-.desktop_menu_part_1_social_icons svg:hover {
-  fill: rgb(52, 50, 50);
-  transition: all 200ms ease;
+.desktop_menu_part_1_social_icons_discord_icon svg {
+  width: 21.5px;
+  height: 17.5px;
 }
 .desktop_menu_part_1_logo_social_icons_wrap {
   display: flex;
@@ -1999,7 +2094,6 @@ button.sub-menu-toggle.active svg {
   transition: all 200ms ease;
   cursor: pointer;
 }
-
 @media (max-width: 800px) {
   .cookies {
       gap: 0px;
@@ -2020,7 +2114,7 @@ button.sub-menu-toggle.active svg {
   display: none;
 }
 .cookies_policy {
-  margin-top: 25px; 
+  margin-top: 25px;
   margin-bottom: 15px;
 }
 .cookies_policy h2 {
@@ -2078,19 +2172,36 @@ button.sub-menu-toggle.active svg {
   right: 5px;
   gap: 20px;
 }
-.contacts_icons_level_2 svg {
+ 
+.contacts_icons_level_2__icon_wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.contacts_icons_level_2__icon_wrap a{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+ 
+
+.contacts_icons_level_2__icon_wrap svg {
   fill: rgb(0, 0, 0);
   width: 37px;
   height: 37px;
   transition: all 200ms ease;
 }
-.contacts_icons_level_2_telegram_icon {
+
+
+.contacts_icons_level_2_discord_icon {
   position: relative;
   top: 0.3px;
 }
-.contacts_icons_level_2_telegram_icon svg {
-  width: 28px;
-  height: 23px;
+.contacts_icons_level_2_discord_icon svg {
+  width: 36px;
+  height: 31px;
 }
 .contacts_icons_level_3 {
   display: flex;
@@ -2466,13 +2577,17 @@ button.pswp__button:hover {
   display: flex;
 }
 .categories_side_list a {
-  text-decoration: none;
-  color: black;
+  padding: 3px 6px;
+  border-radius: 4px;
+  border: 1px solid rgb(225 223 223 / 34%);
+  box-shadow: 0 1px 6px rgb(132 134 136 / 9%), 0 0px 2px rgb(138 140 143 / 16%);
+  transition: all 200ms ease;
+  color: #000000;
+  font-weight: normal;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 1.6px 4px;
-  border: 1.6px solid var(--categories_border_color);
-  border-radius: 3px;
+  text-decoration: none;
+ 
 }
 /* categories_side.php 2*/
 /*sidebar_single.php 1*/
@@ -2524,15 +2639,15 @@ button.pswp__button:hover {
   align-items: center;
 }
 .categories_list_single a {
-  color: black;
+  padding: 3px 6px;
+  border-radius: 4px;
+  border: 1px solid rgb(225 223 223 / 34%);
+  box-shadow: 0 1px 6px rgb(132 134 136 / 9%), 0 0px 2px rgb(138 140 143 / 16%);
+  transition: all 200ms ease;
+  color: #000000;
+  font-weight: normal;
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.6px 4px;
-  border: 1.6px solid var(--categories_border_color);
-  border-radius: 3px;
   text-decoration: none;
 }
 .wp-block-heading {
@@ -2545,8 +2660,8 @@ button.pswp__button:hover {
 /*posts.php 1*/
 .post__share_list {
   position: absolute;
-  top: 33px;
-  right: -6px;
+  top: 44px;
+  right: -14px;
   display: none;
   z-index: 1;
   opacity: 0;
@@ -2566,8 +2681,8 @@ button.pswp__button:hover {
 }
 .post_views_wrap {
   position: absolute;
-  bottom: 6px;
-  left: 6px;
+  bottom: 10px;
+  left: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2605,33 +2720,47 @@ button.pswp__button:hover {
   gap: 9px;
   padding-top: 1px;
 }
-.post__share_list_social_icons svg {
-  transition: all 200ms ease;
-  fill: #2c2b2b;
-}
-.post__share_link svg {
+.post__share_list_social_icons__icon_wrap {
   display: flex;
-  justify-content: center;
   align-items: center;
+  position: relative;
 }
-.post__share_list_social_icons__x_icon {
+.post__share_list_social_icons__icon_wrap a{
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+.post__share_list_social_icons__icon_wrap svg {
+  fill: #2c2b2b;
+  transition: all 200ms ease;
+}
+.post__share_list_social_icons__x_icon svg{
   cursor: pointer;
   width: 13px;
   height: 13px;
 }
-.post__share_list_social_icons__telegram_icon {
+.post__share_list_social_icons__telegram_icon svg{
   cursor: pointer;
   position: relative;
   right: 1px;
   width: 18px;
   height: 13px;
 }
-.post__share_list_social_icons__vk_icon {
+.post__share_list_social_icons__vk_icon svg{
   cursor: pointer;
   width: 21.6px;
   height: 20.6px;
   bottom: 1px;
   position: relative;
+}
+.post__share_link svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #2c2b2b;
+  transition: all 200ms ease;
 }
 .post__share_link_copy_notification_wrap {
   position: relative;
@@ -2672,7 +2801,6 @@ button.pswp__button:hover {
   border-color: #ffffff transparent transparent transparent;
 }
 .post__share_link {
-  transition: all 200ms ease;
   cursor: pointer;
   width: 16px;
   height: 16px;
@@ -3073,11 +3201,15 @@ button.pswp__button:hover {
       transition: all 200ms ease;
       background-color: var(--categories_background_hover_color);
  }
-  .single_share_post_social_links svg:hover {
+  .single_share_post_social_links__icon_wrap:hover svg{
       fill: rgb(52, 50, 50);
       transition: all 200ms ease;
  }
-  .single_sub_icons_level_1 svg:hover {
+  .single_share_copy_icon:hover svg {
+      fill: rgb(52, 50, 50);
+      transition: all 200ms ease;
+ }
+  .single_sub_icons_level_1__icon_wrap:hover svg{
       fill: rgb(52, 50, 50);
       transition: all 200ms ease;
  }
@@ -3086,7 +3218,8 @@ button.pswp__button:hover {
       background-color: var(--categories_background_hover_color);
  }
   .post_share:hover {
-      background-color: rgb(230, 229, 229);
+    background-color: rgb(233 233 233);
+    transition: all 200ms ease;
  }
   .mobile_menu_part_1_languages a:hover {
       transition: all 200ms ease;
@@ -3137,7 +3270,11 @@ button.pswp__button:hover {
       transition: all 200ms ease;
       background-color: var(--categories_background_hover_color);
  }
-  .post__share_list_social_icons svg:hover {
+  .post__share_link:hover svg {
+      fill: #404040;
+      transition: all 200ms ease;
+ }
+  .post__share_list_social_icons__icon_wrap:hover svg{
       fill: #404040;
       transition: all 200ms ease;
  }
@@ -3151,18 +3288,54 @@ button.pswp__button:hover {
   .contacts_icons svg:hover {
       fill: rgb(52, 50, 50);
  }
- .cookies_buttons button:hover {
-  background-color: rgb(33, 33, 33);
+  .cookies_buttons button:hover {
+      background-color: rgb(33, 33, 33);
+      transition: all 200ms ease;
+ }
+  .cookies_button_wrap:hover button {
+      background-color: rgb(33, 33, 33);
+      transition: all 200ms ease;
+ }
+  .cookies_policy a:hover {
+      transition: all 200ms ease;
+      text-decoration-color: rgba(255, 255, 255, 0);
+ }
+  .desktop_menu_part_1_social_icons__icon_wrap:hover svg {
+      fill: rgb(52, 50, 50);
+      transition: all 200ms ease;
+ }
+ .contacts_icons_level_2__icon_wrap:hover svg{
+  fill: #404040;
   transition: all 200ms ease;
 }
-.cookies_button_wrap:hover button {
-  background-color: rgb(33, 33, 33);
+.categories_side_list a:hover {
   transition: all 200ms ease;
+background-color: rgb(246, 246, 246);
 }
-.cookies_policy a:hover {
+.post__categories_list a:hover {
   transition: all 200ms ease;
-  text-decoration-color: rgba(255, 255, 255, 0);
+background-color: rgb(246, 246, 246);
+}
+.categories__under_post_list a:hover {
+  transition: all 200ms ease;
+background-color: rgb(246, 246, 246);
+}
+.categories_list_single a:hover {
+  transition: all 200ms ease;
+background-color: rgb(246, 246, 246);
+}
+.post:hover {
+  transition: all 200ms ease;
+  box-shadow: 4px 6px 9px rgb(151 153 155 / 13%), 0 4px 6px rgb(155 157 162 / 7%);
 }
 }
 /* hover /end */
+/* active */
+@media (max-width: 1000px) {
+  .post_share:active {
+    background-color: rgb(233 233 233);
+    transition: all 20ms ease;
+}
+}
+/* /active */
 /* @media /end */
