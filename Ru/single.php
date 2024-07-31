@@ -113,13 +113,13 @@
           </div>
           <div class="single_sub_icons_level_2"> <a
             class="yoomoney_icon_sub_single" href="https://yoomoney.ru/to/410011226872318" target="blank"
-            rel="noopener" aria-label="ссылка на yoomoney"><img src="https://shedov.top/wp-content/images/yoomoney.png" alt="yoomoney" /> </a>
+            rel="noopener" aria-label="ссылка на yoomoney"><img src="https://shedov.top/wp-content/images/yoomoney.webp" alt="yoomoney" /> </a>
             <a class="tinkoff_icon_sub_single" href="https://www.tinkoff.ru/rm/shedov.andrey2/lGla256001" target="blank"
-              rel="noopener" aria-label="ссылка на tinkoff"><img src="https://shedov.top/wp-content/images/tinkoff_logo.png" alt="tinkoff" /> </a>
+              rel="noopener" aria-label="ссылка на Т-Банк"><img src="https://shedov.top/wp-content/images/t-bank_logo.webp" alt="T-Bank" /> </a>
           </div>
           <div class="single_sub_icons_level_3">
-            <p>BTC (Network BTC) - 1N1GXRUXNTbwPa1mQY5ugufNdhGWxQxtyU</p>
-            <p>Ethereum (Network ERC20) - 0xd6893a5807c24cf5c1319f10489c89540cba149b</p>
+            <p>BTC (Network BTC) - 1C2EWWeEXVhg93hJA9KovpkSd3Rn3BkcYm</p>
+            <p>Ethereum (Network ERC20) - 0x05037ecbd8bcd15631d780c95c3799861182e6b8</p>
           </div>
         </div>
       </div>

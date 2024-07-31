@@ -27,7 +27,7 @@
                 <path d="m488.649875 44.6098697c6.442438-2.8224615 10.738405-4.6832009 12.887902-5.5822181 6.137252-2.5668769 7.41252-3.0127709 8.243723-3.0276516.182815-.0030813.591576.0424775.856354.2585203.223574.1824224.285088.428849.314524.6018054.029436.1729565.066092.5669556.036954.874815-.33258 3.5138587-1.771648 12.041067-2.503764 15.9766489-.309785 1.6652923-.919763 2.2236562-1.510292 2.2782995-1.283356.1187526-2.257879-.8528431-3.500872-1.6721675-1.945039-1.2820809-3.043862-2.0801802-4.931859-3.3312543-2.181908-1.4458326-.767468-2.2404874.475995-3.5391756.32542-.3398729 5.979917-5.5116482 6.08936-5.9808093.013687-.0586764.02639-.2773944-.102829-.3928855-.129218-.1154911-.319934-.0759976-.457559-.0445881-.195081.044522-3.302306 2.1096922-9.321675 6.1955107-.881976.6089971-1.680842.9057209-2.396598.8901714-.789064-.017142-2.306907-.4486274-3.435267-.8174505-1.38398-.4523766-2.48394-.6915513-2.388158-1.4598267.049889-.4001653.59791-.8094133 1.644061-1.227744z" fill-rule="evenodd" transform="translate(-487 -36)"></path>
               </svg>
               <a href="https://telegram.me/share/url?url=<?php the_permalink() ?>"
-                onclick="window.open(this.href, this.title, ); return false" target="_parent" aria-label="Поделиться в Telegram">
+                onclick="window.open(this.href, this.title, ); return false" target="_parent" aria-label="Share on Telegram">
               </a>
             </div>
             <div class="single_share_post_social_links__icon_wrap single_share_post_social_links__vk_icon">
@@ -35,7 +35,7 @@
                 <path style=" stroke:none;fill-rule:nonzero;fill-opacity:1;" d="M 10.640625 14.410156 C 6.082031 14.410156 3.484375 11.285156 3.375 6.082031 L 5.660156 6.082031 C 5.734375 9.898438 7.417969 11.515625 8.75 11.851562 L 8.75 6.082031 L 10.898438 6.082031 L 10.898438 9.375 C 12.214844 9.234375 13.601562 7.734375 14.066406 6.082031 L 16.214844 6.082031 C 15.859375 8.117188 14.359375 9.617188 13.292969 10.234375 C 14.359375 10.734375 16.066406 12.042969 16.714844 14.410156 L 14.351562 14.410156 C 13.839844 12.824219 12.574219 11.601562 10.898438 11.433594 L 10.898438 14.410156 Z M 10.640625 14.410156 "/>
               </svg>
               <a href="http://vk.com/share.php?url=<?php the_permalink() ?>" title=""
-                onclick="window.open(this.href, this.title, ); return false" target="_parent" aria-label="Поделиться в VK">
+                onclick="window.open(this.href, this.title, ); return false" target="_parent" aria-label="Share on VK">
               </a>
             </div>
             <div class="single_share_post_social_links__icon_wrap single_share_post_social_links__x_icon">
@@ -43,7 +43,7 @@
                 <path style=" stroke:none;fill-rule:nonzero; fill-opacity:1;" d="M 11.90625 8.476562 L 19.351562 0 L 17.585938 0 L 11.117188 7.359375 L 5.957031 0 L 0 0 L 7.808594 11.128906 L 0 20.015625 L 1.765625 20.015625 L 8.589844 12.242188 L 14.042969 20.015625 L 20 20.015625 M 2.402344 1.300781 L 5.109375 1.300781 L 17.585938 18.777344 L 14.875 18.777344 "/>
               </svg>
               <a href="http://twitter.com/share?&url=<?php the_permalink() ?>"
-                onclick="window.open(this.href, this.title, ); return false" target="_parent" aria-label="Поделиться в X">
+                onclick="window.open(this.href, this.title, ); return false" target="_parent" aria-label="Share to X">
               </a>
             </div>
             <div class="single_share_copy_notification_wrap">
@@ -106,13 +106,13 @@
           </div>
           <div class="single_sub_icons_level_2"> <a
             class="yoomoney_icon_sub_single" href="https://yoomoney.ru/to/410011226872318" target="blank"
-            rel="noopener" aria-label="yoomoney link"><img src="https://shedov.top/wp-content/images/yoomoney.png" alt="yoomoney" /> </a>
+            rel="noopener" aria-label="yoomoney link"><img src="https://shedov.top/wp-content/images/yoomoney.webp" alt="yoomoney"/> </a>
             <a class="tinkoff_icon_sub_single" href="https://www.tinkoff.ru/rm/shedov.andrey2/lGla256001" target="blank"
-              rel="noopener" aria-label="tinkoff link"><img src="https://shedov.top/wp-content/images/tinkoff_logo.png" alt="tinkoff" /> </a>
+              rel="noopener" aria-label="T-Bank link"><img src="https://shedov.top/wp-content/images/t-bank_logo.webp" alt="T-Bank" /> </a>
           </div>
           <div class="single_sub_icons_level_3">
-            <p>BTC (Network BTC) - 1N1GXRUXNTbwPa1mQY5ugufNdhGWxQxtyU</p>
-            <p>Ethereum (Network ERC20) - 0xd6893a5807c24cf5c1319f10489c89540cba149b</p>
+            <p>BTC (Network BTC) - 1C2EWWeEXVhg93hJA9KovpkSd3Rn3BkcYm</p>
+            <p>Ethereum (Network ERC20) - 0x05037ecbd8bcd15631d780c95c3799861182e6b8</p>
           </div>
         </div>
       </div>

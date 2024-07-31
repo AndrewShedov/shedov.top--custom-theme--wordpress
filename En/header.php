@@ -3,6 +3,7 @@
   <head>
     <meta charset="<?php bloginfo("charset"); ?>">
     <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <meta name="yandex-verification" content="4f14f40864f7bdfd" />
     <script> 
       // lazy loading Yandex metrika 
       let lazyloadingScript_sensor = false;

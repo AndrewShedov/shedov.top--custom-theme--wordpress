@@ -773,7 +773,7 @@ button.sub-menu-toggle.active svg {
 }
 .single_title h1 {
   line-height: 28.5px;
-  font-weight: normal;
+  font-weight: bold;
   color: #000000;
   text-align: center;
   font-size: 20px;
@@ -986,7 +986,7 @@ button.sub-menu-toggle.active svg {
 .categories__under_post_title {
   display: flex;
   justify-content: center;
-  margin-top: 8px;
+  margin-top: 15px;
   margin-bottom: 1px;
   width: 100%;
 }
@@ -1026,7 +1026,7 @@ button.sub-menu-toggle.active svg {
   transition: all 200ms ease;
   color: #000000;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
 }
@@ -1186,7 +1186,7 @@ button.sub-menu-toggle.active svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 12px;
   gap: 14px;
 }
 .single_sub_icons_level_2 a {
@@ -1196,18 +1196,26 @@ button.sub-menu-toggle.active svg {
   width: 37.5px;
   text-decoration: none;
 }
+.tinkoff_icon_sub_single {
+  display: flex;
+  align-items: center;
+  height: 34px !important;
+  width: 34px !important;
+  text-decoration: none;
+  border-radius: 9px;
+overflow: hidden;
+}
 .single_sub_icons_level_3 {
-  margin-top: 10px;
+  margin-top: 11px;
   width: 100%;
-  max-width: 146px;
+  max-width: 175px;
   position: relative;
-  left: 3px;
 }
 .single_sub_icons_level_3 p {
   font-family: Arial, Helvetica, sans-serif;
   word-break: break-all;
-  font-size: 10px;
-  line-height: 14px;
+  font-size: 12px;
+  line-height: 15px;
 }
 .single_sub_icons_level_3 p:nth-child(2) {
   margin-top: 5px;
@@ -2200,14 +2208,14 @@ button.sub-menu-toggle.active svg {
   top: 0.3px;
 }
 .contacts_icons_level_2_discord_icon svg {
-  width: 36px;
-  height: 31px;
+  width: 33px;
+  height: 33px;
 }
 .contacts_icons_level_3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8px;
+  margin-top: 15px;
   position: relative;
   right: 5px;
   gap: 17px;
@@ -2221,17 +2229,19 @@ button.sub-menu-toggle.active svg {
   height: 37px;
 }
 .contacts_icons_level_3 a:nth-child(2) {
-  width: 42px;
-  height: 42px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 9px;
+  overflow: hidden;
 }
-.contacts_icons_level_3 a:nth-child(3) {
-  width: 44px;
-  height: 44px;
-}
+ 
 .contacts_icons_level_4 {
   margin-top: 13px;
   width: 100%;
-  max-width: 200px;
+  max-width: 190px;
   position: relative;
   right: 4px;
 }
@@ -2556,7 +2566,7 @@ button.pswp__button:hover {
 .categories_side_title h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
-  color: #0c0c0c;
+  color: #000000;
   font-size: 18px;
   text-align: center;
   cursor: default;
@@ -2584,7 +2594,7 @@ button.pswp__button:hover {
   transition: all 200ms ease;
   color: #000000;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
  
@@ -2646,7 +2656,7 @@ button.pswp__button:hover {
   transition: all 200ms ease;
   color: #000000;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
 }
@@ -2887,7 +2897,7 @@ button.pswp__button:hover {
 }
 .popular_posts_cell__left_sidebar_title p {
   transition: all 200ms ease;
-  font-size: 15px;
+  font-size: 16px;
   color: black;
   line-height: 18px;
   padding-left: 10px;
@@ -3081,9 +3091,9 @@ button.pswp__button:hover {
   .posts_categories_side_wrap__search_page {
       margin-top: 22px;
  }
-  .single_sub_icons_level_3 p {
+  /* .single_sub_icons_level_3 p {
       font-size: 9px;
- }
+ } */
   .category_name_title_wrap {
       margin-top: 4px;
  }
@@ -3310,19 +3320,19 @@ button.pswp__button:hover {
 }
 .categories_side_list a:hover {
   transition: all 200ms ease;
-background-color: rgb(246, 246, 246);
+background-color: rgba(246, 246, 246, 0.797);
 }
 .post__categories_list a:hover {
   transition: all 200ms ease;
-background-color: rgb(246, 246, 246);
+background-color: rgba(246, 246, 246, 0.797);
 }
 .categories__under_post_list a:hover {
   transition: all 200ms ease;
-background-color: rgb(246, 246, 246);
+background-color: rgba(246, 246, 246, 0.797);
 }
 .categories_list_single a:hover {
   transition: all 200ms ease;
-background-color: rgb(246, 246, 246);
+background-color: rgba(246, 246, 246, 0.797);
 }
 .post:hover {
   transition: all 200ms ease;

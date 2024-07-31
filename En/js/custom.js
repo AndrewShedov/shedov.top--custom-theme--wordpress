@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
          const copyBtn = document.createElement('button');
          copyBtn.setAttribute('class', 'copy-button');
          copyBtn.setAttribute('data-lang', lang);
-         copyBtn.innerHTML = `<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
+         copyBtn.innerHTML = `<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
          wrapper.insertAdjacentElement('beforeend', copyBtn);
       });
       function parseLanguage(block) {
@@ -88,14 +88,14 @@ document.addEventListener("DOMContentLoaded", function () {
          copyTextToClipboard(text)
             .then(
                () => {
-                  btn.innerHTML = `<svg class="button_copied_code" fill="black" viewBox="2 -2 24 24" id="check-mark-square-2" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color"><polyline id="secondary" points="21 5 12 14 8 10" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></polyline><path id="primary" d="M21,11v9a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path></svg>`;
+                  btn.innerHTML = `<svg class="button_copied_code" fill="black" viewBox="2 -2 24 24" id="check-mark-square-2" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color"><polyline id="secondary" points="21 5 12 14 8 10" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></polyline><path id="primary" d="M21,11v9a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></path></svg>`;
                   btn.setAttribute('style', 'opacity: 1');
                },
                () => alert('failed to copy'),
             );
          setTimeout(() => {
             btn.removeAttribute('style');
-            btn.innerHTML = `<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
+            btn.innerHTML = `<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
          }, 1000);
       }
       const copyButtons = document.querySelectorAll('.copy-button');
