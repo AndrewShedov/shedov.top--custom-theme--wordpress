@@ -642,7 +642,7 @@ function no_image()
         print '<img class="wp-post-image" src="' .
             get_bloginfo("template_directory") .
             "/images/post_no_image.webp" .
-            '"alt="no image" />';
+            '" alt="no image" />';
     endif;
 }
 // PICTURE IF THERE IS NO IMAGE 2
@@ -684,9 +684,9 @@ function kama_postviews($args = [])
         // Key of the post meta field where the number of views will be recorded.
         "meta_key" => "views",
         // Whose visits are counted? 0 - Everyone. 1 - Guests only. 2 - Only registered users.
-        "who_count" => 0,
+        "who_count" => 1,
         // Exclude bots, robots? 0 - no, let them count too. 1 - yes, exclude from counting.
-        "exclude_bots" => true,
+        "exclude_bots" => 1,
     ]);
     $do_count = false;
     switch ($rg->who_count) {
@@ -1004,3 +1004,7 @@ add_theme_support("admin-bar", ["callback" => "__return_false"]);
 
 // }
  //  /BREADCRUMBS
+ // ban on adding <p> tags in posts
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+// /ban on adding <p> tags in posts
