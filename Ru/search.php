@@ -93,8 +93,10 @@
       </div>
    </div>
    <?php wp_reset_postdata(); ?>
+   <div class="popular_posts_wrap_search_page">
    <?php
       get_template_part( 'parts/sorting_posts_by_popularity' );
            ?>
+            </div>
 </div>
 <?php get_footer(); ?>

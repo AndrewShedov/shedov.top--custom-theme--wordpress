@@ -1,3 +1,51 @@
+// Dark theme 
+let html = document.getElementsByTagName('html')[0];
+const userColorTheme = window.matchMedia(
+  "(prefers-color-scheme: dark)",
+).matches;
+let ThemeStatus = window.localStorage.getItem("darkTheme")
+  ?
+  JSON.parse(window.localStorage.getItem("darkTheme"))
+  :
+  userColorTheme
+
+function ChangeTheme() {
+  ThemeStatus = !ThemeStatus,
+    ThemeStatus ?
+      (localStorage.setItem("darkTheme", ThemeStatus),
+        html.setAttribute('data-dark-theme', ThemeStatus),
+        document.querySelector(".sun").style.display = 'block',
+        document.querySelector(".half_moon").style.display = 'none',
+        document.querySelector(".sun_icon_mobile").style.display = 'block',
+        document.querySelector(".half_moon_icon_mobile").style.display = 'none'
+      )
+      :
+      (
+        localStorage.setItem("darkTheme", ThemeStatus),
+        html.setAttribute('data-dark-theme', ThemeStatus),
+        document.querySelector(".half_moon").style.display = 'block',
+        document.querySelector(".sun").style.display = 'none',
+        document.querySelector(".half_moon_icon_mobile").style.display = 'block',
+        document.querySelector(".sun_icon_mobile").style.display = 'none'
+      )
+}
+
+ThemeStatus ?
+  (
+    html.setAttribute('data-dark-theme', "true"),
+    document.querySelector(".half_moon").style.display = 'none',
+    document.querySelector(".sun").style.display = 'block',
+    document.querySelector(".sun_icon_mobile").style.display = 'block',
+    document.querySelector(".half_moon_icon_mobile").style.display = 'none'
+  )
+  :
+  (html.setAttribute('data-dark-theme', "false"),
+    document.querySelector(".half_moon").style.display = 'block',
+    document.querySelector(".sun").style.display = 'none',
+    document.querySelector(".half_moon_icon_mobile").style.display = 'block',
+    document.querySelector(".sun_icon_mobile").style.display = 'none'
+  )
+// /Dark theme 
 document.addEventListener("DOMContentLoaded", function () {
    // adaptation to different screens admin bar /Start
    // in the header
@@ -86,18 +134,18 @@ document.addEventListener("DOMContentLoaded", function () {
          const btn = e.currentTarget;
          const text = e.currentTarget.previousSibling.children[0].textContent;
          copyTextToClipboard(text)
-            .then(
-               () => {
-                  btn.innerHTML = `<svg class="button_copied_code" fill="black" viewBox="2 -2 24 24" id="check-mark-square-2" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color"><polyline id="secondary" points="21 5 12 14 8 10" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></polyline><path id="primary" d="M21,11v9a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></path></svg>`;
-                  btn.setAttribute('style', 'opacity: 1');
-               },
-               () => alert('failed to copy'),
-            );
+           .then(
+             () => {
+               btn.innerHTML = `<svg class="button_copied_code" fill="black" viewBox="2 -2 24 24" id="check-mark-square-2" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color"><polyline id="secondary" points="21 5 12 14 8 10" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></polyline><path id="primary" d="M21,11v9a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16" style="fill: none;  stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></path></svg>`;
+               btn.setAttribute('style', 'opacity: 1');
+             },
+             () => alert('failed to copy'),
+           );
          setTimeout(() => {
-            btn.removeAttribute('style');
-            btn.innerHTML = `<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
+           btn.removeAttribute('style');
+           btn.innerHTML = `<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
          }, 1000);
-      }
+       }
       const copyButtons = document.querySelectorAll('.copy-button');
       copyButtons.forEach((btn) => {
          btn.addEventListener('click', copy);

@@ -26,7 +26,9 @@
       </div>
    </div>
 </div>
+<div class="popular_posts_wrap_index_page">
 <?php
    get_template_part( 'parts/sorting_posts_by_popularity' );
      ?>
+</div>
 <?php get_footer() ?>

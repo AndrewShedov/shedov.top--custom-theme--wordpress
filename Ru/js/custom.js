@@ -1,15 +1,64 @@
+// Dark theme 
+let html = document.getElementsByTagName('html')[0];
+const userColorTheme = window.matchMedia(
+  "(prefers-color-scheme: dark)",
+).matches;
+let ThemeStatus = window.localStorage.getItem("darkTheme")
+  ?
+  JSON.parse(window.localStorage.getItem("darkTheme"))
+  :
+  userColorTheme
+
+function ChangeTheme() {
+  ThemeStatus = !ThemeStatus,
+    ThemeStatus ?
+      (localStorage.setItem("darkTheme", ThemeStatus),
+        html.setAttribute('data-dark-theme', ThemeStatus),
+        document.querySelector(".sun").style.display = 'block',
+        document.querySelector(".half_moon").style.display = 'none',
+        document.querySelector(".sun_icon_mobile").style.display = 'block',
+        document.querySelector(".half_moon_icon_mobile").style.display = 'none'
+      )
+      :
+      (
+        localStorage.setItem("darkTheme", ThemeStatus),
+        html.setAttribute('data-dark-theme', ThemeStatus),
+        document.querySelector(".half_moon").style.display = 'block',
+        document.querySelector(".sun").style.display = 'none',
+        document.querySelector(".half_moon_icon_mobile").style.display = 'block',
+        document.querySelector(".sun_icon_mobile").style.display = 'none'
+      )
+}
+
+ThemeStatus ?
+  (
+    html.setAttribute('data-dark-theme', "true"),
+    document.querySelector(".half_moon").style.display = 'none',
+    document.querySelector(".sun").style.display = 'block',
+    document.querySelector(".sun_icon_mobile").style.display = 'block',
+    document.querySelector(".half_moon_icon_mobile").style.display = 'none'
+  )
+  :
+  (html.setAttribute('data-dark-theme', "false"),
+    document.querySelector(".half_moon").style.display = 'block',
+    document.querySelector(".sun").style.display = 'none',
+    document.querySelector(".half_moon_icon_mobile").style.display = 'block',
+    document.querySelector(".sun_icon_mobile").style.display = 'none'
+  )
+// /Dark theme 
+
 document.addEventListener("DOMContentLoaded", function () {
-// adaptation to different screens admin bar /Start
-// in the header
+  // adaptation to different screens admin bar /Start
+  // in the header
   if (document.body.classList.contains('admin-bar')) {
-  let wpAdminbarHeight = document.getElementById('wpadminbar').offsetHeight;
-  document.getElementById("desktop_menu_part_1_wrap").style.marginTop = wpAdminbarHeight+"px", document.getElementById("mobile_menu_part_1").style.marginTop = wpAdminbarHeight+"px", document.getElementById("mobile_menu_part_2").style.top = wpAdminbarHeight+"px", document.getElementById("desktop_menu_part_2_wrap").style.top = wpAdminbarHeight+"px"
- }
-// in the footer
-// if (document.body.classList.contains('admin-bar')) {
-//   document.getElementById("UpButton").style.bottom = wpAdminbarHeight+ 12 +"px"
-// }
-// adaptation to different screens admin bar /End
+    let wpAdminbarHeight = document.getElementById('wpadminbar').offsetHeight;
+    document.getElementById("desktop_menu_part_1_wrap").style.marginTop = wpAdminbarHeight + "px", document.getElementById("mobile_menu_part_1").style.marginTop = wpAdminbarHeight + "px", document.getElementById("mobile_menu_part_2").style.top = wpAdminbarHeight + "px", document.getElementById("desktop_menu_part_2_wrap").style.top = wpAdminbarHeight + "px"
+  }
+  // in the footer
+  // if (document.body.classList.contains('admin-bar')) {
+  //   document.getElementById("UpButton").style.bottom = wpAdminbarHeight+ 12 +"px"
+  // }
+  // adaptation to different screens admin bar /End
   function initCodeCopy() {
     const codeBlocks = document.querySelectorAll('code[class*="language-"]');
     codeBlocks.forEach((block) => {
@@ -22,9 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
       wrapper.append(block.parentElement);
       const copyBtn = document.createElement('button');
       copyBtn.setAttribute('class', 'copy-button');
-      copyBtn.setAttribute('data-lang', lang); 
+      copyBtn.setAttribute('data-lang', lang);
       copyBtn.innerHTML = `<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ch-code-button"><title>Copy</title><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3px" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>`;
-     wrapper.insertAdjacentElement('beforeend', copyBtn);
+      wrapper.insertAdjacentElement('beforeend', copyBtn);
     });
     function parseLanguage(block) {
       const className = block.className;
@@ -86,9 +135,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const btn = e.currentTarget;
       const text = e.currentTarget.previousSibling.children[0].textContent;
       copyTextToClipboard(text)
-        .then(  
-          () => {   
-            btn.innerHTML = `<svg class="button_copied_code" fill="black" viewBox="2 -2 24 24" id="check-mark-square-2" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color"><polyline id="secondary" points="21 5 12 14 8 10" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></polyline><path id="primary" d="M21,11v9a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16" style="fill: none; stroke: black; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></path></svg>`;
+        .then(
+          () => {
+            btn.innerHTML = `<svg class="button_copied_code" fill="black" viewBox="2 -2 24 24" id="check-mark-square-2" data-name="Line Color" xmlns="http://www.w3.org/2000/svg" class="icon line-color"><polyline id="secondary" points="21 5 12 14 8 10" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></polyline><path id="primary" d="M21,11v9a1,1,0,0,1-1,1H4a1,1,0,0,1-1-1V4A1,1,0,0,1,4,3H16" style="fill: none;  stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7px;"></path></svg>`;
             btn.setAttribute('style', 'opacity: 1');
           },
           () => alert('failed to copy'),
@@ -115,15 +164,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   document.querySelectorAll(".single_share_copy_icon").forEach((element) => {
     element.addEventListener("mouseover", (event) => {
-        element.parentElement.querySelector(".single_share_copy_notification").querySelector("p").textContent = "Копировать"; 
+      element.parentElement.querySelector(".single_share_copy_notification").querySelector("p").textContent = "Копировать";
     });
   });
   /* single_share_link 2 */
   /* single.php 2 */
   /*index.php 1*/
   /* post cell share 1 */
-   /*share list open/close 1*/
-   const ob = document.querySelector("html");
+  /*share list open/close 1*/
+  const ob = document.querySelector("html");
   ob.addEventListener("click", (e) => {
     const o = e.target.closest(".post_share");
     if (!o) {
@@ -165,8 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }, timeout);
     }
   }
-   /* post cell share 2 */
- 
+  /* post cell share 2 */
   /* post cell share link 1 */
   ob.addEventListener("click", (e) => {
     const o = e.target.closest(".post__share_link");
@@ -181,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
   });
-   ob.addEventListener("click", (e) => {
+  ob.addEventListener("click", (e) => {
     const o = e.target.closest(".post__share_link");
     if (!o) {
       ob.querySelectorAll(".post__share_link").forEach((element) => {
@@ -232,12 +280,11 @@ document.addEventListener("DOMContentLoaded", function () {
   };
   // Сookies notification 
   window.localStorage.getItem("СookiesAcceptRU") ? document.getElementById("cookies_wrap").style.display = "none" : document.getElementById("cookies_wrap").style.display = "flex";
-
   document.getElementById('cookies_accept_button').onclick = function () {
-  window.localStorage.setItem("СookiesAcceptRU", true)
-  document.getElementById("cookies_wrap").style.display = "none";
-};
- // /Сookies notification
+    window.localStorage.setItem("СookiesAcceptRU", true)
+    document.getElementById("cookies_wrap").style.display = "none";
+  };
+  // /Сookies notification
 });
 jQuery(document).ready(function ($) {
   /* UP BUTTON */
@@ -270,14 +317,14 @@ jQuery(document).ready(function ($) {
     }
   });
   $(document).mouseup(function (e) {
-      let div = $(".desktop_menu_part_2__search");
-      if (
-        !div.is(e.target) &&
-        div.has(e.target).length === 0
-      ) {
-        div.fadeOut(50);
-      }
-    });
+    let div = $(".desktop_menu_part_2__search");
+    if (
+      !div.is(e.target) &&
+      div.has(e.target).length === 0
+    ) {
+      div.fadeOut(50);
+    }
+  });
   $(".desktop_menu_part_2__search_button_clear").hide(50);
   setInterval(function () {
     if ($(".desktop_menu_part_2__search_input").val().length != 0) {
@@ -287,7 +334,7 @@ jQuery(document).ready(function ($) {
     }
   }, 0);
   /* desktop search /end */
-  /* mobile search /start */ 
+  /* mobile search /start */
   $(".mobile_menu_part_2_search").hide();
   $(".mobile_menu_part_2_search_icon").click(function () {
     if ($(".mobile_menu_part_2_search").is(":visible")) {
@@ -297,15 +344,15 @@ jQuery(document).ready(function ($) {
       $(".mobile_menu_part_2_search_input").focus();
     }
   });
-    $(document).mouseup(function (e) {
-      let div = $(".mobile_menu_part_2_search");
-      if (
-        !div.is(e.target) &&
-        div.has(e.target).length === 0
-      ) {
-        div.fadeOut(50);
-      }
-    });
+  $(document).mouseup(function (e) {
+    let div = $(".mobile_menu_part_2_search");
+    if (
+      !div.is(e.target) &&
+      div.has(e.target).length === 0
+    ) {
+      div.fadeOut(50);
+    }
+  });
   $(".mobile_menu_part_2_search_button_clear").hide(50);
   setInterval(function () {
     if ($(".mobile_menu_part_2_search_input").val().length != 0) {
@@ -314,31 +361,31 @@ jQuery(document).ready(function ($) {
       $(".mobile_menu_part_2_search_button_clear").fadeOut(50);
     }
   }, 0);
-    /* mobile search /end */
-/* hide icons in the header on the contact page /start */
-if (document.querySelector(".contacts_wrap")) {
-  $(".desktop_menu_part_1_social_icons").fadeOut('fast');
-}
-if (document.querySelector(".contacts_wrap")) {
-  $(".mobile_menu_part_1_social_icons").fadeOut('fast');
-}
-/* hide icons in the header on the contact page /end*/
+  /* mobile search /end */
+  /* hide icons in the header on the contact page /start */
+  if (document.querySelector(".contacts_wrap")) {
+    $(".desktop_menu_part_1_social_icons").fadeOut('fast');
+  }
+  if (document.querySelector(".contacts_wrap")) {
+    $(".mobile_menu_part_1_social_icons").fadeOut('fast');
+  }
+  /* hide icons in the header on the contact page /end*/
   if ($(".similar_news_cell").length) {
     $("#similar_news_wrap_1").css("display", "block");
   }
   if ($(".comments-area").length) {
     $("#single_number_comments_wrap").css("display", "block");
   }
- /* disable search, if the search field is empty /start */
- let $submit_search_desktop = $('.desktop_menu_part_2__search_button_search');
- $submit_search_desktop.prop('disabled', true);
- $('.desktop_menu_part_2__search_input').on('input change', function() { //'input change keyup paste'
-     $submit_search_desktop.prop('disabled', !$(this).val());
- });
- let $submit_search_mobile = $('.mobile_menu_part_2_search_button_search');
- $submit_search_mobile.prop('disabled', true);
- $('.mobile_menu_part_2_search_input').on('input change', function() { //'input change keyup paste'
-     $submit_search_mobile.prop('disabled', !$(this).val());
- });
-/* disable search, if the search field is empty /end */
+  /* disable search, if the search field is empty /start */
+  let $submit_search_desktop = $('.desktop_menu_part_2__search_button_search');
+  $submit_search_desktop.prop('disabled', true);
+  $('.desktop_menu_part_2__search_input').on('input change', function () { //'input change keyup paste'
+    $submit_search_desktop.prop('disabled', !$(this).val());
+  });
+  let $submit_search_mobile = $('.mobile_menu_part_2_search_button_search');
+  $submit_search_mobile.prop('disabled', true);
+  $('.mobile_menu_part_2_search_input').on('input change', function () { //'input change keyup paste'
+    $submit_search_mobile.prop('disabled', !$(this).val());
+  });
+  /* disable search, if the search field is empty /end */
 });

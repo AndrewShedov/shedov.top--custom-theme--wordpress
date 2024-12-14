@@ -262,6 +262,11 @@
 <?php endif;
    wp_reset_postdata( );
    ?>
+   <div class="popular_posts_wrap_single_page">
+   <?php
+      get_template_part( 'parts/sorting_posts_by_popularity' );
+           ?>
+            </div>
 <?php if ( $categories = get_categories(  )) : ?> 
 <div class="categories_wrap_single">
    <div class="categories_single">

@@ -257,10 +257,13 @@
 <?php endif;
    wp_reset_postdata( );
    ?>
-<div class="single_width_1025_wrap">
-   <div class="single_width_1025">
+    <div class="popular_posts_wrap_single_page">
+   <?php
+      get_template_part( 'parts/sorting_posts_by_popularity' );
+           ?>
+            </div>
       <?php if ( $categories = get_categories(  )) : ?>
-      <div class="categories_wrap">
+      <div class="categories_wrap_single">
          <div class="categories_single">
             <div class="categories_title_single">
                <h3>All categories</h3>
@@ -280,6 +283,4 @@
       <?php if (comments_open()) { ?>
       <?php comments_template(); ?>
       <?php } ?>
-   </div>
-</div>
 <?php get_footer() ?>

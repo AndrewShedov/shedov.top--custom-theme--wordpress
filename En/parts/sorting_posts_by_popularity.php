@@ -1,4 +1,3 @@
-<div class="popular_posts_wrap">
    <div class="popular_posts_title">
           <h3>Popular posts</h3>
       </div> 
@@ -6,4 +5,3 @@
          <?php sorting_posts_by_number_views_bottom("num=5");
             ?>
    </div>
-</div>
