@@ -156,18 +156,10 @@ padding: 15px;
    padding-bottom: 4px
  }
 
- .mobile_menu_part_2_logo p {
+ .mobile_menu_part_2_logo a {
    font-family: Arial, Helvetica, sans-serif;
    font-size: 22px;
    white-space: nowrap;
- }
-
- .mobile_menu_part_2_logo a {
-   position: absolute;
-   left: 0;
-   top: 0;
-   bottom: 0;
-   right: 0;
  }
 
  .desktop_menu_part_2_wrap {
@@ -676,7 +668,7 @@ padding: 15px;
 
  .UpButton {
    position: fixed;
-   bottom: 5px;
+   bottom: 3px;
    right: 20px;
    z-index: 2;
    cursor: pointer;
@@ -2011,19 +2003,10 @@ border-radius: 6px; */
  }
 
  .desktop_menu_part_1_logo a {
-   position: absolute;
-   left: 0;
-   top: 0;
-   bottom: 0;
-   right: 0;
- }
-
- .desktop_menu_part_1_logo p {
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 23px;
-   white-space: nowrap;
- }
-
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 23px;
+  white-space: nowrap;
+}
  .main_title {
    margin-top: 25px;
    line-height: 28.5px;
@@ -4207,8 +4190,8 @@ bottom: 0 !important;
    }
  }
 
- @media (max-width: 310px) {
-   .mobile_menu_part_2_logo p {
+ @media (max-width: 350px) {
+   .mobile_menu_part_2_logo a {
      white-space: wrap;
    }
  }

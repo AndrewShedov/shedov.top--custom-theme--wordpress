@@ -45,8 +45,7 @@
          <div class="desktop_menu_part_1">
             <div class="desktop_menu_part_1_logo_social_icons_wrap">
                <div class="desktop_menu_part_1_logo">
-                  <a href="https://shedov.top" aria-label="logo - ANDREW SHEDOV"></a>
-                  <p>ANDREW SHEDOV</p>
+                  <a href="https://shedov.top" aria-label="logo - ANDREW SHEDOV">ANDREW SHEDOV</a>
                </div>
                <div class="desktop_menu_part_1_social_icons_wrap">
                   <div class="desktop_menu_part_1_social_icons">
@@ -263,8 +262,7 @@
       <div class="mobile_menu_part_2" id="mobile_menu_part_2">
          <div class="mobile_menu_part_2_logo_wrap">
             <div class="mobile_menu_part_2_logo">
-               <a href="https://shedov.top" aria-label="logo - ANDREW SHEDOV"></a>   
-               <p>ANDREW SHEDOV</p>
+               <a href="https://shedov.top" aria-label="logo - ANDREW SHEDOV">ANDREW SHEDOV</a>   
             </div>
          </div>
          <div class="mobile_menu_part_2_change_theme_mobile_search_icon_burger_wrap">
