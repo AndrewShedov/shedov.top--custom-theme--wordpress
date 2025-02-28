@@ -31,6 +31,16 @@
             <?php get_template_part( 'template-parts/pagination' ); ?>
          </div>
       </div>
+      <div class="popular_posts_wrap_index_page">
+         <?php
+            get_template_part( 'parts/sorting_posts_by_popularity' );
+              ?>
+      </div>
+      <div class="all_categories_index_page">
+         <?php
+            get_template_part( 'parts/all_categories' );
+            ?>
+      </div>
    </div>
 </div>
 <?php

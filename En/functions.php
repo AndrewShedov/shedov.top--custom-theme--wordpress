@@ -568,75 +568,7 @@ function MobileMenuJs()
 }
 /* /Mobile Menu */
 
-// Reply to comment 1
-function add_comment_author_to_reply_link($link, $args, $comment)
-{
-    $comment = get_comment($comment);
-    $as = "";
-    // If no comment author is blank, use 'Anonymous'
-    if (empty($comment->comment_author)) {
-        if (!empty($comment->user_id)) {
-            $user = get_userdata($comment->user_id);
-            $author = $user->user_login;
-        } else {
-            $author = __("Anonymous");
-        }
-    } else {
-        $author = $comment->comment_author;
-    }
-    // If the user provided more than a first name, use only first name
-    if (strpos($author, " ")) {
-        $author = substr($author, 0, strpos($author, " "));
-    }
-    // Replace Reply Link with "Reply to <Author First Name>"
-    $reply_link_text = $args["reply_text"];
-    $link = str_replace($reply_link_text, "Ответ для " . $author, $link);
-    return $link;
-}
-add_filter("comment_reply_link", "add_comment_author_to_reply_link", 10, 3);
-// Reply to comment 2
-// Cancel reply to comment 1
-/*
- * Change the comment reply cancel link to use 'Cancel Reply to
- */
-function add_comment_author_to_cancel_reply_link($formatted_link, $link, $text)
-{
-    $comment = get_comment($comment);
-    // If no comment author is blank, use 'Anonymous'
-    if (empty($comment->comment_author)) {
-        if (!empty($comment->user_id)) {
-            $user = get_userdata($comment->user_id);
-            $author = $user->user_login;
-        } else {
-            $author = __("Anonymous");
-        }
-    } else {
-        $author = $comment->comment_author;
-    }
-    // If the user provided more than a first name, use only first name
-    if (strpos($author, " ")) {
-        $author = substr($author, 0, strpos($author, " "));
-    }
-    // Replace "Cancel Reply" with "Cancel Reply to "
-    $formatted_link = str_ireplace(
-        $text,
-        '<i class=" trr1 fas fa-window-close"></i>' . $as,
-        $formatted_link
-    );
-    /*
-	
-	$formatted_link = str_ireplace($text, 'Отменить ответ для ' . $author, $formatted_link);
- */
-
-    return $formatted_link;
-}
-add_filter(
-    "cancel_comment_reply_link",
-    "add_comment_author_to_cancel_reply_link",
-    10,
-    3
-);
-// Cancel reply to comment 2
+ 
 // PICTURE IF THERE IS NO IMAGE 1
 function no_image()
 {
@@ -659,18 +591,11 @@ function trim_title_chars($count, $after)
     } else {
         $after = "";
     }
-    echo $title . $after;
+    echo $title . $after; 
 }
 //... ellipses at the end TITLE 2
 
-// redirect on exit 1
-add_action("wp_logout", "auto_redirect_after_logout");
-function auto_redirect_after_logout()
-{
-    wp_redirect("https://shedov.top/");
-    exit();
-}
-// redirect on exit 2
+ 
 // Counting the number of page visits 1
 add_action("wp_head", "kama_postviews");
 /**
@@ -999,3 +924,50 @@ add_theme_support("admin-bar", ["callback" => "__return_false"]);
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 // /ban on adding <p> tags in posts
+
+// fix wp v6.7 - 'https://wordpress.org/support/topic/weird-style-code-in-my-website/ --- https://core.trac.wordpress.org/ticket/62413' Error validator.w3.org: CSS: contain-intrinsic-size: Property contain-intrinsic-size doesn't exist.
+add_filter('wp_img_tag_add_auto_sizes', '__return_false');
+// /fix wp v6.7 - 'https://wordpress.org/support/topic/weird-style-code-in-my-website/ --- https://core.trac.wordpress.org/ticket/62413' Error validator.w3.org: CSS: contain-intrinsic-size: Property contain-intrinsic-size doesn't exist.
+
+// disable embeds
+function disable_embeds_code_init() {
+
+    // Remove the REST API endpoint.
+    remove_action( 'rest_api_init', 'wp_oembed_register_route' );
+   
+    // Turn off oEmbed auto discovery.
+    add_filter( 'embed_oembed_discover', '__return_false' );
+   
+    // Don't filter oEmbed results.
+    remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
+   
+    // Remove oEmbed discovery links.
+    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+   
+    // Remove oEmbed-specific JavaScript from the front-end and back-end.
+    remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+    add_filter( 'tiny_mce_plugins', 'disable_embeds_tiny_mce_plugin' );
+   
+    // Remove all embeds rewrite rules.
+    add_filter( 'rewrite_rules_array', 'disable_embeds_rewrites' );
+   
+    // Remove filter of the oEmbed result before any HTTP requests are made.
+    remove_filter( 'pre_oembed_result', 'wp_filter_pre_oembed_result', 10 );
+   }
+   
+   add_action( 'init', 'disable_embeds_code_init', 9999 );
+   
+   function disable_embeds_tiny_mce_plugin($plugins) {
+       return array_diff($plugins, array('wpembed'));
+   }
+   
+   function disable_embeds_rewrites($rules) {
+       foreach($rules as $rule => $rewrite) {
+           if(false !== strpos($rewrite, 'embed=true')) {
+               unset($rules[$rule]);
+           }
+       }
+       return $rules;
+   }
+   
+   // /disable embeds
