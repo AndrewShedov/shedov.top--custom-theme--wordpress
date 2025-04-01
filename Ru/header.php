@@ -42,7 +42,7 @@
    </head>
    <body <?php body_class(); ?>>
       <div class="wrap" id="wrap">
-      <div class="desktop_menu_part_1_wrap" id="desktop_menu_part_1_wrap">
+      <header class="desktop_menu_part_1_wrap" id="desktop_menu_part_1_wrap">
          <div class="desktop_menu_part_1">
             <div class="desktop_menu_part_1_logo_social_icons_wrap">
                <div class="desktop_menu_part_1_logo">
@@ -175,7 +175,7 @@
                <a href="https://shedov.top">En</a>
             </div>
          </div>
-      </div>
+      </header>
       <div class="desktop_menu_part_2_wrap" id="desktop_menu_part_2_wrap">
          <div class="desktop_menu_part_2">
             <nav class="desktop_menu_part_2_navigation">
@@ -327,7 +327,7 @@
             <a href="https://shedov.top">En</a>
          </div>
       </div>
-      <div class="mobile_menu_part_2" id="mobile_menu_part_2">
+      <header class="mobile_menu_part_2" id="mobile_menu_part_2">
          <div class="mobile_menu_part_2_logo_wrap">
             <div class="mobile_menu_part_2_logo">
                <a href="https://shedov.top/ru" aria-label="логотип - ANDREW SHEDOV">ANDREW SHEDOV</a>   
@@ -389,7 +389,7 @@
                   type="submit" id="mobile_searchsubmit">поиск</button>
             </form>
          </div>
-      </div>
+      </header>
       <div class="menu" id="menu">
          <p><?php echo $str11; ?></p>
          <div class="wrap_m">
