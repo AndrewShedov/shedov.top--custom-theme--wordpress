@@ -10,7 +10,7 @@
    </div>
    <div class="post_text">
       <p>
-         <?php echo excerpt(25); ?>
+         <?php echo excerpt(35); ?>
       </p>
    </div>
    <?php if ($categories = get_the_category()): ?>

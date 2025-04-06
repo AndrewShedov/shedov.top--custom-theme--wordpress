@@ -1,11 +1,6 @@
 <?php get_header(); the_post(); ?>
 <div class="single_width_1025_wrap">
    <div class="single_width_1025">
-      <!-- <div class="breadcrumbs_name_title_wrap">
-         <div class="breadcrumbs_name_title">
-         <?php if (function_exists('the_breadcrumb')) the_breadcrumb(); ?>
-         </div>
-         </div> -->
       <div class="single_title_wrap">
          <div class="single_title ">
             <h1><?php the_title()?></h1>

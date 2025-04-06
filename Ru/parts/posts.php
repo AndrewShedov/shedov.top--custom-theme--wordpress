@@ -6,7 +6,7 @@
       <p> <?php trim_title_chars(100, "…"); ?> </p>
    </div>
    <div class="post_text">
-      <p> <?php echo excerpt(21); ?> </p>
+      <p> <?php echo excerpt(30); ?> </p>
    </div>
    <?php if ($categories = get_the_category()): ?> 
    <div class="post_categories">

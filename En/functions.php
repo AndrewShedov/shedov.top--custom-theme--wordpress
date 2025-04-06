@@ -1,10 +1,6 @@
 <?php
 add_theme_support("title-tag");
 add_theme_support("post-thumbnails");
-// This theme uses wp_nav_menu() in one location.
-register_nav_menus([
-    "menu-1" => esc_html__("Primary", "asd"),
-]);
 add_image_size("bigfeatured", 888, 578, true);
 add_image_size("smallsidebar", 88, 69, true);
 add_action("wp_enqueue_scripts", "Add_js_and_css");
@@ -915,10 +911,10 @@ add_action("template_redirect", function () {
     });
 });
 
-// adaptation to different screens admin bar / Start
+// adaptation to different screens admin bar
 // delete html { margin-top: 32px !important; }
 add_theme_support("admin-bar", ["callback" => "__return_false"]);
-// adaptation to different screens admin bar / End
+// /adaptation to different screens admin bar
 
 // ban on adding <p> tags in posts
 remove_filter( 'the_content', 'wpautop' );

@@ -1,10 +1,6 @@
 <?php
 add_theme_support("title-tag");
 add_theme_support("post-thumbnails");
-// This theme uses wp_nav_menu() in one location.
-register_nav_menus([
-    "menu-1" => esc_html__("Primary", "asd"),
-]);
 add_image_size("bigfeatured", 888, 578, true);
 add_image_size("smallsidebar", 88, 69, true);
 add_action("wp_enqueue_scripts", "Add_js_and_css");
@@ -21,14 +17,14 @@ function Add_js_and_css()
         wp_enqueue_script("comment-reply");
     }
 }
-// Gutenberg styles 1
+// Gutenberg styles
 add_action("after_setup_theme", "add_gutenberg_css");
 function add_gutenberg_css()
 {
     add_theme_support("editor-styles");
     add_editor_style("css/style-gutenberg.css");
 }
-// Gutenberg styles 2
+// /Gutenberg styles
 register_nav_menus([
     "head_menu" => "Menu in header",
 ]);
@@ -910,25 +906,11 @@ add_action("template_redirect", function () {
     });
 });
 
-// adaptation to different screens admin bar / Start
+// adaptation to different screens admin bar
 // delete html { margin-top: 32px !important; }
 add_theme_support("admin-bar", ["callback" => "__return_false"]);
-// adaptation to different screens admin bar / End
+// /adaptation to different screens admin bar
 
-
-//  BREADCRUMBS
-// function the_breadcrumb()
-// {
-//     foreach ( get_the_category() as $category ) {
-//         printf(
-//             '<a href="%s" class="link link_text">%s</a>',
-//             esc_url( get_category_link( $category ) ),
-//             esc_html( $category->name )
-//         );
-//     }
-
-// }
- //  /BREADCRUMBS
  // ban on adding <p> tags in posts
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );

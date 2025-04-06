@@ -396,7 +396,7 @@
             <div class="menu-modal cover-modal">
                <div class="menu-wrapper ">
                   <?php
-                     $mobile_menu_location = "Mobile_Menu_1";
+                     $mobile_menu_location = "MobileMenu";
                      if ("expanded" !== $mobile_menu_location) { ?> 
                   <nav
                      class="mobile-menu">
@@ -417,7 +417,7 @@
                                "show_toggles" => true,
                            ]);
                            } ?>
-                     </ul>
+                     </ul> 
                   </nav>
                   <?php }
                      ?> 

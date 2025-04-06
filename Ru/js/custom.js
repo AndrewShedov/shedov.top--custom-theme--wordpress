@@ -8,7 +8,6 @@ let ThemeStatus = window.localStorage.getItem("darkTheme")
   JSON.parse(window.localStorage.getItem("darkTheme"))
   :
   userColorTheme
-
 function ChangeTheme() {
   ThemeStatus = !ThemeStatus,
     ThemeStatus ?
@@ -29,7 +28,6 @@ function ChangeTheme() {
         document.querySelector(".sun_icon_mobile").style.display = 'none'
       )
 }
-
 ThemeStatus ?
   (
     html.setAttribute('data-dark-theme', "true"),
@@ -46,19 +44,15 @@ ThemeStatus ?
     document.querySelector(".sun_icon_mobile").style.display = 'none'
   )
 // /Dark theme 
-
 document.addEventListener("DOMContentLoaded", function () {
-  // adaptation to different screens admin bar /Start
+  // adaptation to different screens admin bar
   // in the header
   if (document.body.classList.contains('admin-bar')) {
     let wpAdminbarHeight = document.getElementById('wpadminbar').offsetHeight;
     document.getElementById("desktop_menu_part_1_wrap").style.marginTop = wpAdminbarHeight + "px", document.getElementById("mobile_menu_part_1").style.marginTop = wpAdminbarHeight + "px", document.getElementById("mobile_menu_part_2").style.top = wpAdminbarHeight + "px", document.getElementById("desktop_menu_part_2_wrap").style.top = wpAdminbarHeight + "px"
   }
-  // in the footer
-  // if (document.body.classList.contains('admin-bar')) {
-  //   document.getElementById("UpButton").style.bottom = wpAdminbarHeight+ 12 +"px"
-  // }
-  // adaptation to different screens admin bar /End
+  // /in the footer
+  // /adaptation to different screens admin bar
   function initCodeCopy() {
     const codeBlocks = document.querySelectorAll('code[class*="language-"]');
     codeBlocks.forEach((block) => {
@@ -153,8 +147,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   initCodeCopy()
-  /* single.php 1 */
-  /* single_share_link 1 */
+  /* single.php */
+  /* single_share_link */
   document.querySelectorAll(".single_share_copy_icon").forEach((element) => {
     element.addEventListener("click", (event) => {
       const href = element.getAttribute('data-href');
@@ -167,11 +161,11 @@ document.addEventListener("DOMContentLoaded", function () {
       element.parentElement.querySelector(".single_share_copy_notification").querySelector("p").textContent = "Копировать";
     });
   });
-  /* single_share_link 2 */
-  /* single.php 2 */
-  /*index.php 1*/
-  /* post cell share 1 */
-  /*share list open/close 1*/
+  /* /single_share_link */
+  /* /single.php */
+  /* index.php */
+  /* post cell share */
+  /*share list open/close */
   const ob = document.querySelector("html");
   ob.addEventListener("click", (e) => {
     const o = e.target.closest(".post_share");
@@ -214,8 +208,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }, timeout);
     }
   }
-  /* post cell share 2 */
-  /* post cell share link 1 */
+  /* /post cell share */
+  /* post cell share link */
   ob.addEventListener("click", (e) => {
     const o = e.target.closest(".post__share_link");
     if (!o) {
@@ -240,8 +234,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
   });
-  /* post cell share link 2 */
-  /*index.php 2*/
+  /* /post cell share link */
+  /* /index.php */
   let burger = document.getElementById("burger");
   let mobile_side_burger = document.getElementById("mobile_side_burger");
   let menu = document.getElementById("menu");
@@ -254,6 +248,11 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.toggle("menuMoveLeft", showMenu);
     menu.classList.toggle("menu_shadow", showMenu);
     BodyHiddenOver.classList.toggle("BodyHiddenOver", showMenu);
+    /* shift towards burger 1 */
+      /*
+                  [burger.style].map(v => v.transform = `translateX(${showMenu ? -menuWidth - 25 : 0}px)`);
+           */
+      /* shift towards burger 2 */
   }
   let showMenu = false;
   /////////////////Pressing a Burger
@@ -287,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // /Сookies notification
 });
 jQuery(document).ready(function ($) {
-  /* UP BUTTON */
+  /* /UP BUTTON */
   let offset = 100;
   let speed = 50;
   let duration = 200;
@@ -306,7 +305,7 @@ jQuery(document).ready(function ($) {
     }, speed);
     return false;
   });
-  /* desktop search /start */
+  /* desktop search */
   $(".desktop_menu_part_2__search").hide();
   $(".desktop_menu_part_2__search_icon").click(function () {
     if ($(".desktop_menu_part_2__search").is(":visible")) {
@@ -333,8 +332,8 @@ jQuery(document).ready(function ($) {
       $(".desktop_menu_part_2__search_button_clear").fadeOut(50);
     }
   }, 0);
-  /* desktop search /end */
-  /* mobile search /start */
+  /* /desktop search */
+  /* /mobile search */
   $(".mobile_menu_part_2_search").hide();
   $(".mobile_menu_part_2_search_icon").click(function () {
     if ($(".mobile_menu_part_2_search").is(":visible")) {
@@ -361,22 +360,22 @@ jQuery(document).ready(function ($) {
       $(".mobile_menu_part_2_search_button_clear").fadeOut(50);
     }
   }, 0);
-  /* mobile search /end */
-  /* hide icons in the header on the contact page /start */
+  /* /mobile search */
+  /* /hide icons in the header on the contact page */
   if (document.querySelector(".contacts_wrap")) {
     $(".desktop_menu_part_1_social_icons").fadeOut('fast');
   }
   if (document.querySelector(".contacts_wrap")) {
     $(".mobile_menu_part_1_social_icons").fadeOut('fast');
   }
-  /* hide icons in the header on the contact page /end*/
+  /* /hide icons in the header on the contact page */
   if ($(".similar_news_cell").length) {
     $("#similar_news_wrap_1").css("display", "block");
   }
   if ($(".comments-area").length) {
     $("#single_number_comments_wrap").css("display", "block");
   }
-  /* disable search, if the search field is empty /start */
+  /* disable search, if the search field is empty */
   let $submit_search_desktop = $('.desktop_menu_part_2__search_button_search');
   $submit_search_desktop.prop('disabled', true);
   $('.desktop_menu_part_2__search_input').on('input change', function () { //'input change keyup paste'
@@ -387,5 +386,5 @@ jQuery(document).ready(function ($) {
   $('.mobile_menu_part_2_search_input').on('input change', function () { //'input change keyup paste'
     $submit_search_mobile.prop('disabled', !$(this).val());
   });
-  /* disable search, if the search field is empty /end */
+  /* /disable search, if the search field is empty */
 });
