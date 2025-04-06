@@ -248,11 +248,11 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.toggle("menuMoveLeft", showMenu);
       menu.classList.toggle("menu_shadow", showMenu);
       BodyHiddenOver.classList.toggle("BodyHiddenOver", showMenu);
-      /* shift towards burger 1 */
+      /* shift towards burger */
       /*
                   [burger.style].map(v => v.transform = `translateX(${showMenu ? -menuWidth - 25 : 0}px)`);
            */
-      /* shift towards burger 2 */
+      /* /shift towards burger */
    }
    let showMenu = false;
    /////////////////Pressing a Burger

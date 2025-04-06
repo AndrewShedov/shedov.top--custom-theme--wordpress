@@ -638,7 +638,7 @@
 
  .UpButton {
    position: fixed;
-   bottom: 3px;
+   bottom: 0;
    right: 20px;
    z-index: 2;
    cursor: pointer;
@@ -647,8 +647,8 @@
 
  .UpButton svg {
    fill: var(--up_button_fill);
-   width: 48px;
-   height: 48px;
+   width: 60px;
+   height: 60px;
    z-index: 99;
    position: relative;
  }
