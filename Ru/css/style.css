@@ -637,13 +637,13 @@
  }
 
  .UpButton {
-   position: fixed;
-   bottom: 0;
-   right: 20px;
-   z-index: 2;
-   cursor: pointer;
-   display: none;
- }
+  position: fixed;
+  bottom: -5px;
+  right: 20px;
+  z-index: 2;
+  cursor: pointer;
+  display: none;
+}
 
  .UpButton svg {
    fill: var(--up_button_fill);
@@ -947,7 +947,7 @@
  }
 
  .single_wrap {
-   margin: 11px 15px 0 15px;
+   margin: 17px 15px 0 15px;
  }
 
  .single_wrap strong{
@@ -3802,7 +3802,7 @@
  .resume_wrap {
    display: flex;
    justify-content: center;
-   margin: 16px 0 0;
+   margin-top: 17px;
  }
 
  .resume {
