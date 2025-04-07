@@ -903,14 +903,8 @@
    max-width: 800px;
  }
 
- .single_title_wrap {
-   display: flex;
-   justify-content: center;
-   margin-top: 25px;
- }
-
  .single_title {
-   margin: 0 15px;
+  margin: 25px 15px 0 15px;
  }
 
  .single_title h1 {
@@ -956,6 +950,12 @@
    margin: 11px 15px 0 15px;
  }
 
+ .single_wrap strong{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 31px;
+  font-size: 21px;
+}
+
  .single_wrap a {
    transition: text-decoration 200ms ease;
    text-underline-offset: 2px;
@@ -998,12 +998,6 @@
    font-size: 19px;
  }
 
- .single_date p {
-   font-size: 13px;
-   font-family: Arial, Helvetica, sans-serif;
-   white-space: nowrap;
- }
-
  .single_external_video {
    border-radius: 15px;
    overflow: hidden;
@@ -1032,12 +1026,12 @@
    border-radius: 15px;
  }
 
- .single_title_date_wrap {
+ .single_date {
    margin-top: 15px;
  }
 
- .single_title_date p {
-   font-size: 17px;
+ .single_date p {
+   font-size: 18px;
    font-family: Arial, Helvetica, sans-serif;
    white-space: nowrap;
    text-align: center;
@@ -3928,7 +3922,7 @@
      margin: 0;
    }
 
-   .single_title_wrap {
+   .single_title {
      margin-top: 22px;
    }
 
@@ -3966,12 +3960,6 @@
 
    .search_results_cell_title_text_image_wrap {
      max-width: 100%;
-   }
- }
-
- @media (max-width: 900px) {
-   .single_title h1 {
-     text-align: center;
    }
  }
 

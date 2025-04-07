@@ -1,17 +1,13 @@
 <?php get_header(); the_post(); ?>
 <div class="single_width_1025_wrap">
    <div class="single_width_1025">
-      <div class="single_title_wrap">
-         <div class="single_title ">
+   <div class="single_title ">
             <h1><?php the_title()?></h1>
-         </div>
       </div>
-      <div class="single_title_date_wrap">
-         <div class="single_title_date">
+      <div class="single_date">
             <p>
                <?php the_time('d.m.Y') ?>
             </p>
-         </div>
       </div>
       <div class="single_wrap">
          <?php the_content() ?>
