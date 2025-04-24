@@ -1,5 +1,5 @@
 <?php get_header() ?>
-<div class="width_page_1165_wrap">
+<main class="width_page_1165_wrap">
    <div class="width_page_1165">
       <div class="posts__categories_side__wrap">
          <?php
@@ -9,7 +9,7 @@
             <div class="posts">
                <?php
                   if (have_posts()) : while (have_posts()) : the_post();  
-                   get_template_part( 'parts/posts' );
+                   get_template_part( 'parts/post' );
                       endwhile;
                    endif;
                     ?>
@@ -25,15 +25,15 @@
          </div>
       </div>
    </div>
-</div>
-<div class="popular_posts_wrap_index_page">
-   <?php
-      get_template_part( 'parts/sorting_posts_by_popularity' );
-        ?>
-</div>
-<div class="all_categories_index_page">
-   <?php
-      get_template_part( 'parts/all_categories' );
-      ?>
-</div>
+   <div class="popular_posts_wrap_index_page">
+      <?php
+         get_template_part( 'parts/sorting_posts_by_popularity' );
+           ?>
+   </div>
+   <div class="all_categories_index_page">
+      <?php
+         get_template_part( 'parts/all_categories' );
+         ?>
+   </div>
+</main>
 <?php get_footer() ?>

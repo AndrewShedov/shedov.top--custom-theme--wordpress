@@ -1,13 +1,13 @@
 <?php get_header(); the_post(); ?>
 <div class="single_width_1025_wrap">
-   <div class="single_width_1025">
-   <div class="single_title ">
-            <h1><?php the_title()?></h1>
+   <article class="single_width_1025">
+      <div class="single_title ">
+         <h1><?php the_title()?></h1>
       </div>
       <div class="single_date">
-            <p>
-               <?php the_time('d.m.Y') ?>
-            </p>
+         <p>
+            <?php the_time('d.m.Y') ?>
+         </p>
       </div>
       <div class="single_wrap">
          <?php the_content() ?>
@@ -82,6 +82,9 @@
          </div>
          <div class="single_sub_wrap">
             <div class="single_sub_icons">
+               <div class="single_orcid">
+                  <a rel="noreferrer noopener" href="https://orcid.org/0009-0001-9559-1696" target="_blank" aria-label="link to ORCID">ORCID: 0009-0001-9559-1696</a>
+               </div>
                <div class="single_sub_icons_level_4">
                   <div class="sub_icon_single_wrap  single_sub_icons_level_4__crystal_icon">
                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-5 15 520 477.06" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
@@ -247,7 +250,7 @@
             </div>
             <?php 
                if ( $categories = get_the_category()) : ?>
-            <div class="categories__under_post_wrap">
+            <section class="categories__under_post_wrap">
                <div class="categories__under_post">
                   <div class="categories__under_post_title">
                      <h3>Post categories</h3>
@@ -263,26 +266,26 @@
                   </ul>
                   <?php endif; ?>
                </div>
-            </div>
+            </section>
          </div>
       </div>
       <?php
          $args = array(
          'posts_per_page' => 4,
          'ignore_sticky_posts' => true,
-         'category__in' => $category_ids, // array(1,5,10);
+         'category__in' => $category_ids,
          );
          $query = new WP_Query ( $args);
-         if ($query->have_posts()) : //если посты не найдены
+         if ($query->have_posts()) :
          ?>
-   </div>
+   </article>
 </div>
-<div id="similar_news_wrap_1">
-   <div class="similar_news_wrap">
-      <div class="similar_news_title">
-         <h3>Related posts</h3>
+<div id="similar_posts_wrap_1">
+   <section class="similar_posts_wrap">
+      <div class="similar_posts_title">
+         <h3>Similar posts</h3>
       </div>
-      <div class="similar_news">
+      <div class="similar_posts">
          <?php
             $categories = get_the_category($post->ID);
             if ($categories) {
@@ -299,20 +302,20 @@
             while ($my_query->have_posts()) {
             $my_query->the_post();
             ?>
-         <div class="similar_news_cell">
+         <article class="similar_post">
             <a href="<?php the_permalink() ?>">
-               <div class="similar_news_cell_image">
+               <div class="similar_post_image">
                   <?php
                      no_image()
                      ?>
                </div>
-               <div class="similar_news_cell_title">
-                  <p>
+               <div class="similar_post_title">
+                  <h3>
                      <?php echo mb_strimwidth(get_the_title(), 0, 40,'...'); ?>
-                  </p>
+                  </h3>
                </div>
             </a>
-         </div>
+         </article>
          <?php
             }
             wp_reset_query();
@@ -320,16 +323,14 @@
             }
             ?>
       </div>
-   </div>
+   </section>
 </div>
 <?php endif;
    wp_reset_postdata( );
    ?>
-<div class="popular_posts_wrap_single_page">
    <?php
       get_template_part( 'parts/sorting_posts_by_popularity' );
            ?>
-</div>
 <?php
    get_template_part( 'parts/all_categories' );
    ?>

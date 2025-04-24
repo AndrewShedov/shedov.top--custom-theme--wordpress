@@ -370,8 +370,8 @@ jQuery(document).ready(function ($) {
    }
    /* /hide icons in the header on the contact page */
    /* Hide a block with similar posts and comments if there are none  */
-   if ($(".similar_news_cell").length) {
-      $("#similar_news_wrap_1").css("display", "block");
+   if ($(".similar_post").length) {
+      $("#similar_posts_wrap_1").css("display", "block");
    }
    if ($(".comments-area").length) {
       $("#single_number_comments_wrap").css("display", "block");

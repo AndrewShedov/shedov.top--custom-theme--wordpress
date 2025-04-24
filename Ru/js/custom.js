@@ -369,8 +369,8 @@ jQuery(document).ready(function ($) {
     $(".mobile_menu_part_1_social_icons").fadeOut('fast');
   }
   /* /hide icons in the header on the contact page */
-  if ($(".similar_news_cell").length) {
-    $("#similar_news_wrap_1").css("display", "block");
+  if ($(".similar_post").length) {
+    $("#similar_posts_wrap_1").css("display", "block");
   }
   if ($(".comments-area").length) {
     $("#single_number_comments_wrap").css("display", "block");

@@ -24,7 +24,7 @@
                $the_query->the_post();
                ?>
             <?php
-               get_template_part( 'parts/search_posts' );
+               get_template_part( 'parts/post_in_search' );
                  ?>
             <?php
                }

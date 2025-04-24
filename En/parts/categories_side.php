@@ -1,5 +1,5 @@
 <?php if ( $categories = get_categories(  )) : ?>
-    <div class="categories_side_wrap">
+    <section class="categories_side_wrap">
       <div class="categories_side">
         <div class="categories_side_title">
           <h3>All categories</h3>
@@ -15,4 +15,4 @@
         </ul>
         <?php endif; ?>
       </div>
-    </div>
+    </section>

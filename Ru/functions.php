@@ -700,7 +700,7 @@ function sorting_posts_by_number_views_left_sidebar($args = "")
     $out = $x = "";
     preg_match("!{date:(.*?)}!", $format, $date_m);
     foreach ($posts as $pst) {
-        $x = "popular_posts_cell__left_sidebar";
+        $x = "popular_post_left_sidebar";
         $LinkArticle = get_permalink($pst->ID);
         $image = get_the_post_thumbnail($pst->ID);
         // Title length
@@ -735,17 +735,17 @@ function sorting_posts_by_number_views_left_sidebar($args = "")
         //with pictures
         //$out .= "\n<div class='$x'>". $image ."$Sformat</div>";
         $out .=
-            "<div class='popular_posts_cell__left_sidebar'>
-						<a aria-label='популярный пост' class='popular_posts_cell__left_sidebar_all_link' href=" .
+            "<article class='popular_post_left_sidebar'>
+						<a aria-label='популярный пост' class='popular_post_left_sidebar_all_link' href=" .
             $LinkArticle .
             "></a>
-            <div class='popular_posts_cell__left_sidebar_image'>" .
+            <div class='popular_post_left_sidebar_image'>" .
             $image .
-            "</div><div class='popular_posts_cell__left_sidebar_title'>
-		<p>" .
+            "</div><div class='popular_post_left_sidebar_title'>
+		<h3>" .
             $Title .
-            "</p></div></div>";
-        //$out .= "<div class="'popular_posts_cell_image_wrap'">". $image ."</div>";
+            "</h3></div></article>";
+        //$out .= "<div class="'popular_post_image'">". $image ."</div>";
     }
     if ($cache) {
         wp_cache_add($cache_key, $out);
@@ -807,7 +807,7 @@ function sorting_posts_by_number_views_bottom($args = "")
     $out = $x = "";
     preg_match("!{date:(.*?)}!", $format, $date_m);
     foreach ($posts as $pst) {
-        $x = "popular_posts_cell";
+        $x = "popular_post";
         $LinkArticle = get_permalink($pst->ID);
         $image = get_the_post_thumbnail($pst->ID);
         // Header length
@@ -842,15 +842,15 @@ function sorting_posts_by_number_views_bottom($args = "")
         //with pictures
         //$out .= "\n<div class='$x'>". $image ."$Sformat</div>";
         $out .=
-            "<div class='popular_posts_cell'><a href=" .
+            "<article class='popular_post'><a href=" .
             $LinkArticle .
-            "><div class='popular_posts_cell_image_wrap'>" .
+            "><div class='popular_post_image'>" .
             $image .
-            "</div><div class='popular_posts_cell_title_wrap'>
+            "</div><div class='popular_post_title'>
 		<h3>" .
             $Title .
-            "</h3></div></a></div>";
-        //$out .= "<div class="'popular_posts_cell_image_wrap'">". $image ."</div>";
+            "</h3></div></a></article>";
+        //$out .= "<div class="'popular_post_image'">". $image ."</div>";
     }
     if ($cache) {
         wp_cache_add($cache_key, $out);
@@ -961,3 +961,20 @@ function disable_embeds_code_init() {
        return $rules;
    }
    // /disable embeds
+
+
+
+// disable speculative loading
+add_filter( 'wp_speculation_rules_configuration', '__return_null' );
+// /disable speculative loading
+
+// hide main title
+function hide_main_title($classes) {
+    // add main title id
+    if (is_page(array(13, 10, 18, 19, 16, 8))) {
+      $classes[] = 'hide-main-title';
+    }
+    return $classes;
+  }
+  add_filter('body_class', 'hide_main_title');
+// /hide main title

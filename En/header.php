@@ -327,7 +327,7 @@
             <a href="https://shedov.top/ru">Ru</a>
          </div>
       </div>
-      <header class="mobile_menu_part_2" id="mobile_menu_part_2">
+      <div class="mobile_menu_part_2" id="mobile_menu_part_2">
          <div class="mobile_menu_part_2_logo_wrap">
             <div class="mobile_menu_part_2_logo">
                <a href="https://shedov.top" aria-label="logo - ANDREW SHEDOV">ANDREW SHEDOV</a>   
@@ -390,7 +390,7 @@
                   type="submit" id="mobile_searchsubmit">search</button> 
             </form>
          </div>
-      </header>
+      </div>
       <div class="menu" id="menu">
          <p><?php echo $str11; ?></p>
          <div class="wrap_m">
