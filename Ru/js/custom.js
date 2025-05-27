@@ -277,13 +277,13 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.toggle("menu_shadow", showMenu);
     }
   };
-  // Сookies notification 
-  window.localStorage.getItem("СookiesAcceptRU") ? document.getElementById("cookies_wrap").style.display = "none" : document.getElementById("cookies_wrap").style.display = "flex";
+  // Cookies notification 
+  window.localStorage.getItem("CookiesAcceptRU") ? document.getElementById("cookies_wrap").style.display = "none" : document.getElementById("cookies_wrap").style.display = "flex";
   document.getElementById('cookies_accept_button').onclick = function () {
-    window.localStorage.setItem("СookiesAcceptRU", true)
+    window.localStorage.setItem("CookiesAcceptRU", true)
     document.getElementById("cookies_wrap").style.display = "none";
   };
-  // /Сookies notification
+  // /Cookies notification
 });
 jQuery(document).ready(function ($) {
   /* /UP BUTTON */

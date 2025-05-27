@@ -984,3 +984,35 @@ function hide_main_title($classes) {
   }
   add_filter('body_class', 'hide_main_title');
 // /hide main title
+
+// disable - wptexturize
+add_filter( 'run_wptexturize', '__return_false' );
+// /disable - wptexturize
+
+// remove trailing slash
+function remove_trailing_slashes_from_void_elements($buffer) {
+    $search = [
+        '/<meta([^>]*?)\s*\/>/i',
+        '/<link([^>]*?)\s*\/>/i',
+        '/<input([^>]*?)\s*\/>/i',
+        '/<img([^>]*?)\s*\/>/i',
+        '/<br([^>]*?)\s*\/>/i',
+        '/<hr([^>]*?)\s*\/>/i',
+    ];
+    $replace = [
+        '<meta$1>',
+        '<link$1>',
+        '<input$1>',
+        '<img$1>',
+        '<br$1>',
+        '<hr$1>',
+    ];
+
+    return preg_replace($search, $replace, $buffer);
+}
+
+function start_buffer_cleaning() {
+    ob_start('remove_trailing_slashes_from_void_elements');
+}
+add_action('get_header', 'start_buffer_cleaning');
+// /remove trailing slash

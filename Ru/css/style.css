@@ -982,7 +982,7 @@
 
  .single_wrap h2 {
    font-family: Arial, Helvetica, sans-serif;
-   line-height: 31px;
+   line-height: 35px;
    font-size: 21px;
  }
 
@@ -1004,7 +1004,7 @@
  }
 
  .single_orcid a {
-   font-size: 14.3px;
+   font-size: 14.4px;
    font-family: Arial, Helvetica, sans-serif;
    text-decoration: none !important;
  }
@@ -1046,6 +1046,16 @@
    font-family: Arial, Helvetica, sans-serif;
    white-space: nowrap;
    text-align: center;
+ }
+
+ .single_contents nav {
+   margin-top: 7px;
+ }
+
+ .single_contents a {
+   text-decoration: none !important;
+   transition: text-decoration 200ms ease !important;
+   text-decoration-color: rgba(255, 255, 255, 0) !important;
  }
 
  /* hide comments */
@@ -1124,7 +1134,7 @@
    align-items: baseline;
    box-shadow: var(--similar_post_box-shadow);
  }
- 
+
  .similar_post a {
    text-decoration: none;
  }
@@ -1154,7 +1164,7 @@
    line-height: 21px;
    font-family: Arial, Helvetica, sans-serif;
    word-wrap: break-word;
-  word-break: break-word;
+   word-break: break-word;
  }
 
  .similar_post_image {
@@ -1941,6 +1951,7 @@
    white-space: nowrap !important;
    border: 0 !important;
  }
+
  /* /hide title */
 
  /* Page - About me */
@@ -2578,7 +2589,7 @@
  }
 
  /* /Page - Portfolio */
- /* Сookies notification */
+ /* Cookies notification */
  .cookies_wrap {
    box-shadow: var(--cookies_wrap_box-shadow);
    background-color: var(--cookies_wrap_background-color);
@@ -2659,7 +2670,7 @@
    }
  }
 
- /* /Сookies notification */
+ /* /Cookies notification */
  /* Page - cookies-policy */
 
  .cookies_policy {
@@ -4117,6 +4128,14 @@
 
  /* hover */
  @media (min-width: 1000px) {
+   .single_contents a:hover {
+     transition: text-decoration 400ms ease !important;
+     text-underline-offset: 2px !important;
+     text-decoration: underline !important;
+     -webkit-text-decoration: underline !important;
+     text-decoration-thickness: 1.5px !important;
+   }
+
    .documentation_crystal_entry a:hover {
      transition: text-decoration 400ms ease !important;
      text-underline-offset: 2px !important;
