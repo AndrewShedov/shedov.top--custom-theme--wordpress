@@ -328,9 +328,11 @@
 <?php endif;
    wp_reset_postdata( );
    ?>
+<section class="popular_posts_wrap_single_page">
    <?php
       get_template_part( 'parts/sorting_posts_by_popularity' );
            ?>
+</section>
 <?php
    get_template_part( 'parts/all_categories' );
    ?>

@@ -7,7 +7,7 @@
             ?>   
          <div class="search_wrap">
             <?php
-               $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+               $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                $s = get_search_query();
                $args = array(
                'posts_per_page' => 5,
@@ -66,11 +66,11 @@
       </div>
    </div>
    <?php wp_reset_postdata(); ?>
-   <div class="popular_posts_wrap_search_page">
+   <section class="popular_posts_wrap_search_page">
       <?php
          get_template_part( 'parts/sorting_posts_by_popularity' );
               ?>
-   </div>
+   </section>
    <div class="all_categories_search_page">
       <?php
          get_template_part( 'parts/all_categories' );

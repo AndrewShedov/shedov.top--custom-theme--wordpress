@@ -1010,3 +1010,4 @@ function start_buffer_cleaning() {
 }
 add_action('get_header', 'start_buffer_cleaning');
 // /remove trailing slash
+

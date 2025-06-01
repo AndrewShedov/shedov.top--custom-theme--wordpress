@@ -1721,7 +1721,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .pagination_wrap {
-  display: flex;
+  display: none;
   justify-content: center;
   margin: 5px 15px 35px 15px;
 }
@@ -3366,7 +3366,7 @@ button.pswp__button:hover {
 .post__share_list_title p {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 16.7px;
 }
 
 .post_views_wrap {
@@ -4507,7 +4507,8 @@ button.pswp__button:hover {
 /* Variables*/
 /* Dark theme*/
 .dark-mode {
-  --scrollbar_color_global: #262626 #191919;
+  /* --scrollbar_color_global: #262626 #191919; */
+  --scrollbar_color_global: #262626 #121212;
 }
 
 [data-dark-theme="true"] {
@@ -4532,14 +4533,14 @@ button.pswp__button:hover {
   --token_class_name_color: rgb(134 160 189);
   --language_javascript_color: rgb(134 160 189);
   --token_interpolation_punctuation_color: rgb(141 117 184);
-  --interpolation_color: rgb(202 202 202);
+  --interpolation_color: rgb(176 176 176);
   --token_class_color: rgb(141 117 184);
   --token_property_color: rgb(134 160 189);
   --language_css_color: rgb(134 160 189);
   --token_unit_color: rgb(219 103 116);
   --token_number_color: rgb(134 160 189);
   --token_rule_color: rgb(219 103 116);
-  --token_regex_color: rgb(202 202 202);
+  --token_regex_color: rgb(176 176 176);
   /* / Prism  dark */
   --portfolio_example_box-shadow: 0 4px 9px 0 rgba(0, 255, 255, 0.7);
   --portfolio_example_hover_box-shadow: 0 5px 11px 2px rgba(0, 255, 255, 0.7);
@@ -4565,7 +4566,8 @@ button.pswp__button:hover {
   --stroke_social_icons_hover: #919191;
   --fill_hover: #b9b9b9;
   --stroke: #a1a1a1;
-  --scrollbar_color_global: #262626 #191919;
+  /* --scrollbar_color_global: #262626 #191919; */
+  --scrollbar_color_global: #262626 #121212;
   --filling_background-color: #121212;
   --fill_no_avatar_global: #666666;
   --color: #a1a1a1;
@@ -4689,7 +4691,8 @@ button.pswp__button:hover {
   --stroke_social_icons_hover: #282828;
   --fill_hover: rgba(37, 36, 36, 0.972);
   --stroke: #000000;
-  --scrollbar_color_global: #65656544 #f1f1f1ec;
+  /* --scrollbar_color_global: #65656544 #f1f1f1ec; */
+  --scrollbar_color_global: #65656544 #ffffff;
   --filling_background-color: #ffffff;
   --fill_no_avatar_global: #000000;
   --color: #000000;
