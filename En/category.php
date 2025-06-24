@@ -28,7 +28,7 @@
       </div>
       <div class="pagination_wrap">
          <div class="pagination">
-            <?php get_template_part( 'template-parts/pagination' ); ?>
+            <?php get_template_part( 'parts/pagination' ); ?>
          </div>
       </div>
    </div>
