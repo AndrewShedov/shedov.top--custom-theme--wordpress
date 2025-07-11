@@ -1011,3 +1011,25 @@ function start_buffer_cleaning() {
 add_action('get_header', 'start_buffer_cleaning');
 // /remove trailing slash
 
+// formats a large number into a short, human-readable form.
+/**
+ * Examples:
+ * - 1200 => "1.2K"
+ * - 2500000 => "2.5M"
+ * - 7200000000 => "7.2B"
+ *
+ * @param int|float $number The number to format.
+ * @return string The formatted short version of the number.
+ */
+function format_number_short($number) {
+  if ($number >= 1_000_000_000) {
+    return round($number / 1_000_000_000, 1) . 'B';
+  } elseif ($number >= 1_000_000) {
+    return round($number / 1_000_000, 1) . 'M';
+  } elseif ($number >= 1_000) {
+    return round($number / 1_000, 1) . 'K';
+  } else {
+    return $number;
+  }
+}
+// /formats a large number into a short, human-readable form.

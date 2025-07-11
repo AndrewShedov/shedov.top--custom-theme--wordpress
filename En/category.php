@@ -12,7 +12,52 @@
          <?php
             get_template_part( 'parts/sorting_posts_by_popularity__left_sidebar' );
             ?>
+            <!-- sorting posts -->
+         <?php
+            $sort = isset($_GET['sort']) ? $_GET['sort'] : 'new';
+            $category_id = get_queried_object_id();
+            $args = array(
+              'post_type' => 'post',
+              'cat' => $category_id,
+              'posts_per_page' => get_option('posts_per_page'),
+              'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
+            );
+            
+            switch ($sort) {
+              case 'old':
+                $args['orderby'] = 'date';
+                $args['order'] = 'ASC';
+                break;
+              case 'popular':
+                $args['orderby'] = 'meta_value_num';
+                $args['meta_key'] = 'views';
+                $args['order'] = 'DESC';
+                break;
+              default:
+                $args['orderby'] = 'date';
+                $args['order'] = 'DESC';
+                break;
+            }
+            
+            $wp_query = new WP_Query($args);
+            ?>
+         <!-- /sorting posts -->
          <div class="posts_wrap">
+            <!-- sorting posts -->
+            <nav class="sort_menu">
+               <ul class="sort_menu_list">
+                  <li class="<?php echo ($sort === 'new' ? 'current-menu-item' : ''); ?>">
+                     <a href="?sort=new">New</a>
+                  </li>
+                  <li class="<?php echo ($sort === 'old' ? 'current-menu-item' : ''); ?>">
+                     <a href="?sort=old">Old</a>
+                  </li>
+                  <li class="<?php echo ($sort === 'popular' ? 'current-menu-item' : ''); ?>">
+                     <a href="?sort=popular">Popular</a>
+                  </li>
+               </ul>
+            </nav>
+            <!-- /sorting posts -->
             <div class="posts">
                <?php
                   if (have_posts()) : while (have_posts()) : the_post();  

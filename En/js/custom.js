@@ -1,50 +1,44 @@
-// Dark theme 
-let html = document.getElementsByTagName('html')[0];
-const userColorTheme = window.matchMedia(
-   "(prefers-color-scheme: dark)",
-).matches;
-let ThemeStatus = window.localStorage.getItem("darkTheme")
-   ?
-   JSON.parse(window.localStorage.getItem("darkTheme"))
-   :
-   userColorTheme
-function ChangeTheme() {
-   ThemeStatus = !ThemeStatus,
-      ThemeStatus ?
-         (localStorage.setItem("darkTheme", ThemeStatus),
-            html.setAttribute('data-dark-theme', ThemeStatus),
-            document.querySelector(".sun").style.display = 'block',
-            document.querySelector(".half_moon").style.display = 'none',
-            document.querySelector(".sun_icon_mobile").style.display = 'block',
-            document.querySelector(".half_moon_icon_mobile").style.display = 'none'
-         )
-         :
-         (
-            localStorage.setItem("darkTheme", ThemeStatus),
-            html.setAttribute('data-dark-theme', ThemeStatus),
-            document.querySelector(".half_moon").style.display = 'block',
-            document.querySelector(".sun").style.display = 'none',
-            document.querySelector(".half_moon_icon_mobile").style.display = 'block',
-            document.querySelector(".sun_icon_mobile").style.display = 'none'
-         )
-}
-ThemeStatus ?
-   (
-      html.setAttribute('data-dark-theme', "true"),
-      document.querySelector(".half_moon").style.display = 'none',
-      document.querySelector(".sun").style.display = 'block',
-      document.querySelector(".sun_icon_mobile").style.display = 'block',
-      document.querySelector(".half_moon_icon_mobile").style.display = 'none'
-   )
-   :
-   (html.setAttribute('data-dark-theme', "false"),
-      document.querySelector(".half_moon").style.display = 'block',
-      document.querySelector(".sun").style.display = 'none',
-      document.querySelector(".half_moon_icon_mobile").style.display = 'block',
-      document.querySelector(".sun_icon_mobile").style.display = 'none'
-   )
-// /Dark theme 
 document.addEventListener("DOMContentLoaded", function () {
+
+   // dark theme
+   const html = document.documentElement;
+   const userColorTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+   let ThemeStatus = window.localStorage.getItem("darkTheme")
+      ? JSON.parse(window.localStorage.getItem("darkTheme"))
+      : userColorTheme;
+
+   function applyThemeUI(status) {
+      html.setAttribute("data-dark-theme", status ? "true" : "false");
+
+      const sun = document.querySelector(".sun");
+      const moon = document.querySelector(".half_moon");
+      const sunMobile = document.querySelector(".sun_icon_mobile");
+      const moonMobile = document.querySelector(".half_moon_icon_mobile");
+
+      if (!sun || !moon || !sunMobile || !moonMobile) return;
+
+      if (status) {
+         sun.style.display = "block";
+         moon.style.display = "none";
+         sunMobile.style.display = "block";
+         moonMobile.style.display = "none";
+      } else {
+         sun.style.display = "none";
+         moon.style.display = "block";
+         sunMobile.style.display = "none";
+         moonMobile.style.display = "block";
+      }
+   }
+
+   applyThemeUI(ThemeStatus);
+
+   window.ChangeTheme = function () {
+      ThemeStatus = !ThemeStatus;
+      localStorage.setItem("darkTheme", ThemeStatus);
+      applyThemeUI(ThemeStatus);
+   };
+   // /dark theme
+
    // adaptation to different screens admin bar 
    // in the header
    if (document.body.classList.contains('admin-bar')) {
@@ -240,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function () {
    let mobile_side_burger = document.getElementById("mobile_side_burger");
    let menu = document.getElementById("menu");
    let BodyHiddenOver = document.body;
-   ///////////////Function opening menu
+   // Function opening menu
    function calcShowMenu(showMenu) {
       burger.classList.toggle("burger-open", showMenu);
       mobile_side_burger.classList.toggle("burger-open", showMenu);
@@ -255,22 +249,22 @@ document.addEventListener("DOMContentLoaded", function () {
       /* /shift towards burger */
    }
    let showMenu = false;
-   /////////////////Pressing a Burger
+   // Pressing a Burger
    burger.addEventListener("click", () => calcShowMenu((showMenu = !showMenu)));
    mobile_side_burger.addEventListener("click", () =>
       calcShowMenu((showMenu = !showMenu))
    );
-   /////////////Closing when pressed outside the menu
+   // Closing when pressed outside the menu
    window.addEventListener("mousedown", (event) => {
       if (!event.target.closest(".menu, .burger"))
          calcShowMenu((showMenu = false));
    });
-   /////////////Closing when pressed outside the menu for mobile
+   // Closing when pressed outside the menu for mobile
    window.addEventListener("touchstart", (event) => {
       if (!event.target.closest(".menu, .burger"))
          calcShowMenu((showMenu = false));
    });
-   /////////////Closing when you click on a menu item
+   // Closing when you click on a menu item
    document.getElementById("menu").onclick = function (event) {
       let target = event.target;
       if (target.tagName == "A") {

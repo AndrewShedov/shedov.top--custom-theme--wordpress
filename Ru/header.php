@@ -4,39 +4,50 @@
       <meta charset="<?php bloginfo("charset"); ?>">
       <meta name=viewport content="width=device-width, initial-scale=1.0">
       <meta name="yandex-verification" content="4f14f40864f7bdfd" />
-      <script>  
-         // lazy loading Yandex metrika
-         let lazyloadingScript_sensor = false;
-         window.addEventListener('scroll', () => {
-             if (lazyloadingScript_sensor === false) {
-                 lazyloadingScript_sensor = true;
-                 setTimeout(() => {
-                     // Yandex.Metrika counter
-                     (function(m, e, t, r, i, k, a) {
-                         m[i] = m[i] || function() {
-                             (m[i].a = m[i].a || []).push(arguments)
-                         };
-                         m[i].l = 1 * new Date();
-                         for (var j = 0; j < document.scripts.length; j++) {
-                             if (document.scripts[j].src === r) {
-                                 return;
-                             }
-                         }
-                         k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-                     })
-                     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      <script>
+         // dark theme
+                 (function () {
+                   const userPref = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                   const savedTheme = localStorage.getItem("darkTheme");
+                   const darkMode = savedTheme !== null ? JSON.parse(savedTheme) : userPref;
+                   if (darkMode) {
+                     document.documentElement.setAttribute("data-dark-theme", "true");
+                   }
+                 })();
+              // /dark theme
          
-                     ym(96081739, "init", {
-                         clickmap: true,
-                         trackLinks: true,
-                         accurateTrackBounce: true,
-                         webvisor: true
-                     });
-                     // /Yandex.Metrika counter
-                 }, 1000)
-             }
-         });
-         // /lazy loading Yandex metrika
+                 // lazy loading Yandex metrika
+                 let lazyloadingScript_sensor = false;
+                 window.addEventListener('scroll', () => {
+                     if (lazyloadingScript_sensor === false) {
+                         lazyloadingScript_sensor = true;
+                         setTimeout(() => {
+                             // Yandex.Metrika counter
+                             (function(m, e, t, r, i, k, a) {
+                                 m[i] = m[i] || function() {
+                                     (m[i].a = m[i].a || []).push(arguments)
+                                 };
+                                 m[i].l = 1 * new Date();
+                                 for (var j = 0; j < document.scripts.length; j++) {
+                                     if (document.scripts[j].src === r) {
+                                         return;
+                                     }
+                                 }
+                                 k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+                             })
+                             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+                 
+                             ym(96081739, "init", {
+                                 clickmap: true,
+                                 trackLinks: true,
+                                 accurateTrackBounce: true,
+                                 webvisor: true
+                             });
+                             // /Yandex.Metrika counter
+                         }, 1000)
+                     }
+                 });
+                 // /lazy loading Yandex metrika
       </script>
       <?php wp_head(); ?> 
    </head>
@@ -417,7 +428,7 @@
                                "show_toggles" => true,
                            ]);
                            } ?>
-                     </ul> 
+                     </ul>
                   </nav>
                   <?php }
                      ?> 

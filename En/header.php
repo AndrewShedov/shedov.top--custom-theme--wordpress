@@ -4,7 +4,17 @@
       <meta charset="<?php bloginfo("charset"); ?>">
       <meta name=viewport content="width=device-width, initial-scale=1.0">
       <meta name="yandex-verification" content="4f14f40864f7bdfd" />
-      <script> 
+      <script>
+      // dark theme
+                 (function () {
+                   const userPref = window.matchMedia("(prefers-color-scheme: dark)").matches;
+                   const savedTheme = localStorage.getItem("darkTheme");
+                   const darkMode = savedTheme !== null ? JSON.parse(savedTheme) : userPref;
+                   if (darkMode) {
+                     document.documentElement.setAttribute("data-dark-theme", "true");
+                   }
+                 })();
+              // /dark theme 
          // lazy loading Yandex metrika 
          let lazyloadingScript_sensor = false;
          window.addEventListener('scroll', () => {

@@ -1,14 +1,83 @@
 <?php get_header(); the_post(); ?>
 <div class="single_width_1025_wrap">
    <article class="single_width_1025">
-         <div class="single_title ">
-            <h1><?php the_title()?></h1>
+      <div class="single_title ">
+         <h1><?php the_title()?></h1>
       </div>
-      <div class="single_date">
-            <p>
-               <?php the_time('d.m.Y') ?>
-            </p>
+      <!-- post publication date -->
+      <div class="single_post_date_views_wrap">
+         <div class="single_post_date_views">
+            <div class="single_post_date_wrap">
+               <?php
+                  $published = get_the_time('U');
+                  $updated = get_the_modified_time('U');
+                  $current_year = date('Y');
+                  
+                  $pub_year = date('Y', $published);
+                  $upd_year = date('Y', $updated);
+                  
+                  $pub_format = ($pub_year === $current_year) ? 'j F' : 'j F Y';
+                  $upd_format = ($upd_year === $current_year) ? 'j F' : 'j F Y';
+                  
+                  $pub_date = date_i18n($pub_format, $published);
+                  $upd_date = date_i18n($upd_format, $updated);
+                  ?>
+               <?php if ($published === $updated) : ?>
+               <div class="single_post_date">
+                  <p><?php echo $pub_date; ?></p>
+               </div>
+               <?php else : ?>
+               <div class="single_post_date">
+                  <p>доб: <?php echo $pub_date; ?></p>
+                  <div class="single_post_date_upd_wrap">
+                     <div class="single_post_date_upd">
+                        <div class="single_post_date_upd_separator_wrap">
+                           <span class="single_post_date_upd_separator_svg" aria-hidden="true">
+                              <svg viewBox="0 0 297 297" class="heartbeat_single">
+                                 <path
+                                    d="M277.47,49.459c-13.551-13.78-33.892-21.064-58.824-21.064c-30.677,0-57.294,17.727-70.144,43.475
+                                    c-12.85-25.748-39.466-43.475-70.144-43.475c-23.853,0-44.62,7.79-58.475,21.934C6.41,64.085-0.458,83.648,0.024,106.902
+                                    c0.273,13.19,3.447,26.465,9.483,39.782h51.16l18.615-55.847c1.115-3.345,4.247-5.602,7.773-5.602s6.658,2.256,7.773,5.602
+                                    l33.193,99.58l12.71-38.131c1.115-3.345,4.247-5.602,7.773-5.602H287.38c5.831-12.691,9.37-26.022,9.602-39.815
+                                    C297.393,82.359,290.828,63.043,277.47,49.459z"
+                                    fill="currentColor"
+                                    />
+                                 <path
+                                    d="M135.792,218.917c-1.115,3.345-4.247,5.602-7.773,5.602c-3.526,0-6.658-2.256-7.773-5.602l-33.193-99.58l-12.71,38.131
+                                    c-1.115,3.345-4.247,5.602-7.773,5.602H18.377c12.35,19.664,30.885,39.377,55.545,58.996
+                                    c35.138,27.955,69.518,44.986,70.965,45.697c1.14,0.561,2.377,0.841,3.616,0.841c1.252,0,2.503-0.287,3.654-0.86
+                                    c4.537-2.26,88.196-44.559,126.254-104.674H154.407L135.792,218.917z"
+                                    fill="currentColor"
+                                    />
+                              </svg>
+                           </span>
+                        </div>
+                        <p>обн: <?php echo $upd_date; ?></p>
+                     </div>
+                  </div>
+               </div>
+               <?php endif; ?>
+            </div>
+            <div class="single_post_views_wrap">
+                <div class="single_post_eye">
+                  <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                  <svg  viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                     <g stroke="none" stroke-width="1"   fill-rule="evenodd">
+                        <path d="M14,5.25 C8.16666667,5.25 3.185,8.87833333 1.16666667,14 C3.185,19.1216667 8.16666667,22.75 14,22.75 C19.8333333,22.75 24.815,19.1216667 26.8333333,14 C24.815,8.87833333 19.8333333,5.25 14,5.25 L14,5.25 L14,5.25 Z M14,19.8333333 C10.78,19.8333333 8.16666667,17.22 8.16666667,14 C8.16666667,10.78 10.78,8.16666667 14,8.16666667 C17.22,8.16666667 19.8333333,10.78 19.8333333,14 C19.8333333,17.22 17.22,19.8333333 14,19.8333333 L14,19.8333333 L14,19.8333333 Z M14,10.5 C12.0633333,10.5 10.5,12.0633333 10.5,14 C10.5,15.9366667 12.0633333,17.5 14,17.5 C15.9366667,17.5 17.5,15.9366667 17.5,14 C17.5,12.0633333 15.9366667,10.5 14,10.5 L14,10.5 L14,10.5 Z">
+                        </path>
+                     </g>
+                  </svg>
+               </div>
+               <div class="single_post_number_views">
+                  <?php
+                     $views = get_post_meta($post->ID, "views", true);
+                     echo format_number_short((int)$views);
+                     ?>
+               </div>  
+            </div>
+         </div>
       </div>
+      <!-- / post publication date -->
       <div class="single_wrap">
          <?php the_content() ?>
          <div class="add_comment__on__social_networks___wrap">
@@ -82,9 +151,9 @@
          </div>
          <div class="single_sub_wrap">
             <div class="single_sub_icons">
-            <div class="single_orcid">
-      <a rel="noreferrer noopener" href="https://orcid.org/0009-0001-9559-1696" target="_blank" aria-label="link to ORCID">ORCID: 0009-0001-9559-1696</a>
-      </div>
+               <div class="single_orcid">
+                  <a rel="noreferrer noopener" href="https://orcid.org/0009-0001-9559-1696" target="_blank" aria-label="link to ORCID">ORCID: 0009-0001-9559-1696</a>
+               </div>
                <div class="single_sub_icons_level_4">
                   <div class="sub_icon_single_wrap  single_sub_icons_level_4__crystal_icon">
                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-5 15 520 477.06" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
@@ -276,7 +345,7 @@
          'category__in' => $category_ids, // array(1,5,10);
          );
          $query = new WP_Query ( $args);
-         if ($query->have_posts()) : //если посты не найдены
+         if ($query->have_posts()) : // if the posts are not found
          ?>
    </article>
 </div>
@@ -312,7 +381,7 @@
                <div class="similar_post_title">
                   <h3>
                      <?php echo mb_strimwidth(get_the_title(), 0, 38,'...'); ?>
-            </h3>
+                  </h3>
                </div>
             </a>
          </article>
@@ -328,7 +397,7 @@
 <?php endif;
    wp_reset_postdata( );
    ?>
-   <section class="popular_posts_wrap_single_page">
+<section class="popular_posts_wrap_single_page">
    <?php
       get_template_part( 'parts/sorting_posts_by_popularity' );
            ?>
