@@ -9,6 +9,7 @@
  html[data-dark-theme="false"] body {
    background-color: #ffffff;
  }
+
  /* /dark theme */
 
  :root {
@@ -218,9 +219,19 @@
    position: absolute;
    top: 38px;
    right: 0;
-   display: none;
    margin-right: 15px;
    background: var(--filling_background-color);
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+   transition: opacity 50ms ease, transform 50ms ease, visibility 50ms ease;
+ }
+
+ .desktop_menu_part_2__search.visible {
+   opacity: 1;
+   visibility: visible;
+   pointer-events: auto;
+   transition: opacity 50ms ease;
  }
 
  .desktop_menu_part_2__search form {
@@ -241,7 +252,7 @@
  }
 
  .desktop_menu_part_2__search_button_clear {
-   display: flex;
+   display: none;
    align-items: center;
    border: none;
    padding: 7px;
@@ -423,7 +434,7 @@
  }
 
  .mobile_menu_part_2_search_button_clear {
-   display: flex;
+   display: none;
    align-items: center;
    border: none;
    padding: 7px;
@@ -472,8 +483,18 @@
    position: absolute;
    top: 33px;
    right: 15px;
-   display: none;
    background: var(--filling_background-color);
+   opacity: 0;
+   visibility: hidden;
+   pointer-events: none;
+   transition: opacity 50ms ease, transform 50ms ease, visibility 50ms ease;
+ }
+
+ .mobile_menu_part_2_search.visible {
+   opacity: 1;
+   visibility: visible;
+   pointer-events: auto;
+   transition: opacity 50ms ease;
  }
 
  .mobile_menu_part_2_search form {
@@ -653,7 +674,15 @@
    right: 20px;
    z-index: 2;
    cursor: pointer;
-   display: none;
+   opacity: 0;
+   pointer-events: none;
+   transition: opacity 0.4s ease;
+ }
+
+ .UpButton.visible {
+   opacity: 1;
+   pointer-events: auto;
+   transition: opacity 0.4s ease;
  }
 
  .UpButton svg {
@@ -2026,6 +2055,12 @@
    padding: 4px 0;
  }
 
+ .mobile_menu_part_1_social_icons_fade-out {
+   opacity: 0;
+   pointer-events: none;
+   transition: opacity 200ms ease;
+ }
+
  .mobile_menu_part_1_social_icons__icon_wrap {
    display: flex;
    align-items: center;
@@ -2274,6 +2309,12 @@
    gap: 15px;
  }
 
+ .desktop_menu_part_1_social_icons_fade-out {
+   opacity: 0;
+   pointer-events: none;
+   transition: opacity 200ms ease;
+ }
+
  .desktop_menu_part_1_social_icons__icon_wrap {
    display: flex;
    align-items: center;
@@ -2478,7 +2519,7 @@
 
  .category_name_title_wrap {
    display: flex;
-   margin: 6px 15px -33px 0;
+   margin: 13px 15px -24px 0;
  }
 
  .category_name_title {
@@ -3776,11 +3817,7 @@
    display: flex;
    justify-content: center;
    width: 50%;
-   margin-bottom: 15px;
- }
-
- .sort_menu {
-   margin-bottom: 15px;
+   margin-bottom: 20px;
  }
 
  .sort_menu_list {
@@ -4176,10 +4213,6 @@
 
    .posts_categories_side_wrap__search_page {
      margin-top: 22px;
-   }
-
-   .category_name_title_wrap {
-     margin-top: 4px;
    }
 
    .post_in_search_title_text_image_wrap {

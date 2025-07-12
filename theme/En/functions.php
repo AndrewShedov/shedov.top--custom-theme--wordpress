@@ -3,28 +3,29 @@ add_theme_support("title-tag");
 add_theme_support("post-thumbnails");
 add_image_size("bigfeatured", 888, 578, true);
 add_image_size("smallsidebar", 88, 69, true);
-add_action("wp_enqueue_scripts", "Add_js_and_css");
-function Add_js_and_css()
-{
-    wp_enqueue_style(
-        "main",
-        get_stylesheet_directory_uri() . "/css/style.css",
-        [],
-        time()
-    );
 
-    if (is_singular()) {
-        wp_enqueue_script("comment-reply");
-    }
+// add main style.css
+add_action('wp_enqueue_scripts', 'enqueue_assets');
+
+function enqueue_assets() {
+    wp_enqueue_style(
+        'shedov-style',
+        get_stylesheet_directory_uri() . '/css/style.css',
+        [],
+        filemtime(get_stylesheet_directory() . '/css/style.css')
+    );
 }
-// Gutenberg styles
+// /add main style.css
+
+// gutenberg styles
 add_action("after_setup_theme", "add_gutenberg_css");
 function add_gutenberg_css()
 {
     add_theme_support("editor-styles");
     add_editor_style("css/style-gutenberg.css");
 }
-// /Gutenberg styles
+// /gutenberg styles
+
 register_nav_menus([
     "head_menu" => "Menu in header",
 ]);
@@ -305,7 +306,7 @@ class Cust_Nav_mobile extends Walker_Nav_Menu
         $has_children = array_search("menu-item-has-children", $classes);
         if ($has_children != false):
             $item_output .=
-                '<div class="toggle-button"><svg class="menu_arrow" viewBox="-96 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg></div>';
+                '<div class="toggle-button"  ><svg class="menu_arrow" viewBox="-96 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z"/></svg>';
         endif;
         /**
          * Filters the arguments for a single nav menu item.
@@ -499,16 +500,20 @@ function tutsplus_enqueue_custom_js()
         true
     );
 }
-// Remove jquery jQuery Migrate
-add_filter( 'wp_default_scripts', 'remove_jquery_migrate' );
-function remove_jquery_migrate( $scripts ) {
-	if ( empty( $scripts->registered['jquery'] ) || is_admin() ) {
-		return; 
+
+// remove jQuery on front
+
+function remove_jquery_on_front() {
+	if (!is_admin() && !is_login()) {
+		wp_deregister_script( 'jquery' );
+		wp_deregister_script( 'jquery-core' );
+		wp_deregister_script( 'jquery-migrate' );
 	}
-   $deps = & $scripts->registered['jquery']->deps;
-   $deps = array_diff( $deps, [ 'jquery-migrate' ] );
 }
-// /Remove jquery jQuery Migrate
+add_action( 'wp_enqueue_scripts', 'remove_jquery_on_front', PHP_INT_MAX );
+
+// /remove jQuery on front
+
 function be_arrows_in_menus($item_output, $item, $depth, $args)
 {
     if (in_array("desktop_menu_arrows", $item->classes)) {
@@ -560,6 +565,7 @@ function MobileMenuJs()
     );
 }
 /* /Mobile Menu */
+
  
 // PICTURE IF THERE IS NO IMAGE 1
 function no_image()
@@ -583,12 +589,12 @@ function trim_title_chars($count, $after)
     } else {
         $after = "";
     }
-    echo $title . $after;
+    echo $title . $after; 
 }
 //... ellipses at the end TITLE 2
 
  
-// Counting the number of page visits 1
+// Counting the number of page visits
 add_action("wp_head", "kama_postviews");
 /**
  * @param array $args
@@ -649,7 +655,7 @@ function kama_postviews($args = [])
         wp_cache_delete($post->ID, "post_meta");
     }
 }
-// Counting the number of page visits 2
+// /Counting the number of page visits
 
 // sorting posts by number of views - left sidebar
 
@@ -704,7 +710,7 @@ function sorting_posts_by_number_views_left_sidebar($args = "")
         $LinkArticle = get_permalink($pst->ID);
         $image = get_the_post_thumbnail($pst->ID);
         // Title length
-        $maxchar = 45;
+        $maxchar = 48;
         $Title =
             iconv_strlen($pst->post_title, "utf-8") > $maxchar
                 ? iconv_substr($pst->post_title, 0, $maxchar, "utf-8") . "..."
@@ -736,10 +742,10 @@ function sorting_posts_by_number_views_left_sidebar($args = "")
         //$out .= "\n<div class='$x'>". $image ."$Sformat</div>";
         $out .=
             "<article class='popular_post_left_sidebar'>
-						<a aria-label='популярный пост' class='popular_post_left_sidebar_all_link' href=" .
+						<a aria-label='popular post' class='popular_post_left_sidebar_all_link' href=" .
             $LinkArticle .
             "></a>
-            <div class='popular_post_left_sidebar_image'>" .
+						<div class='popular_post_left_sidebar_image'>" .
             $image .
             "</div><div class='popular_post_left_sidebar_title'>
 		<h3>" .
@@ -872,11 +878,13 @@ function add_prism()
             "prismCSS", // handle name for the style
             get_stylesheet_directory_uri() . "/prism/prism.css" // location of the prism.css file
         );
+
         // Register prism.js file
         wp_register_script(
             "prismJS", // handle name for the script
             get_stylesheet_directory_uri() . "/prism/prism.js" // location of the prism.js file
         );
+
         // Enqueue the registered style and script files
         wp_enqueue_style("prismCSS");
         wp_enqueue_script("prismJS");
@@ -884,7 +892,6 @@ function add_prism()
 }
 add_action("wp_enqueue_scripts", "add_prism");
 // PRISM 2
-
 /* Snippet seeks to remove the remaining warnings when validating HTML on w3c.org:
    Warning: The type attribute is unnecessary for JavaScript resources.
    Warning: The type attribute for the style element is not needed and should be omitted.
@@ -911,7 +918,7 @@ add_action("template_redirect", function () {
 add_theme_support("admin-bar", ["callback" => "__return_false"]);
 // /adaptation to different screens admin bar
 
- // ban on adding <p> tags in posts
+// ban on adding <p> tags in posts
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 // /ban on adding <p> tags in posts
@@ -960,9 +967,10 @@ function disable_embeds_code_init() {
        }
        return $rules;
    }
+   
    // /disable embeds
 
-
+ 
 
 // disable speculative loading
 add_filter( 'wp_speculation_rules_configuration', '__return_null' );
@@ -971,7 +979,7 @@ add_filter( 'wp_speculation_rules_configuration', '__return_null' );
 // hide main title
 function hide_main_title($classes) {
     // add main title id
-    if (is_page(array(13, 10, 18, 19, 16, 8))) {
+    if (is_page(array(10, 18, 22, 8, 25))) {
       $classes[] = 'hide-main-title';
     }
     return $classes;
