@@ -2288,6 +2288,12 @@ button.sub-menu-toggle.active svg {
 }
 
 /* Dark theme */
+
+.wp-block-code code {
+   background-color:var(--code-wrapper_background-color); 
+   font-size: 18px;
+ }
+
 .change_theme_desktop {
   cursor: pointer;
 }
@@ -3298,10 +3304,6 @@ button.sub-menu-toggle.active svg {
 }
 
 /* /404.php */
-.wp-block-code code {
-  background-color: #ffffff;
-  font-size: 18px;
-}
 
 /* photoswipe background */
 .pswp__bg {
@@ -4899,13 +4901,14 @@ button.pswp__button:hover {
 /* /@media*/
 /* Variables*/
 /* Dark theme*/
+
 .dark-mode {
   /* --scrollbar_color_global: #262626 #191919; */
   --scrollbar_color_global: #262626 #121212;
 }
 
 [data-dark-theme="true"] {
-  /* Prism  dark */
+  /* prismJS  dark */
   --code-wrapper_background-color: rgb(26, 27, 30);
   --code_class_language_box-shadow: none;
   --code_class_language_border: none;
@@ -4934,7 +4937,7 @@ button.pswp__button:hover {
   --token_number_color: rgb(134 160 189);
   --token_rule_color: rgb(219 103 116);
   --token_regex_color: rgb(176 176 176);
-  /* / Prism  dark */
+  /* / prismJS  dark */
   --portfolio_example_box-shadow: 0 4px 9px 0 rgba(0, 255, 255, 0.7);
   --portfolio_example_hover_box-shadow: 0 5px 11px 2px rgba(0, 255, 255, 0.7);
   --portfolio_example_hover_transform: translateY(-4px);
@@ -5032,7 +5035,7 @@ button.pswp__button:hover {
 }
 
 [data-dark-theme="false"] {
-  /* Prism light */
+  /* prismJS light */
   --code-wrapper_background-color: rgb(255, 255, 255);
   --code_class_language_box-shadow: 0 4px 16px rgb(132 134 136 / 6%), 0 0 2px rgb(138 140 143 / 16%);
   --code_class_language_border: 1px solid rgb(225 223 223 / 34%);
@@ -5065,7 +5068,7 @@ button.pswp__button:hover {
   --token_number_color: #098658;
   --token_rule_color: #0431fa;
   --token_regex_color: #000000;
-  /* /Prism light*/
+  /* /prismJS light*/
   --container_box-shadow_all: 0 4px 16px rgb(132 134 136 / 9%), 0 2px 2px rgb(138 140 143 / 10%);
   --container_box-shadow_hover_all:
     4px 6px 9px rgb(151 153 155 / 13%), 0 4px 6px rgb(155 157 162 / 7%);

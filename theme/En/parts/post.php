@@ -1,5 +1,5 @@
 <article id="post-<?php the_ID(); ?>" class="post">
-   <a aria-label="see post" class="post_all_link" href="<?php the_permalink(); ?>"></a>
+   <a aria-label="see post" class="post_all_link" href="<?php the_permalink(); ?>" rel="noreferrer noopener" target="_blank"></a>
    <div class="post_image"> 
       <?php no_image(); ?>
    </div>
@@ -18,7 +18,7 @@
       <ul class="post__categories_list">
          <?php foreach ($categories as $cat): ?>
          <li>
-            <a href="<?php echo get_category_link($cat); ?>">
+            <a href="<?php echo get_category_link($cat); ?>" rel="noreferrer noopener" target="_blank">
             <?php echo $cat->name; ?>
             </a>
          </li>

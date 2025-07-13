@@ -440,4 +440,26 @@ document.addEventListener("DOMContentLoaded", function () {
    }
    /* /disable search, if the search field is empty */
 
+   // prismJS (line numbers), adjusting the arrangement of numbers depending on the length of the code
+   const codeBlocks = document.querySelectorAll("pre.line-numbers");
+
+   codeBlocks.forEach(pre => {
+      const rows = pre.querySelector(".line-numbers-rows");
+      const code = pre.querySelector("code");
+
+      if (!rows || !code) return;
+
+      const lines = rows.children.length;
+      const digits = lines.toString().length;
+
+      const digitWidthEm = 0.6;
+      const spacingEm = 1.5; // distance from numbers to the edge of the container
+      const totalWidth = digits * digitWidthEm + spacingEm;
+
+      // we define variables that are used in CSS
+      pre.style.setProperty("--prism-line-width", `${totalWidth}em`);
+      code.style.setProperty("--prism-line-offset", `${totalWidth + 1.3}em`); // distance from numbers to code
+   });
+   // /prismJS (line numbers), adjusting the arrangement of numbers depending on the length of the code
+
 });

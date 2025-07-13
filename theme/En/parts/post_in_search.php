@@ -1,5 +1,5 @@
 <article id="post-<?php the_ID(); ?>" class="post_in_search_wrap">
-   <a href="<?php the_permalink() ?>">
+   <a href="<?php the_permalink() ?>" rel="noreferrer noopener" target="_blank">
       <div class="post_in_search">
          <div class="post_in_search_title_text_image_wrap">
             <div class="post_in_search_title_text_wrap">
