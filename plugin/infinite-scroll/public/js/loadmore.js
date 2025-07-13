@@ -18,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const mainDiv = document.querySelector(mainDivSelector);
 
+  if (!mainDiv) return;
+
   function getScrollTop() {
     return window.pageYOffset || document.documentElement.scrollTop;
   }
