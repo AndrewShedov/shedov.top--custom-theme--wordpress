@@ -743,7 +743,7 @@ function sorting_posts_by_number_views_left_sidebar($args = "")
             "<article class='popular_post_left_sidebar'>
 						<a aria-label='популярный пост' class='popular_post_left_sidebar_all_link' href=" .
             $LinkArticle .
-    " target='_blank' rel='noreferrer noopener'></a>
+    "></a>
     <div class='popular_post_left_sidebar_image'>" .
             $image .
             "</div><div class='popular_post_left_sidebar_title'>
@@ -846,10 +846,10 @@ function sorting_posts_by_number_views_bottom($args = "")
         //$out .= "<li class=\"$x\">$Sformat</li>";
         //with pictures
         //$out .= "\n<div class='$x'>". $image ."$Sformat</div>";
-        $out .= 
-    "<article class='popular_post'>
-        <a href=\"" . $LinkArticle . "\" target=\"_blank\" rel=\"noreferrer noopener\">
-            <div class='popular_post_image'>" .
+        $out .=
+            "<article class='popular_post'><a href=" .
+            $LinkArticle .
+            "><div class='popular_post_image'>" .
             $image .
             "</div><div class='popular_post_title'>
 		<h3>" .

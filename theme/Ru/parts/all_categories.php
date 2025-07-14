@@ -7,7 +7,7 @@
       <ul class="all_categories_list">
          <?php foreach($categories as $cat) : ?>
          <li>
-            <a href="<?php echo get_category_link( $cat )?>" rel="noreferrer noopener" target="_blank">
+            <a href="<?php echo get_category_link( $cat )?>">
             <?php echo $cat ->name;?>
             </a>
          </li>

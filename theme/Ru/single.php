@@ -372,7 +372,7 @@
             $my_query->the_post();
             ?>
          <article class="similar_post">
-            <a href="<?php the_permalink() ?>" rel="noreferrer noopener" target="_blank">
+            <a href="<?php the_permalink() ?>">
                <div class="similar_post_image">
                   <?php
                      no_image()
