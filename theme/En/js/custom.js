@@ -458,7 +458,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // we define variables that are used in CSS
       pre.style.setProperty("--prism-line-width", `${totalWidth}em`);
-      code.style.setProperty("--prism-line-offset", `${totalWidth + 0.9}em`); // distance from numbers to code
+      code.style.setProperty("--prism-line-offset", `${totalWidth + 1}em`); // distance from numbers to code
    });
    // /prismJS (line numbers), adjusting the arrangement of numbers depending on the length of the code
 

@@ -3,6 +3,7 @@
 /* custom */
 
 /* adjusting the code indentation from the right edge of the container */
+@media (max-width: 1000px) {
 .code-wrapper pre[class*="language-"] {
   overflow-x: auto !important; /* specifically on 'pre', not on 'code' */
   overflow-y: hidden !important; /* remove vertical scroll */
@@ -20,6 +21,7 @@
   display: inline-block;
   width: 5px; /* the indent is visual, but does not affect the scrollbar */
   height: 1px;
+}
 }
 /* /adjusting the code indentation from the right edge of the container */
 

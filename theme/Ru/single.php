@@ -28,7 +28,7 @@
                </div>
                <?php else : ?>
                <div class="single_post_date">
-                  <p>доб: <?php echo $pub_date; ?></p>
+                  <p><?php echo $pub_date; ?></p>
                   <div class="single_post_date_upd_wrap">
                      <div class="single_post_date_upd">
                         <div class="single_post_date_upd_separator_wrap">

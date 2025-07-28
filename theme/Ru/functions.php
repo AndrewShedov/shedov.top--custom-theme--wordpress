@@ -1038,3 +1038,10 @@ function format_number_short($number) {
   }
 }
 // /formats a large number into a short, human-readable form.
+
+// 🔧 Disable automatic substitution of emoji for images in WordPress.
+// This is necessary so that ⚠️ and other emoji are displayed as symbols, and not as <img> from an external server.
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+// /🔧 Disable automatic substitution of emoji for images in WordPress.
+// /This is necessary so that ⚠️ and other emoji are displayed as symbols, and not as <img> from an external server.

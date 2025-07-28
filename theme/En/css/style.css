@@ -2290,9 +2290,9 @@ button.sub-menu-toggle.active svg {
 /* Dark theme */
 
 .wp-block-code code {
-   background-color:var(--code-wrapper_background-color); 
-   font-size: 18px;
- }
+  background-color: var(--code-wrapper_background-color);
+  font-size: 18px;
+}
 
 .change_theme_desktop {
   cursor: pointer;
@@ -2746,7 +2746,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .portfolio_example_image__crystal img {
-  object-fit: fill;
+  /* object-fit: fill; */
 }
 
 .portfolio_example_text {
@@ -4119,10 +4119,6 @@ button.pswp__button:hover {
   transition: text-decoration-color 200ms ease;
 }
 
-.resume_margin {
-  margin-top: 9px;
-}
-
 .resume_tests a {
   text-decoration: none !important;
   text-decoration-color: rgba(255, 255, 255, 0) !important;
@@ -4416,10 +4412,10 @@ button.pswp__button:hover {
   }
 
   .single_post_date_upd_separator_svg {
-    margin: 0 8px 0 0;
+    margin: 0 9px 0 0;
     color: var(--fill_social_icons);
-    width: 9px;
-    height: 9px;
+    /* width: 9px;
+    height: 9px; */
   }
 
 
@@ -4921,7 +4917,7 @@ button.pswp__button:hover {
   --token_function: rgb(141 117 184);
   --tag_color: rgb(108 177 120);
   --token_punctuation_color: rgb(134 160 189);
-  --token_operator_color: rgb(219 103 116);
+  --token_operator_color: #a1a1a1;
   --token_string_color: rgb(134 160 189);
   --token_attr_value_color: rgb(134 160 189);
   --token_inserted_color: rgb(141 117 184);

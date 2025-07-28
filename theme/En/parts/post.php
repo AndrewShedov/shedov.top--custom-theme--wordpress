@@ -67,7 +67,7 @@
       <?php else : ?>
       <div class="post_date_wrap">
          <div class="post_date">
-            <p>add: <?php echo $pub_date; ?></p>
+            <p><?php echo $pub_date; ?></p>
             <div class="post_date_upd_wrap">
                <div class="post_date_upd">
                   <div class="post_date_upd_separator_wrap">
