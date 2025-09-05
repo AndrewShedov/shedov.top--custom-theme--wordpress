@@ -2688,7 +2688,7 @@
      "p3 p3 p4 p4"
      ". p5 p5 .";
    justify-content: center;
-   row-gap: 40px;
+   row-gap: 50px;
    column-gap: 50px;
  }
 
@@ -2706,7 +2706,7 @@
  .portfolio_example {
    position: relative;
    width: 100%;
-   max-width: 335px;
+   max-width: 355px;
    border: var(--portfolio_example_border);
    box-shadow: var(--portfolio_example_box-shadow);
    border-radius: 6px;
@@ -2774,10 +2774,9 @@
 
  .portfolio_example_text_title h2 {
    font-family: Arial, Helvetica, sans-serif;
-   font-size: 19.5px;
+   font-size: 21px;
    text-align: center;
    font-weight: 600;
-   font-family: Arial, Helvetica, sans-serif;
  }
 
  .portfolio_example_text_title__crystal h2 {
@@ -2824,7 +2823,7 @@
  /* page - proekty */
 
  .projects_wrap {
-   margin-top: 50px;
+   margin-top: 40px;
    display: flex;
    justify-content: center;
    flex-direction: column;
@@ -2835,9 +2834,9 @@
  .projects_examples {
    display: grid;
    grid-template-areas:
-   "p1 p1 p2 p2";
+     "p1 p1 p2 p2";
    justify-content: center;
-   row-gap: 40px;
+   row-gap: 50px;
    column-gap: 50px;
  }
 
@@ -2855,7 +2854,7 @@
  .projects_example {
    position: relative;
    width: 100%;
-   max-width: 335px;
+   max-width: 355px;
    border: var(--portfolio_example_border);
    box-shadow: var(--portfolio_example_box-shadow);
    border-radius: 6px;
@@ -2907,10 +2906,9 @@
 
  .projects_example_text_title h2 {
    font-family: Arial, Helvetica, sans-serif;
-   font-size: 19.5px;
+   font-size: 21px;
    text-align: center;
    font-weight: 600;
-   font-family: Arial, Helvetica, sans-serif;
  }
 
  .projects_example_text_title__crystal h2 {
@@ -2957,7 +2955,7 @@
  /* page: npm */
 
  .npm_wrap {
-   margin-top: 50px;
+   margin-top: 40px;
    display: flex;
    justify-content: center;
    flex-direction: column;
@@ -2971,7 +2969,7 @@
      "p1 p1 p2 p2"
      "p3 p3 p4 p4";
    justify-content: center;
-   row-gap: 40px;
+   row-gap: 50px;
    column-gap: 50px;
  }
 
@@ -2989,7 +2987,7 @@
  .npm_example {
    position: relative;
    width: 100%;
-   max-width: 335px;
+   max-width: 355px;
    border: var(--portfolio_example_border);
    box-shadow: var(--portfolio_example_box-shadow);
    border-radius: 6px;
@@ -3052,7 +3050,7 @@
  }
 
  .npm_example_text_3 {
-   margin-top: 3px;
+   margin-top: 4px;
  }
 
  .npm_example_text_3 p {
@@ -3068,7 +3066,6 @@
    font-size: 21px;
    text-align: center;
    font-weight: 600;
-   font-family: Arial, Helvetica, sans-serif;
  }
 
 
