@@ -7,7 +7,7 @@
 **Technologies:** WordPress, PHP, JS, Flexbox, Grid. <br />
 <br>
 <a href="https://shedov.top/" target="_blank">
-<img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/screenshot1.webp" width="700" />
+<img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/screenshot.webp" width="700" />
 </a>
 <br>
 [PageSpeed Insights test](https://developers.google.com/speed/pagespeed/insights/?url=https://shedov.top/) <br/>
