@@ -1056,40 +1056,40 @@ function get_npm_package_downloads($package_name, $period = 'last-week') {
     if (empty($package_name)) {
         return 0; // If the package name is empty, return 0
     }
-    
+
     // Validate period
     $valid_periods = ['last-day', 'last-week', 'last-month'];
     $period = in_array($period, $valid_periods) ? $period : 'last-week';
 
     $transient_key = 'npm_downloads_' . sanitize_key($package_name . '_' . $period); // Cache key for each package and period
-    $downloads = get_transient($transient_key);
-    
+    $downloads = get_site_transient($transient_key); // Use site-wide transient
+
     if ($downloads !== false) {
         return $downloads; // If in cache, return
     }
-    
+
     $api_url = sprintf('https://api.npmjs.org/downloads/point/%s/%s', urlencode($period), urlencode($package_name));
-    
-    // Fetch с wp_remote_get
+
+    // Fetch with wp_remote_get
     $response = wp_remote_get($api_url, array(
         'timeout' => 10,
         'user-agent' => 'WordPress/' . get_bloginfo('version') . '; ' . home_url()
     ));
-    
+
     if (is_wp_error($response)) {
-        set_transient($transient_key, 0, 24 * HOUR_IN_SECONDS); // Error cache for 24 hours
+        set_site_transient($transient_key, 0, 24 * HOUR_IN_SECONDS); // Error cache for 24 hours
         return 0;
     }
-    
+
     $body = wp_remote_retrieve_body($response);
     $data = json_decode($body, true);
-    
+
     if (isset($data['downloads'])) {
         $downloads = intval($data['downloads']);
-        set_transient($transient_key, $downloads, 24 * HOUR_IN_SECONDS); // Cache for 24 hours
+        set_site_transient($transient_key, $downloads, 24 * HOUR_IN_SECONDS); // Cache for 24 hours
         return $downloads;
     } else {
-        set_transient($transient_key, 0, 24 * HOUR_IN_SECONDS);
+        set_site_transient($transient_key, 0, 24 * HOUR_IN_SECONDS);
         return 0;
     }
 }
@@ -1100,11 +1100,11 @@ function npm_downloads_shortcode($atts) {
         'package' => '', // The package parameter is empty by default
         'period' => 'last-week' // The period parameter defaults to last-week
     ), $atts, 'npm_downloads');
-    
+
     $package_name = sanitize_text_field($atts['package']);
     $period = sanitize_text_field($atts['period']);
     $downloads = get_npm_package_downloads($package_name, $period);
-    
+
     return format_number_short((int)$downloads);
 }
 add_shortcode('npm_downloads', 'npm_downloads_shortcode');
