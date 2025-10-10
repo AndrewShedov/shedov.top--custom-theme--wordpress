@@ -2037,8 +2037,8 @@ button.sub-menu-toggle.active svg {
  }
 
  .desktop_menu_part_2_navigation ul li li:hover .menu_arrow_2 {
-   top: 0.5px;
-   transform: rotate(92deg);
+   top: 0.9px;
+   transform: rotate(90deg);
    transition: all 200ms ease !important;
  }
 
