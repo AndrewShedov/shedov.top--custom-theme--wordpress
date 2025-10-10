@@ -10,6 +10,7 @@
 </a>
 <br>
 
+[![LIVE](https://img.shields.io/badge/LIVE-ff0000?style=for-the-badge)](https://shedov.top/)
 [![PageSpeed Insights test](https://img.shields.io/badge/PageSpeed%20Insights%20test-black?style=for-the-badge)](https://developers.google.com/speed/pagespeed/insights/?url=https://shedov.top/) 
 [![Markup test](https://img.shields.io/badge/Markup%20test-black?style=for-the-badge)](https://validator.w3.org/nu/?doc=https%3A%2F%2Fshedov.top%2F)
 
