@@ -42,11 +42,11 @@
                   <li class="<?php echo ($sort === 'new' ? 'current-menu-item' : ''); ?>">
                      <a href="?sort=new">Новые</a>
                   </li>
-                  <li class="<?php echo ($sort === 'old' ? 'current-menu-item' : ''); ?>">
-                     <a href="?sort=old">Старые</a>
-                  </li>
                   <li class="<?php echo ($sort === 'popular' ? 'current-menu-item' : ''); ?>">
                      <a href="?sort=popular">Популярные</a>
+                  </li>
+                  <li class="<?php echo ($sort === 'old' ? 'current-menu-item' : ''); ?>">
+                     <a href="?sort=old">Старые</a>
                   </li>
                </ul>
             </nav>

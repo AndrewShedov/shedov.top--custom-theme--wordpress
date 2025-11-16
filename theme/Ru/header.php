@@ -83,7 +83,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 0 26 20">
                            <path d="m488.649875 44.6098697c6.442438-2.8224615 10.738405-4.6832009 12.887902-5.5822181 6.137252-2.5668769 7.41252-3.0127709 8.243723-3.0276516.182815-.0030813.591576.0424775.856354.2585203.223574.1824224.285088.428849.314524.6018054.029436.1729565.066092.5669556.036954.874815-.33258 3.5138587-1.771648 12.041067-2.503764 15.9766489-.309785 1.6652923-.919763 2.2236562-1.510292 2.2782995-1.283356.1187526-2.257879-.8528431-3.500872-1.6721675-1.945039-1.2820809-3.043862-2.0801802-4.931859-3.3312543-2.181908-1.4458326-.767468-2.2404874.475995-3.5391756.32542-.3398729 5.979917-5.5116482 6.08936-5.9808093.013687-.0586764.02639-.2773944-.102829-.3928855-.129218-.1154911-.319934-.0759976-.457559-.0445881-.195081.044522-3.302306 2.1096922-9.321675 6.1955107-.881976.6089971-1.680842.9057209-2.396598.8901714-.789064-.017142-2.306907-.4486274-3.435267-.8174505-1.38398-.4523766-2.48394-.6915513-2.388158-1.4598267.049889-.4001653.59791-.8094133 1.644061-1.227744z"  fill-rule="evenodd" transform="translate(-487 -36)"/>
                         </svg>
-                        <a href="https://t.me/ShedovChannel" target="blank" rel="noopener" aria-label="ссылка на telegram канал"></a>
+                        <a href="https://t.me/ShedovTop" target="_blank" rel="noopener" aria-label="ссылка на telegram канал"></a>
                      </div>
                      <div class="desktop_menu_part_1_social_icons__icon_wrap desktop_menu_part_1_social_icons_x_icon">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" version="1.1" aria-label="X link">
@@ -96,7 +96,7 @@
                         <svg viewBox="-8 -7 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.52944 7.02944C0.5 14.0589 0.5 25.3726 0.5 48V52C0.5 74.6274 0.5 85.9411 7.52944 92.9706C14.5589 100 25.8726 100 48.5 100H52.5C75.1274 100 86.4411 100 93.4706 92.9706C100.5 85.9411 100.5 74.6274 100.5 52V48C100.5 25.3726 100.5 14.0589 93.4706 7.02944C86.4411 0 75.1274 0 52.5 0H48.5C25.8726 0 14.5589 0 7.52944 7.02944ZM17.3752 30.4169C17.9168 56.4169 30.9167 72.0418 53.7084 72.0418H55.0003V57.1668C63.3753 58.0001 69.7082 64.1252 72.2498 72.0418H84.0835C80.8335 60.2085 72.2914 53.6668 66.9581 51.1668C72.2914 48.0835 79.7915 40.5835 81.5831 30.4169H70.8328C68.4995 38.6669 61.5836 46.1668 55.0003 46.8751V30.4169H44.2499V59.2501C37.5833 57.5835 29.1668 49.5002 28.7918 30.4169H17.3752Z"  />
                         </svg>
-                        <a href="https://vk.com/shedovchannel" target="_blank" rel="noopener" aria-label="ссылка на VK">
+                        <a href="https://vk.com/ShedovTop" target="_blank" rel="noopener" aria-label="ссылка на VK">
                         </a>
                      </div>
                      <div class="desktop_menu_part_1_social_icons__icon_wrap desktop_menu_part_1_social_icons_vk_video">
@@ -109,7 +109,7 @@
                               </g>
                            </g>
                         </svg>
-                        <a href="https://vkvideo.ru/@shedovchannel" target="_blank" rel="noopener" aria-label="ссылка на VK video">
+                        <a href="https://vkvideo.ru/@ShedovTop" target="_blank" rel="noopener" aria-label="ссылка на VK video">
                         </a>
                      </div>
                      <div class="desktop_menu_part_1_social_icons__icon_wrap desktop_menu_part_1_social_icons_youtube">
@@ -137,7 +137,7 @@
                               </g>
                            </g>
                         </svg>
-                        <a href="https://www.behance.net/AndrewShedov" target="blank" rel="noopener" aria-label="ссылка на behance"></a>
+                        <a href="https://www.behance.net/AndrewShedov" target="_blank" rel="noopener" aria-label="ссылка на behance"></a>
                      </div>
                      <div class="desktop_menu_part_1_social_icons__icon_wrap">
                         <svg viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -148,14 +148,14 @@
                               </g>
                            </g>
                         </svg>
-                        <a href="https://codepen.io/AndrewShedov" target="blank" rel="noopener" aria-label="ссылка на codepen">
+                        <a href="https://codepen.io/AndrewShedov" target="_blank" rel="noopener" aria-label="ссылка на codepen">
                         </a>
                      </div>
                      <div class="desktop_menu_part_1_social_icons__icon_wrap">
                         <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1"   data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
                         </svg>
-                        <a href="https://github.com/AndrewShedov" target="blank" rel="noopener" aria-label="ссылка на github">
+                        <a href="https://github.com/AndrewShedov" target="_blank" rel="noopener" aria-label="ссылка на github">
                         </a>
                      </div>
                   </div>
@@ -256,7 +256,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 0 26 20">
                      <path d="m488.649875 44.6098697c6.442438-2.8224615 10.738405-4.6832009 12.887902-5.5822181 6.137252-2.5668769 7.41252-3.0127709 8.243723-3.0276516.182815-.0030813.591576.0424775.856354.2585203.223574.1824224.285088.428849.314524.6018054.029436.1729565.066092.5669556.036954.874815-.33258 3.5138587-1.771648 12.041067-2.503764 15.9766489-.309785 1.6652923-.919763 2.2236562-1.510292 2.2782995-1.283356.1187526-2.257879-.8528431-3.500872-1.6721675-1.945039-1.2820809-3.043862-2.0801802-4.931859-3.3312543-2.181908-1.4458326-.767468-2.2404874.475995-3.5391756.32542-.3398729 5.979917-5.5116482 6.08936-5.9808093.013687-.0586764.02639-.2773944-.102829-.3928855-.129218-.1154911-.319934-.0759976-.457559-.0445881-.195081.044522-3.302306 2.1096922-9.321675 6.1955107-.881976.6089971-1.680842.9057209-2.396598.8901714-.789064-.017142-2.306907-.4486274-3.435267-.8174505-1.38398-.4523766-2.48394-.6915513-2.388158-1.4598267.049889-.4001653.59791-.8094133 1.644061-1.227744z"  fill-rule="evenodd" transform="translate(-487 -36)"/>
                   </svg>
-                  <a href="https://t.me/ShedovChannel" target="blank" rel="noopener" aria-label="ссылка на telegram канал"></a>
+                  <a href="https://t.me/ShedovTop" target="_blank" rel="noopener" aria-label="ссылка на telegram канал"></a>
                </div>
                <div class="mobile_menu_part_1_social_icons__icon_wrap mobile_menu_part_1_social_icons_x_icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" version="1.1" aria-label="X link">
@@ -269,7 +269,7 @@
                   <svg viewBox="-8 -7 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path fill-rule="evenodd" clip-rule="evenodd" d="M7.52944 7.02944C0.5 14.0589 0.5 25.3726 0.5 48V52C0.5 74.6274 0.5 85.9411 7.52944 92.9706C14.5589 100 25.8726 100 48.5 100H52.5C75.1274 100 86.4411 100 93.4706 92.9706C100.5 85.9411 100.5 74.6274 100.5 52V48C100.5 25.3726 100.5 14.0589 93.4706 7.02944C86.4411 0 75.1274 0 52.5 0H48.5C25.8726 0 14.5589 0 7.52944 7.02944ZM17.3752 30.4169C17.9168 56.4169 30.9167 72.0418 53.7084 72.0418H55.0003V57.1668C63.3753 58.0001 69.7082 64.1252 72.2498 72.0418H84.0835C80.8335 60.2085 72.2914 53.6668 66.9581 51.1668C72.2914 48.0835 79.7915 40.5835 81.5831 30.4169H70.8328C68.4995 38.6669 61.5836 46.1668 55.0003 46.8751V30.4169H44.2499V59.2501C37.5833 57.5835 29.1668 49.5002 28.7918 30.4169H17.3752Z"></path>
                   </svg>
-                  <a href="https://vk.com/shedovchannel" target="_blank" rel="noopener" aria-label="ссылка на VK">
+                  <a href="https://vk.com/ShedovTop" target="_blank" rel="noopener" aria-label="ссылка на VK">
                   </a>
                </div>
                <div class="mobile_menu_part_1_social_icons__icon_wrap mobile_menu_part_1_social_icons_vk_video">
@@ -282,7 +282,7 @@
                         </g>
                      </g>
                   </svg>
-                  <a href="https://vkvideo.ru/@shedovchannel" target="_blank" rel="noopener" aria-label="ссылка на VK video">
+                  <a href="https://vkvideo.ru/@ShedovTop" target="_blank" rel="noopener" aria-label="ссылка на VK video">
                   </a>
                </div>
                <div class="mobile_menu_part_1_social_icons__icon_wrap mobile_menu_part_1_social_icons_youtube">
@@ -310,7 +310,7 @@
                         </g>
                      </g>
                   </svg>
-                  <a href="https://www.behance.net/AndrewShedov" target="blank" rel="noopener" aria-label="ссылка на behance">
+                  <a href="https://www.behance.net/AndrewShedov" target="_blank" rel="noopener" aria-label="ссылка на behance">
                   </a>
                </div>
                <div class="mobile_menu_part_1_social_icons__icon_wrap mobile_menu_part_1_social_icons_codepen">
@@ -322,14 +322,14 @@
                         </g>
                      </g>
                   </svg>
-                  <a href="https://codepen.io/AndrewShedov" target="blank" rel="noopener" aria-label="ссылка на codepen">
+                  <a href="https://codepen.io/AndrewShedov" target="_blank" rel="noopener" aria-label="ссылка на codepen">
                   </a>
                </div>
                <div class="mobile_menu_part_1_social_icons__icon_wrap">
                   <svg   aria-hidden="true" viewBox="0 0 16 16" version="1.1"   data-view-component="true" class="octicon octicon-mark-github v-align-middle color-fg-default">
                      <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
                   </svg>
-                  <a href="https://github.com/AndrewShedov" target="blank" rel="noopener" aria-label="ссылка на github">
+                  <a href="https://github.com/AndrewShedov" target="_blank" rel="noopener" aria-label="ссылка на github">
                   </a>
                </div>
             </div>

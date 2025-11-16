@@ -40,11 +40,11 @@
                   <li class="<?php echo ($sort === 'new' ? 'current-menu-item' : ''); ?>">
                      <a href="?sort=new">New</a>
                   </li>
-                  <li class="<?php echo ($sort === 'old' ? 'current-menu-item' : ''); ?>">
-                     <a href="?sort=old">Old</a>
-                  </li>
                   <li class="<?php echo ($sort === 'popular' ? 'current-menu-item' : ''); ?>">
                      <a href="?sort=popular">Popular</a>
+                  </li>
+                  <li class="<?php echo ($sort === 'old' ? 'current-menu-item' : ''); ?>">
+                     <a href="?sort=old">Old</a>
                   </li>
                </ul>
             </nav>
