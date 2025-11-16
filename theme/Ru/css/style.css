@@ -904,16 +904,28 @@
 
 /* post.php */
 
-.post_pin_icon {
+.post_pin_icon_wrap {
   position: absolute;
   right: 9px;
   top: 9px;
   pointer-events: none;
 }
 
+.post_pin_icon {
+  width: 34px;
+  height: 34px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--post_share_background-color);
+}
+
 .post_pin_icon svg{
-  width: 19px;
-  height: 19px;
+  width: 20px;
+  height: 20px;
   fill: var(--fill_social_icons);
 }
 
@@ -1986,8 +1998,8 @@
 
  .post_share_wrap {
    position: absolute;
-   right: 14px;
-   bottom: 12px;
+   right: 12px;
+   bottom: 11px;
    display: block;
  }
 
