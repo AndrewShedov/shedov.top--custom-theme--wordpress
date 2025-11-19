@@ -2,7 +2,7 @@
 
 # Custom theme for <a href="https://shedov.top/">shedov.top</a> website
 
-### This theme is 100% responsive and has no errors in validator.w3.
+### This theme is 100% responsive, very light and has no errors in validator.w3.
 
 **Type:** multi-page website. <br />
 **Technologies:** WordPress, PHP, JS, Flexbox, Grid. <br />
