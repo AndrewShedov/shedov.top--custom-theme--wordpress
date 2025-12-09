@@ -16,7 +16,7 @@
 [![PageSpeed Insights test](https://img.shields.io/badge/PageSpeed%20Insights%20test-black?style=for-the-badge)](https://developers.google.com/speed/pagespeed/insights/?url=https://shedov.top/) 
 [![Markup test](https://img.shields.io/badge/Markup%20test-black?style=for-the-badge)](https://validator.w3.org/nu/?doc=https%3A%2F%2Fshedov.top%2F)<br/>
 [![SHEDOV.TOP](https://img.shields.io/badge/SHEDOV.TOP-black?style=for-the-badge)](https://shedov.top/) 
-[![CRYSTAL](https://img.shields.io/badge/CRYSTAL-black?style=for-the-badge)](https://crysty.ru/AndrewShedov)
+[![CRYSTAL](https://img.shields.io/badge/CRYSTAL-black?style=for-the-badge)](https://crystal.you/AndrewShedov)
 [![Discord](https://img.shields.io/badge/Discord-black?style=for-the-badge&logo=discord&color=black&logoColor=white)](https://discord.gg/ENB7RbxVZE)
 [![Telegram](https://img.shields.io/badge/Telegram-black?style=for-the-badge&logo=telegram&color=black&logoColor=white)](https://t.me/ShedovTop)
 [![X](https://img.shields.io/badge/%20-black?style=for-the-badge&logo=x&logoColor=white)](https://x.com/AndrewShedov)
