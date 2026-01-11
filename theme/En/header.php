@@ -67,7 +67,7 @@
                                  </g>
                               </g>
                            </svg>
-                           <a href="https://crysty.ru/AndrewShedov" target="_blank" rel="noopener" aria-label="link to Crystal">
+                           <a href="https://crystal.you/AndrewShedov" target="_blank" rel="noopener" aria-label="link to Crystal">
                            </a>
                         </div>
                         <div class="desktop_menu_part_1_social_icons__icon_wrap desktop_menu_part_1_social_icons_discord_icon">
@@ -241,7 +241,7 @@
                         </g>
                      </g>
                   </svg>
-                  <a href="https://crysty.ru/AndrewShedov" target="_blank" rel="noopener" aria-label="link to Crystal">
+                  <a href="https://crystal.you/AndrewShedov" target="_blank" rel="noopener" aria-label="link to Crystal">
                   </a>
                </div>
                <div class="mobile_menu_part_1_social_icons__icon_wrap mobile_menu_part_1_social_icons_discord_icon">

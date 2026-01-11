@@ -163,7 +163,7 @@
                            </g>
                         </g>
                      </svg>
-                     <a href="https://crysty.ru/AndrewShedov" target="_blank" rel="noopener" aria-label="ссылка на Crystal">
+                     <a href="https://crystal.you/AndrewShedov" target="_blank" rel="noopener" aria-label="ссылка на Crystal">
                      </a>
                   </div>
                   <div class="sub_icon_single_wrap single_sub_icons_level_4__discord_icon">
@@ -266,7 +266,7 @@
                      <a href="https://yoomoney.ru/to/410011226872318" target="_blank" rel="noopener" aria-label="ссылка на yoomoney">
                      </a>
                   </div>
-                  <div class="sub_icon_single_wrap">
+                  <!-- <div class="sub_icon_single_wrap">
                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="10 35 225 200" style="enable-background:new 0 0 235.6 292.2;" xml:space="preserve">
                         <style type="text/css">
@@ -287,7 +287,7 @@
                      </svg>
                      <a href="https://boosty.to/andrewshedov" target="_blank" rel="noopener" aria-label="ссылка на boosty">
                      </a>
-                  </div>
+                  </div> -->
                   <div class="sub_icon_single_wrap">
                      <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="65 40 155 150">
                         <g  fill="#ffdd2d">
@@ -302,8 +302,11 @@
                   </div>
                </div>
                <div class="single_sub_icons_level_3">
-                  <p>BTC (Network BTC) - 1C2EWWeEXVhg93hJA9KovpkSd3Rn3BkcYm</p>
-                  <p>Ethereum (Network ERC20) - 0x05037ecbd8bcd15631d780c95c3799861182e6b8</p>
+                  <p><strong>USDT (TRON (TRC20)):</strong> TTvJdwtL3VAZKSHbYi8B2eQEQDxbHUD4Ka</p>
+                  <p><strong>POL (Polygon PoS):</strong> 0x97377684b9a589eca92e2c6c8430e6dcf2bae8c2</p>
+                  <p><strong>ETH (Base Mainnet):</strong> 0x97377684b9a589eca92e2c6c8430e6dcf2bae8c2</p>
+                  <p><strong>ETH (ERC20):</strong> 0x97377684b9a589eca92e2c6c8430e6dcf2bae8c2</p>
+                  <p><strong>BTC (BTC):</strong> 12GkhJZWrdn23PUerGerN7nSZXHwWGm59U</p>
                </div>
             </div>
          </div>
