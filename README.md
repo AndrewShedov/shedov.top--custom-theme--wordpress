@@ -8,8 +8,22 @@
 **Technologies:** WordPress, PHP, JS, Flexbox, Grid. <br />
 <br>
 <a href="https://shedov.top/" target="_blank">
-<img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/screenshot_1.webp" width="700" />
+<img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/screenshot_1.webp"/>
 </a>
+<br>
+
+<p align="center">
+<a href="https://developers.google.com/speed/pagespeed/insights/?url=https://shedov.top/">
+<img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/gif.gif"/>
+</a>
+</p>
+<br>
+
+<p align="center">
+<a href="https://validator.w3.org/nu/?doc=https://shedov.top/">
+<img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/screenshot_2.png"/>
+</a>
+</p>
 <br>
 
 [![LIVE](https://img.shields.io/badge/LIVE-ff0000?style=for-the-badge)](https://shedov.top/)
