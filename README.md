@@ -17,6 +17,7 @@
 <img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/gif.gif"/>
 </a>
 </p>
+<p align="center"><strong><a href="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/original.mp4">Original</a></strong></p>
 <br>
 
 <p align="center">
