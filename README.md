@@ -18,6 +18,9 @@
 </a>
 </p>
 <p align="center"><strong><a href="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/original.mp4">Original</a></strong></p>
+
+### 📌 Note: Live speed is currently lower as I installed reCAPTCHA for the contact form.
+
 <br>
 
 <p align="center">
