@@ -5,7 +5,7 @@
 ### This theme is 100% responsive, superfast, very light, and has no errors in validator.w3.
 
 **Type:** Feature-Rich Website. <br />
-**Technologies:** WordPress, PHP, JS, Flexbox, Grid. <br />
+**Technologies:** WordPress (Version 6.8), PHP, JS, Flexbox, Grid. <br />
 <br>
 <a href="https://shedov.top/" target="_blank">
 <img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/screenshot_1.webp"/>
