@@ -162,8 +162,8 @@
                </div>
             </div>
             <div class="desktop_menu_part_2_languages">
-               <div class="change_theme_desktop" onclick="ChangeTheme()">
-                  <div class="half_moon">
+               <div id="theme-toggle-desktop" class="change_theme_desktop">
+                  <div id="theme-icon-moon-desktop" class="half_moon">
                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g stroke-width="0"></g>
                         <g stroke-linecap="round" stroke-linejoin="round"></g>
@@ -172,7 +172,7 @@
                         </g>
                      </svg>
                   </div>
-                  <div class="sun">
+                  <div id="theme-icon-sun-desktop" class="sun">
                      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
                         <g stroke-width="0"></g>
                         <g stroke-linecap="round" stroke-linejoin="round"></g>
@@ -346,8 +346,8 @@
          </div>
          <div class="mobile_menu_part_2_change_theme_mobile_search_icon_burger_wrap">
             <div class="mobile_menu_part_2_change_theme_mobile_search_icon_wrap">
-               <div class="change_theme_mobile" onclick="ChangeTheme()">
-                  <div class="half_moon_icon_mobile">
+               <div id="theme-toggle-mobile" class="change_theme_mobile">
+                  <div id="theme-icon-moon-mobile" class="half_moon_icon_mobile">
                      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g stroke-width="0"></g>
                         <g stroke-linecap="round" stroke-linejoin="round"></g>
@@ -356,7 +356,7 @@
                         </g>
                      </svg>
                   </div>
-                  <div class="sun_icon_mobile">
+                  <div id="theme-icon-sun-mobile" class="sun_icon_mobile">
                      <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
                         <g stroke-width="0"></g>
                         <g stroke-linecap="round" stroke-linejoin="round"></g>

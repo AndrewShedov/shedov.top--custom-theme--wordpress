@@ -1,42 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   // dark theme
-  const html = document.documentElement;
-  const userColorTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  let ThemeStatus = window.localStorage.getItem("darkTheme")
-    ? JSON.parse(window.localStorage.getItem("darkTheme"))
-    : userColorTheme;
+  (function () {
+    const html = document.documentElement;
 
-  function applyThemeUI(status) {
-    html.setAttribute("data-dark-theme", status ? "true" : "false");
+    // Safely retrieve the initial theme (protection against localStorage overflow/blocking errors)
+    const getInitialTheme = () => {
+      try {
+        const savedTheme = localStorage.getItem("darkTheme");
+        if (savedTheme !== null) {
+          return JSON.parse(savedTheme);
+        }
+      } catch (error) {
+        // Fallback in case localStorage access is blocked by the browser
+      }
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    };
 
-    const sun = document.querySelector(".sun");
-    const moon = document.querySelector(".half_moon");
-    const sunMobile = document.querySelector(".sun_icon_mobile");
-    const moonMobile = document.querySelector(".half_moon_icon_mobile");
+    let themeStatus = getInitialTheme();
 
-    if (!sun || !moon || !sunMobile || !moonMobile) return;
+    // Function to apply visual theme changes
+    function applyThemeUI(status) {
+      html.setAttribute("data-dark-theme", status ? "true" : "false");
 
-    if (status) {
-      sun.style.display = "block";
-      moon.style.display = "none";
-      sunMobile.style.display = "block";
-      moonMobile.style.display = "none";
-    } else {
-      sun.style.display = "none";
-      moon.style.display = "block";
-      sunMobile.style.display = "none";
-      moonMobile.style.display = "block";
+      const sunDesktop = document.getElementById("theme-icon-sun-desktop");
+      const moonDesktop = document.getElementById("theme-icon-moon-desktop");
+      const sunMobile = document.getElementById("theme-icon-sun-mobile");
+      const moonMobile = document.getElementById("theme-icon-moon-mobile");
+
+      if (status) {
+        if (sunDesktop) sunDesktop.style.display = "block";
+        if (moonDesktop) moonDesktop.style.display = "none";
+        if (sunMobile) sunMobile.style.display = "block";
+        if (moonMobile) moonMobile.style.display = "none";
+      } else {
+        if (sunDesktop) sunDesktop.style.display = "none";
+        if (moonDesktop) moonDesktop.style.display = "block";
+        if (sunMobile) sunMobile.style.display = "none";
+        if (moonMobile) moonMobile.style.display = "block";
+      }
     }
-  }
 
-  applyThemeUI(ThemeStatus);
+    // Function to toggle the theme
+    function toggleTheme() {
+      themeStatus = !themeStatus;
+      try {
+        localStorage.setItem("darkTheme", JSON.stringify(themeStatus));
+      } catch (error) {
+        // Ignore write error if localStorage is unavailable
+      }
+      applyThemeUI(themeStatus);
+    }
 
-  window.ChangeTheme = function () {
-    ThemeStatus = !ThemeStatus;
-    localStorage.setItem("darkTheme", ThemeStatus);
-    applyThemeUI(ThemeStatus);
-  };
+    // Apply theme on initial load
+    applyThemeUI(themeStatus);
+
+    // Attach event listeners using IDs
+    const desktopToggle = document.getElementById("theme-toggle-desktop");
+    const mobileToggle = document.getElementById("theme-toggle-mobile");
+
+    if (desktopToggle) {
+      desktopToggle.addEventListener("click", toggleTheme);
+    }
+
+    if (mobileToggle) {
+      mobileToggle.addEventListener("click", toggleTheme);
+    }
+  })();
   // /dark theme
 
   // adaptation to different screens admin bar
@@ -443,26 +473,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   /* /disable search, if the search field is empty */
 
-// prismJS (line numbers), adjusting the arrangement of numbers depending on the length of the code
-   const codeBlocks = document.querySelectorAll("pre.line-numbers");
+  // prismJS (line numbers), adjusting the arrangement of numbers depending on the length of the code
+  const codeBlocks = document.querySelectorAll("pre.line-numbers");
 
-   codeBlocks.forEach(pre => {
-      const rows = pre.querySelector(".line-numbers-rows");
-      const code = pre.querySelector("code");
+  codeBlocks.forEach(pre => {
+    const rows = pre.querySelector(".line-numbers-rows");
+    const code = pre.querySelector("code");
 
-      if (!rows || !code) return;
+    if (!rows || !code) return;
 
-      const lines = rows.children.length;
-      const digits = lines.toString().length;
+    const lines = rows.children.length;
+    const digits = lines.toString().length;
 
-      const digitWidthEm = 0.6;
-      const spacingEm = 1.5; // distance from numbers to the edge of the container
-      const totalWidth = digits * digitWidthEm + spacingEm;
+    const digitWidthEm = 0.6;
+    const spacingEm = 1.5; // distance from numbers to the edge of the container
+    const totalWidth = digits * digitWidthEm + spacingEm;
 
-      // we define variables that are used in CSS
-      pre.style.setProperty("--prism-line-width", `${totalWidth}em`);
-      code.style.setProperty("--prism-line-offset", `${totalWidth + 1}em`); // distance from numbers to code
-   });
-   // /prismJS (line numbers), adjusting the arrangement of numbers depending on the length of the code
+    // we define variables that are used in CSS
+    pre.style.setProperty("--prism-line-width", `${totalWidth}em`);
+    code.style.setProperty("--prism-line-offset", `${totalWidth + 1}em`); // distance from numbers to code
+  });
+  // /prismJS (line numbers), adjusting the arrangement of numbers depending on the length of the code
 
 });
