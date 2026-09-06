@@ -17,8 +17,7 @@
                $the_query = new WP_Query($args);
                if ( $the_query->have_posts() ) {
                echo '<div class="search_results_wrap">';
-               _e("<div class='search_title'> <h2>Search results for: ".get_query_var('s')."</h2>
-               </div>" );
+               echo "<div class='search_title'> <h2>Search results for: " . esc_html( get_search_query() ) . "</h2> </div>";
                echo '<div class="search_results">';
                while ( $the_query->have_posts() ) {
                $the_query->the_post();
