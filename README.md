@@ -8,7 +8,7 @@
 **Technologies:** WordPress (Version 6.8), PHP, JS, Flexbox, Grid. <br />
 <br>
 <a href="https://shedov.top/" target="_blank">
-<img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/gif2.gif"/>
+<img src="https://raw.githubusercontent.com/AndrewShedov/shedov.top--custom-theme--wordpress/refs/heads/main/assets/gif1.gif"/>
 </a>
 <br>
 
