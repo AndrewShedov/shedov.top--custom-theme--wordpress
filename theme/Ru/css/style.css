@@ -3402,16 +3402,15 @@
  }
 
  .npm_example_text_title {
-   margin: 5px 0;
+   margin: 10px 0;
  }
 
  .npm_example_text_title h2 {
    font-family: Arial, Helvetica, sans-serif;
-   font-size: 21px;
+   font-size: 20.9px;
    text-align: center;
    font-weight: 600;
  }
-
 
  .npm_example_links_wrap {
    display: grid;
@@ -4701,7 +4700,7 @@
  }
 
  .resume_orcid {
-  margin-top: var(--margin-top_adjustable);
+   margin-top: var(--margin-top_adjustable);
  }
 
  .resume_orcid a {
