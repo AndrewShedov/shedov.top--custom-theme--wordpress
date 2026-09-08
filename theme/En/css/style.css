@@ -3098,7 +3098,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .portfolio_example_text_title {
-  padding: 3px 0 6px 0;
+  margin: 10px 0;
 }
 
 .portfolio_example_text_title h2 {
@@ -3231,7 +3231,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .projects_example_text_title {
-  padding: 5px 0;
+  margin: 5px 0;
 }
 
 .projects_example_text_title h2 {
@@ -3388,7 +3388,7 @@ button.sub-menu-toggle.active svg {
 }
 
 .npm_example_text_title {
-  padding: 5px 0;
+  margin: 5px 0;
 }
 
 .npm_example_text_title h2 {
