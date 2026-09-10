@@ -310,6 +310,7 @@
  html {
    scrollbar-color: var(--scrollbar_color_global);
    scrollbar-width: thin;
+   box-sizing: border-box;
  }
 
  body {
@@ -480,7 +481,7 @@
    display: flex;
    width: 100%;
    max-width: 1025px;
-   padding: 0 15px;
+   margin: 0 15px;
    position: relative;
  }
 
@@ -503,7 +504,6 @@
    position: absolute;
    top: 38px;
    right: 0;
-   margin-right: 15px;
    background: var(--filling_background-color);
    opacity: 0;
    visibility: hidden;
@@ -2738,7 +2738,7 @@
  .desktop_menu_part_1 {
    width: 100%;
    max-width: 1025px;
-   padding: 0 15px;
+   margin: 0 15px;
    display: flex;
    justify-content: space-between;
  }
