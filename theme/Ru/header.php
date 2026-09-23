@@ -212,23 +212,20 @@
                </svg>
             </div>
             <div class="desktop_menu_part_2__search">
-               <form role="search" method="get" id="searchform"
-                  action="<?php echo home_url("/"); ?>">
-                  <label class="screen-reader-text" >Search: </label>
-                  <input class="desktop_menu_part_2__search_input" id="desktop_menu_part_2__search_input" type="text" value="" name="s" autocomplete="off"
-                     > 
-                  <button class="desktop_menu_part_2__search_button_clear" name="clear" type="reset">
-                     <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M9 9L15 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M15 9L9 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="12" cy="12" r="9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                     </svg>
-                  </button>
-                  <button class="desktop_menu_part_2__search_button_search"
-                     type="submit" id="searchsubmit">поиск</button> 
-               </form>
-            </div>
+    <form role="search" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
+        <label class="screen-reader-text" for="desktop_menu_part_2__search_input">Поиск: </label>
+
+        <input class="desktop_menu_part_2__search_input" id="desktop_menu_part_2__search_input" type="text" value="" name="s" autocomplete="off" maxlength="50" required> 
+        <button class="desktop_menu_part_2__search_button_clear" name="clear" type="reset">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 9L15 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 9L9 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="desktop_menu_part_2__search_button_search" type="submit" id="searchsubmit">поиск</button> 
+    </form>
+</div>
          </div>
       </div>
       <div class="mobile_menu_part_1" id="mobile_menu_part_1">
@@ -384,22 +381,21 @@
             </div>
          </div>
          <div class="mobile_menu_part_2_search">
-            <form  role="search" method="get" id="mobile_searchform"
-               action="<?php echo home_url("/"); ?>">
-               <label class="screen-reader-text">Поиск: </label> <input 
-                  class="mobile_menu_part_2_search_input" type="text" value="" name="s"  autocomplete="off">
-               <button class="mobile_menu_part_2_search_button_clear" name="clear" type="reset">
-                  <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M9 9L15 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                     <path d="M15 9L9 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                     <circle cx="12" cy="12" r="9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-               </button>
-               <button class="mobile_menu_part_2_search_button_search"
-                  type="submit" id="mobile_searchsubmit">поиск</button>
-            </form>
-         </div>
+    <form role="search" method="get" id="mobile_searchform" action="<?php echo home_url('/'); ?>">
+        <label class="screen-reader-text" for="mobile_search_input">Поиск: </label> 
+
+        <input id="mobile_search_input" class="mobile_menu_part_2_search_input" type="text" value="" name="s" autocomplete="off" maxlength="50" required>
+        <button class="mobile_menu_part_2_search_button_clear" name="clear" type="reset">
+
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 9L15 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15 9L9 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <button class="mobile_menu_part_2_search_button_search" type="submit" id="mobile_searchsubmit">поиск</button>
+    </form>
+</div>
       </div>
       <div class="menu" id="menu">
          <p><?php echo $str11; ?></p>
